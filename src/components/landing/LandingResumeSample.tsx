@@ -28,7 +28,7 @@ export default function LandingResumeSample() {
             start: "top 80%",
             once: true,
           },
-        }
+        },
       );
     }
 
@@ -45,19 +45,19 @@ export default function LandingResumeSample() {
           start: "top 90%",
           once: true,
         },
-      }
+      },
     );
   }, []);
 
   return (
-    <section id="sample" className="py-24 px-6 md:px-12 bg-surface-soft/70">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+    <section id="sample" className="bg-surface-soft/70 px-6 py-24 md:px-12">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-16 text-center">
           <SectionHeading className="sample-label mb-4 justify-center">
             Privacy First
           </SectionHeading>
           <h2
-            className="font-sans font-bold text-foreground"
+            className="text-foreground font-sans font-bold"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
           >
             Your Data Never Leaves Your Browser.
@@ -67,18 +67,18 @@ export default function LandingResumeSample() {
         {/* Resume sample mockup */}
         <div
           ref={sampleRef}
-          className="max-w-2xl mx-auto bg-card text-card-foreground border border-border rounded-lg p-10 shadow-xl font-sans"
+          className="bg-card text-card-foreground border-border mx-auto max-w-2xl rounded-lg border p-10 font-sans shadow-xl"
           style={{ opacity: 0 }}
         >
           {/* Header */}
-          <div className="border-b border-border pb-6 mb-6">
-            <h3 className="text-2xl font-bold uppercase tracking-widest text-card-foreground">
+          <div className="border-border mb-6 border-b pb-6">
+            <h3 className="text-card-foreground text-2xl font-bold tracking-widest uppercase">
               Alexander Vaughn
             </h3>
-            <p className="text-xs font-sans uppercase tracking-[0.15em] text-muted-foreground mt-1">
+            <p className="text-muted-foreground mt-1 font-sans text-xs tracking-[0.15em] uppercase">
               Senior Technical Architect | New York City
             </p>
-            <div className="flex flex-wrap gap-4 mt-3 text-xs text-text-subtle">
+            <div className="text-text-subtle mt-3 flex flex-wrap gap-4 text-xs">
               <span>alex.vaughn@mypdfcv.com</span>
               <span>+1 (555) 847 3441</span>
               <span>New York, NY</span>
@@ -87,29 +87,29 @@ export default function LandingResumeSample() {
 
           {/* Profile */}
           <div className="mb-6">
-            <h4 className="text-[10px] font-sans uppercase tracking-[0.2em] text-text-subtle mb-2">
+            <h4 className="text-text-subtle mb-2 font-sans text-[10px] tracking-[0.2em] uppercase">
               Profile
             </h4>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Dedicated to the intersection of art and infrastructure. Over 12 years of
-              experience building scalable, design-forward frameworks.
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Dedicated to the intersection of art and infrastructure. Over 12 years of experience
+              building scalable, design-forward frameworks.
             </p>
           </div>
 
           {/* Experience */}
           <div className="mb-6">
-            <h4 className="text-[10px] font-sans uppercase tracking-[0.2em] text-text-subtle mb-3">
+            <h4 className="text-text-subtle mb-3 font-sans text-[10px] tracking-[0.2em] uppercase">
               Professional Experience
             </h4>
             <div className="mb-4">
-              <div className="flex justify-between items-start">
+              <div className="flex items-start justify-between">
                 <div>
-                  <p className="text-sm font-bold uppercase tracking-wide text-card-foreground">
+                  <p className="text-card-foreground text-sm font-bold tracking-wide uppercase">
                     Metropolis Design Group
                   </p>
-                  <p className="text-xs text-muted-foreground">Principal Systems Lead</p>
+                  <p className="text-muted-foreground text-xs">Principal Systems Lead</p>
                 </div>
-                <span className="text-[10px] text-text-subtle font-sans">Jan 2019 – Present</span>
+                <span className="text-text-subtle font-sans text-[10px]">Jan 2019 – Present</span>
               </div>
               <ul className="mt-2 space-y-1">
                 {[
@@ -117,7 +117,7 @@ export default function LandingResumeSample() {
                   "Pioneered BIM detailing information modeling workflows that reduced design errors by 32%.",
                   "Maintained a team of 12 architects, fostering a culture of editorial design excellence.",
                 ].map((item, i) => (
-                  <li key={i} className="text-xs text-muted-foreground flex gap-2">
+                  <li key={i} className="text-muted-foreground flex gap-2 text-xs">
                     <span className="text-border mt-0.5 shrink-0">•</span>
                     {item}
                   </li>
@@ -128,28 +128,28 @@ export default function LandingResumeSample() {
 
           {/* Education */}
           <div className="mb-6">
-            <h4 className="text-[10px] font-sans uppercase tracking-[0.2em] text-text-subtle mb-2">
+            <h4 className="text-text-subtle mb-2 font-sans text-[10px] tracking-[0.2em] uppercase">
               Education
             </h4>
             <div className="flex justify-between">
               <div>
-                <p className="text-sm font-bold text-card-foreground">Pratt Institute</p>
-                <p className="text-xs text-muted-foreground">Bachelor of Architecture & Art</p>
+                <p className="text-card-foreground text-sm font-bold">Pratt Institute</p>
+                <p className="text-muted-foreground text-xs">Bachelor of Architecture & Art</p>
               </div>
-              <span className="text-[10px] text-text-subtle font-sans">Sep – 2008</span>
+              <span className="text-text-subtle font-sans text-[10px]">Sep – 2008</span>
             </div>
           </div>
 
           {/* Skills */}
           <div>
-            <h4 className="text-[10px] font-sans uppercase tracking-[0.2em] text-text-subtle mb-2">
+            <h4 className="text-text-subtle mb-2 font-sans text-[10px] tracking-[0.2em] uppercase">
               Technical Skills
             </h4>
             <div className="flex flex-wrap gap-2">
               {["Revit", "AutoCAD", "Rhino 3D", "V-Ray", "Grasshopper"].map((s) => (
                 <span
                   key={s}
-                  className="px-2 py-0.5 text-[10px] font-sans uppercase tracking-wider border border-border text-muted-foreground rounded"
+                  className="border-border text-muted-foreground rounded border px-2 py-0.5 font-sans text-[10px] tracking-wider uppercase"
                 >
                   {s}
                 </span>
@@ -158,8 +158,9 @@ export default function LandingResumeSample() {
           </div>
 
           {/* Quote */}
-          <p className="mt-8 pt-6 border-t border-border text-xs text-text-subtle italic text-center">
-            Everything runs locally in your browser. No data is sent to any server. No account needed. Just build and export.
+          <p className="border-border text-text-subtle mt-8 border-t pt-6 text-center text-xs italic">
+            Everything runs locally in your browser. No data is sent to any server. No account
+            needed. Just build and export.
           </p>
         </div>
       </div>

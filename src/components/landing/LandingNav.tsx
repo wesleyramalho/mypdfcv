@@ -33,11 +33,11 @@ export default function LandingNav() {
   }
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-4 md:px-12 py-4 border-b border-border bg-background/85 backdrop-blur-md">
+    <nav className="border-border bg-background/85 fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b px-4 py-4 backdrop-blur-md md:px-12">
       <div className="flex items-center gap-8">
         <Link
           href="/"
-          className="font-sans text-sm font-bold uppercase tracking-widest text-foreground"
+          className="text-foreground font-sans text-sm font-bold tracking-widest uppercase"
         >
           {tc("appName")}
         </Link>
@@ -51,24 +51,26 @@ export default function LandingNav() {
             size="sm"
             variant="ghost"
             onClick={() => void handleLinkedInImport()}
-            className="hidden md:flex font-sans text-xs uppercase tracking-widest gap-2"
+            className="hidden gap-2 font-sans text-xs tracking-widest uppercase md:flex"
           >
-            <LinkedInIcon className="w-4 h-4" />
+            <LinkedInIcon className="h-4 w-4" />
             {t("startWithLinkedIn")}
           </Button>
         )}
         <Button
           size="sm"
           onClick={() => router.push("/dashboard")}
-          className="bg-foreground text-background hover:bg-foreground/90 font-sans text-xs uppercase tracking-widest"
+          className="bg-foreground text-background hover:bg-foreground/90 font-sans text-xs tracking-widest uppercase"
         >
           <span className="sm:hidden">{session ? tc("resumes") : tc("start")}</span>
-          <span className="hidden sm:inline">{session ? tc("myResumes") : tc("buildYourResume")}</span>
+          <span className="hidden sm:inline">
+            {session ? tc("myResumes") : tc("buildYourResume")}
+          </span>
         </Button>
       </div>
 
       {linkedInError ? (
-        <p className="absolute top-full right-6 mt-2 text-[10px] text-destructive font-sans uppercase tracking-wider">
+        <p className="text-destructive absolute top-full right-6 mt-2 font-sans text-[10px] tracking-wider uppercase">
           {linkedInError}
         </p>
       ) : null}

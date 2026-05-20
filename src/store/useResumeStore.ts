@@ -132,8 +132,8 @@ export const useResumeStore = create<ResumeStore>()(
     {
       name: "architect-suite-resumes",
       storage: createJSONStorage(() =>
-        typeof window !== "undefined" ? localStorage : noopStorage
+        typeof window !== "undefined" ? localStorage : noopStorage,
       ),
-    }
-  )
+    },
+  ),
 );

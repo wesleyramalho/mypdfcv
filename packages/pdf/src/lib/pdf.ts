@@ -12,9 +12,7 @@ export async function generateResumePDF(
     resume,
     locale,
     messages,
-  }) as unknown as React.ReactElement<
-    import("@react-pdf/renderer").DocumentProps
-  >;
+  }) as unknown as React.ReactElement<import("@react-pdf/renderer").DocumentProps>;
   const buffer = await renderToBuffer(element);
   return Buffer.from(buffer);
 }

@@ -30,10 +30,7 @@ export function markPromptShown(action: SubscribePromptAction): void {
   if (typeof window === "undefined") return;
   const record: PromptRecord = { action, timestamp: Date.now() };
   try {
-    window.localStorage.setItem(
-      SUBSCRIBE_PROMPT_STORAGE_KEY,
-      JSON.stringify(record),
-    );
+    window.localStorage.setItem(SUBSCRIBE_PROMPT_STORAGE_KEY, JSON.stringify(record));
   } catch {
     // localStorage may be unavailable (private mode, quota) — ignore.
   }

@@ -32,20 +32,14 @@ export default function LandingTemplates() {
 
   function handleUseTemplate(templateId: string) {
     const tmpl = getTemplate(templateId);
-    const resume = createResume(
-      tmpl?.name ?? "Untitled Resume",
-      tmpl?.sampleData,
-      templateId,
-    );
+    const resume = createResume(tmpl?.name ?? "Untitled Resume", tmpl?.sampleData, templateId);
     router.push(`/editor/${resume.id}`);
   }
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
     ScrollTrigger.batch(".template-card", {
@@ -69,46 +63,39 @@ export default function LandingTemplates() {
   }, []);
 
   return (
-    <section className="py-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section className="px-6 py-24 md:px-12">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
           <SectionHeading className="mb-3">{t("templatesLabel")}</SectionHeading>
           <h2
-            className="font-sans font-bold text-foreground"
+            className="text-foreground font-sans font-bold"
             style={{ fontSize: "clamp(1.6rem, 3vw, 3rem)" }}
           >
             {t("templatesHeading")}
           </h2>
-          <p className="text-muted-foreground mt-2 max-w-md mx-auto">
-            {t("templatesDesc")}
-          </p>
+          <p className="text-muted-foreground mx-auto mt-2 max-w-md">{t("templatesDesc")}</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
           {TEMPLATES.map((tmpl) => (
             <div
               key={tmpl.id}
-              className="template-card opacity-0 group cursor-pointer rounded-lg border border-border p-3 hover:border-ring transition-colors"
+              className="template-card group border-border hover:border-ring cursor-pointer rounded-lg border p-3 opacity-0 transition-colors"
               onClick={() => handleUseTemplate(tmpl.id)}
             >
-              <div className="relative mb-2 overflow-hidden rounded aspect-3/4">
-                <div className="absolute inset-0 pointer-events-none">
-                  <ResumePreview
-                    data={getSampleData(tmpl.id, locale)}
-                    templateId={tmpl.id}
-                  />
+              <div className="relative mb-2 aspect-3/4 overflow-hidden rounded">
+                <div className="pointer-events-none absolute inset-0">
+                  <ResumePreview data={getSampleData(tmpl.id, locale)} templateId={tmpl.id} />
                 </div>
-                <div className="absolute inset-0 bg-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10">
-                  <span className="bg-background text-foreground font-sans text-xs uppercase tracking-widest px-4 py-2 rounded-md">
+                <div className="bg-foreground/60 absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
+                  <span className="bg-background text-foreground rounded-md px-4 py-2 font-sans text-xs tracking-widest uppercase">
                     {t("useTemplate")}
                   </span>
                 </div>
               </div>
 
-              <p className="text-xs font-semibold text-foreground">
-                {tt(tmpl.id)}
-              </p>
-              <p className="text-[9px] text-muted-foreground leading-relaxed mt-0.5">
+              <p className="text-foreground text-xs font-semibold">{tt(tmpl.id)}</p>
+              <p className="text-muted-foreground mt-0.5 text-[9px] leading-relaxed">
                 {tt(`${tmpl.id}Desc`)}
               </p>
             </div>

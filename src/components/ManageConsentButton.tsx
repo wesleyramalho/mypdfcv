@@ -16,17 +16,17 @@ export default function ManageConsentButton() {
   }
 
   return (
-    <div className="flex items-center gap-3 flex-wrap">
+    <div className="flex flex-wrap items-center gap-3">
       <Button
         size="sm"
         variant="outline"
         onClick={handleClick}
-        className="font-sans text-xs uppercase tracking-widest"
+        className="font-sans text-xs tracking-widest uppercase"
       >
         {t("managePreferences")}
       </Button>
       {revoked && (
-        <span className="text-xs text-muted-foreground" role="status">
+        <span className="text-muted-foreground text-xs" role="status">
           {t("revoked")}
         </span>
       )}

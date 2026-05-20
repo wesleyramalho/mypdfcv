@@ -24,7 +24,10 @@ export default function PreviewEducation({ education, style: tmpl }: Props) {
           textTransform: "uppercase",
           letterSpacing: "1.5pt",
           color: hexWithAlpha(tmpl.accentColor, 0.4),
-          borderBottom: tmpl.sectionDivider === "line" ? `0.5pt solid ${hexWithAlpha(tmpl.accentColor, 0.15)}` : "none",
+          borderBottom:
+            tmpl.sectionDivider === "line"
+              ? `0.5pt solid ${hexWithAlpha(tmpl.accentColor, 0.15)}`
+              : "none",
           paddingBottom: "3pt",
           marginBottom: "6pt",
         }}
@@ -51,11 +54,14 @@ export default function PreviewEducation({ education, style: tmpl }: Props) {
                 whiteSpace: "nowrap",
               }}
             >
-              {formatMonthYear(edu.startDate, localeTag, t("present"))} – {formatMonthYear(edu.endDate, localeTag, t("present"))}
+              {formatMonthYear(edu.startDate, localeTag, t("present"))} –{" "}
+              {formatMonthYear(edu.endDate, localeTag, t("present"))}
             </span>
           </div>
           {edu.highlights && (
-            <p style={{ fontSize: "7.5pt", color: "#6b7280", marginTop: "2pt", fontStyle: "italic" }}>
+            <p
+              style={{ fontSize: "7.5pt", color: "#6b7280", marginTop: "2pt", fontStyle: "italic" }}
+            >
               {edu.highlights}
             </p>
           )}

@@ -75,14 +75,23 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
     ],
     skillGroups: [
       { id: generateId(), category: "Linguagens", skills: ["TypeScript", "Python", "Go", "SQL"] },
-      { id: generateId(), category: "Frameworks", skills: ["React", "Next.js", "Node.js", "FastAPI"] },
-      { id: generateId(), category: "Ferramentas", skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"] },
+      {
+        id: generateId(),
+        category: "Frameworks",
+        skills: ["React", "Next.js", "Node.js", "FastAPI"],
+      },
+      {
+        id: generateId(),
+        category: "Ferramentas",
+        skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Ferramenta CLI Open-Source",
-        description: "Construiu uma CLI para scaffolding de projetos Next.js com CI/CD, linting e testes pré-configurados. Mais de 1.2 mil stars no GitHub.",
+        description:
+          "Construiu uma CLI para scaffolding de projetos Next.js com CI/CD, linting e testes pré-configurados. Mais de 1.2 mil stars no GitHub.",
         url: "github.com/alexandresantos/create-next-stack",
         technologies: ["TypeScript", "Node.js", "GitHub Actions"],
         startDate: "2022-01",
@@ -158,14 +167,28 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Análise", skills: ["Modelagem de Processos", "Levantamento de Requisitos", "SQL", "Data Visualization"] },
-      { id: generateId(), category: "Ferramentas", skills: ["Tableau", "Power BI", "Jira", "Confluence"] },
+      {
+        id: generateId(),
+        category: "Análise",
+        skills: [
+          "Modelagem de Processos",
+          "Levantamento de Requisitos",
+          "SQL",
+          "Data Visualization",
+        ],
+      },
+      {
+        id: generateId(),
+        category: "Ferramentas",
+        skills: ["Tableau", "Power BI", "Jira", "Confluence"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Modelo de Previsão de Churn",
-        description: "Desenvolveu modelo preditivo que identificou clientes em risco com 87% de precisão, possibilitando estratégias proativas que reduziram churn em 15%.",
+        description:
+          "Desenvolveu modelo preditivo que identificou clientes em risco com 87% de precisão, possibilitando estratégias proativas que reduziram churn em 15%.",
         technologies: ["Python", "Tableau", "SQL"],
         startDate: "2022-03",
         endDate: "2022-09",
@@ -240,14 +263,23 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Design", skills: ["Figma", "Sketch", "Adobe XD", "Prototyping"] },
-      { id: generateId(), category: "Pesquisa", skills: ["Testes de Usabilidade", "Entrevistas", "Analytics", "A/B Testing"] },
+      {
+        id: generateId(),
+        category: "Design",
+        skills: ["Figma", "Sketch", "Adobe XD", "Prototyping"],
+      },
+      {
+        id: generateId(),
+        category: "Pesquisa",
+        skills: ["Testes de Usabilidade", "Entrevistas", "Analytics", "A/B Testing"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Design System Open-Source",
-        description: "Criou um design system completo com mais de 50 componentes, documentação interativa e tokens de design. Adotado por 3 startups brasileiras.",
+        description:
+          "Criou um design system completo com mais de 50 componentes, documentação interativa e tokens de design. Adotado por 3 startups brasileiras.",
         url: "github.com/lucasferreira/verde-ui",
         technologies: ["Figma", "Storybook", "React"],
         startDate: "2023-01",
@@ -323,14 +355,19 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "RH", skills: ["Recrutamento", "Employer Branding", "Gestão de Talentos", "Treinamento"] },
+      {
+        id: generateId(),
+        category: "RH",
+        skills: ["Recrutamento", "Employer Branding", "Gestão de Talentos", "Treinamento"],
+      },
       { id: generateId(), category: "Idiomas", skills: ["Português", "Inglês", "Espanhol"] },
     ],
     projects: [
       {
         id: generateId(),
         name: "Programa de Employer Branding",
-        description: "Liderou projeto de employer branding que renovou páginas de carreira e presença digital, aumentando candidaturas qualificadas em 40%.",
+        description:
+          "Liderou projeto de employer branding que renovou páginas de carreira e presença digital, aumentando candidaturas qualificadas em 40%.",
         technologies: ["LinkedIn Recruiter", "Greenhouse", "Canva"],
         startDate: "2023-01",
         endDate: "2023-07",
@@ -405,14 +442,19 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Finanças", skills: ["Modelagem Financeira", "Valuation", "M&A", "FP&A"] },
+      {
+        id: generateId(),
+        category: "Finanças",
+        skills: ["Modelagem Financeira", "Valuation", "M&A", "FP&A"],
+      },
       { id: generateId(), category: "Idiomas", skills: ["Português", "Inglês", "Espanhol"] },
     ],
     projects: [
       {
         id: generateId(),
         name: "Dashboard de Previsão Trimestral",
-        description: "Construiu dashboard automatizado de previsão financeira em Power BI que consolidou dados de 5 departamentos, reduzindo tempo de geração de relatórios de 3 dias para 2 horas.",
+        description:
+          "Construiu dashboard automatizado de previsão financeira em Power BI que consolidou dados de 5 departamentos, reduzindo tempo de geração de relatórios de 3 dias para 2 horas.",
         technologies: ["Power BI", "Excel VBA", "SQL Server"],
         startDate: "2023-06",
         endDate: "2023-12",
@@ -487,14 +529,23 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Carpintaria", skills: ["Acabamento Fino", "Restauração", "Leitura de Projetos", "Instalação de Pisos"] },
-      { id: generateId(), category: "Gestão", skills: ["Gestão de Equipe", "Supervisão", "Controle de Qualidade"] },
+      {
+        id: generateId(),
+        category: "Carpintaria",
+        skills: ["Acabamento Fino", "Restauração", "Leitura de Projetos", "Instalação de Pisos"],
+      },
+      {
+        id: generateId(),
+        category: "Gestão",
+        skills: ["Gestão de Equipe", "Supervisão", "Controle de Qualidade"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Reforma de Cozinha Personalizada",
-        description: "Projetou e construiu reforma completa de cozinha incluindo marcenaria sob medida, piso em madeira e modificações estruturais. Entregue no prazo e 10% abaixo do orçamento.",
+        description:
+          "Projetou e construiu reforma completa de cozinha incluindo marcenaria sob medida, piso em madeira e modificações estruturais. Entregue no prazo e 10% abaixo do orçamento.",
         technologies: ["AutoCAD", "Marcenaria", "Estimativa de Projetos"],
         startDate: "2023-03",
         endDate: "2023-08",
@@ -569,14 +620,23 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Administração", skills: ["Atendimento ao Cliente", "Gestão de Agenda", "Pacote Office", "Telefonia"] },
-      { id: generateId(), category: "Idiomas", skills: ["Português", "Inglês", "Italiano", "Espanhol"] },
+      {
+        id: generateId(),
+        category: "Administração",
+        skills: ["Atendimento ao Cliente", "Gestão de Agenda", "Pacote Office", "Telefonia"],
+      },
+      {
+        id: generateId(),
+        category: "Idiomas",
+        skills: ["Português", "Inglês", "Italiano", "Espanhol"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Projeto de Digitalização do Escritório",
-        description: "Liderou a transição de sistemas de arquivo em papel para digital em 3 departamentos, treinando mais de 25 funcionários e reduzindo tempo de busca de documentos em 70%.",
+        description:
+          "Liderou a transição de sistemas de arquivo em papel para digital em 3 departamentos, treinando mais de 25 funcionários e reduzindo tempo de busca de documentos em 70%.",
         technologies: ["Google Workspace", "DocuSign", "Notion"],
         startDate: "2023-02",
         endDate: "2023-06",
@@ -656,14 +716,23 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
     ],
     skillGroups: [
       { id: generateId(), category: "Lenguajes", skills: ["TypeScript", "Python", "Go", "SQL"] },
-      { id: generateId(), category: "Frameworks", skills: ["React", "Next.js", "Node.js", "FastAPI"] },
-      { id: generateId(), category: "Herramientas", skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"] },
+      {
+        id: generateId(),
+        category: "Frameworks",
+        skills: ["React", "Next.js", "Node.js", "FastAPI"],
+      },
+      {
+        id: generateId(),
+        category: "Herramientas",
+        skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Herramienta CLI Open-Source",
-        description: "Creó una CLI para scaffolding de proyectos Next.js con CI/CD, linting y testing preconfigurados. Más de 1.2 mil estrellas en GitHub.",
+        description:
+          "Creó una CLI para scaffolding de proyectos Next.js con CI/CD, linting y testing preconfigurados. Más de 1.2 mil estrellas en GitHub.",
         url: "github.com/alejandrogarcia/create-next-stack",
         technologies: ["TypeScript", "Node.js", "GitHub Actions"],
         startDate: "2022-01",
@@ -739,14 +808,23 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Análisis", skills: ["Modelado de Procesos", "Requisitos", "SQL", "Data Visualization"] },
-      { id: generateId(), category: "Herramientas", skills: ["Tableau", "Power BI", "Jira", "Confluence"] },
+      {
+        id: generateId(),
+        category: "Análisis",
+        skills: ["Modelado de Procesos", "Requisitos", "SQL", "Data Visualization"],
+      },
+      {
+        id: generateId(),
+        category: "Herramientas",
+        skills: ["Tableau", "Power BI", "Jira", "Confluence"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Modelo de Predicción de Churn",
-        description: "Desarrolló modelo predictivo que identificó clientes en riesgo con 87% de precisión, permitiendo estrategias proactivas que redujeron churn en un 15%.",
+        description:
+          "Desarrolló modelo predictivo que identificó clientes en riesgo con 87% de precisión, permitiendo estrategias proactivas que redujeron churn en un 15%.",
         technologies: ["Python", "Tableau", "SQL"],
         startDate: "2022-03",
         endDate: "2022-09",
@@ -821,14 +899,23 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Diseño", skills: ["Figma", "Sketch", "Adobe XD", "Prototyping"] },
-      { id: generateId(), category: "Investigación", skills: ["Tests de Usabilidad", "Entrevistas", "Analytics", "A/B Testing"] },
+      {
+        id: generateId(),
+        category: "Diseño",
+        skills: ["Figma", "Sketch", "Adobe XD", "Prototyping"],
+      },
+      {
+        id: generateId(),
+        category: "Investigación",
+        skills: ["Tests de Usabilidad", "Entrevistas", "Analytics", "A/B Testing"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Design System Open-Source",
-        description: "Creó un design system completo con más de 50 componentes, documentación interactiva y tokens de diseño. Adoptado por 3 startups españolas.",
+        description:
+          "Creó un design system completo con más de 50 componentes, documentación interactiva y tokens de diseño. Adoptado por 3 startups españolas.",
         url: "github.com/pablomartinez/verde-ui",
         technologies: ["Figma", "Storybook", "React"],
         startDate: "2023-01",
@@ -904,14 +991,19 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "RRHH", skills: ["Reclutamiento", "Employer Branding", "Gestión del Talento", "Formación"] },
+      {
+        id: generateId(),
+        category: "RRHH",
+        skills: ["Reclutamiento", "Employer Branding", "Gestión del Talento", "Formación"],
+      },
       { id: generateId(), category: "Idiomas", skills: ["Español", "Inglés", "Francés"] },
     ],
     projects: [
       {
         id: generateId(),
         name: "Iniciativa de Employer Branding",
-        description: "Lideró proyecto de employer branding que renovó páginas de empleo y presencia digital, aumentando candidaturas cualificadas en un 40%.",
+        description:
+          "Lideró proyecto de employer branding que renovó páginas de empleo y presencia digital, aumentando candidaturas cualificadas en un 40%.",
         technologies: ["LinkedIn Recruiter", "Greenhouse", "Canva"],
         startDate: "2023-01",
         endDate: "2023-07",
@@ -986,14 +1078,19 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Finanzas", skills: ["Modelado Financiero", "Valoración", "M&A", "FP&A"] },
+      {
+        id: generateId(),
+        category: "Finanzas",
+        skills: ["Modelado Financiero", "Valoración", "M&A", "FP&A"],
+      },
       { id: generateId(), category: "Idiomas", skills: ["Español", "Inglés", "Catalán"] },
     ],
     projects: [
       {
         id: generateId(),
         name: "Dashboard de Previsión Trimestral",
-        description: "Construyó dashboard automatizado de previsión financiera en Power BI que consolidó datos de 5 departamentos.",
+        description:
+          "Construyó dashboard automatizado de previsión financiera en Power BI que consolidó datos de 5 departamentos.",
         technologies: ["Power BI", "Excel VBA", "SQL Server"],
         startDate: "2023-06",
         endDate: "2023-12",
@@ -1068,14 +1165,23 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Carpintería", skills: ["Acabado Fino", "Restauración", "Lectura de Planos", "Instalación de Suelos"] },
-      { id: generateId(), category: "Gestión", skills: ["Gestión de Equipos", "Supervisión", "Control de Calidad"] },
+      {
+        id: generateId(),
+        category: "Carpintería",
+        skills: ["Acabado Fino", "Restauración", "Lectura de Planos", "Instalación de Suelos"],
+      },
+      {
+        id: generateId(),
+        category: "Gestión",
+        skills: ["Gestión de Equipos", "Supervisión", "Control de Calidad"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Reforma de Cocina Personalizada",
-        description: "Diseñó y construyó reforma completa de cocina incluyendo ebanistería a medida, suelo de madera y modificaciones estructurales.",
+        description:
+          "Diseñó y construyó reforma completa de cocina incluyendo ebanistería a medida, suelo de madera y modificaciones estructurales.",
         technologies: ["AutoCAD", "Ebanistería", "Estimación de Proyectos"],
         startDate: "2023-03",
         endDate: "2023-08",
@@ -1150,14 +1256,23 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Administración", skills: ["Atención al Cliente", "Gestión de Agenda", "Office 365", "Telefonía"] },
-      { id: generateId(), category: "Idiomas", skills: ["Español", "Inglés", "Italiano", "Francés"] },
+      {
+        id: generateId(),
+        category: "Administración",
+        skills: ["Atención al Cliente", "Gestión de Agenda", "Office 365", "Telefonía"],
+      },
+      {
+        id: generateId(),
+        category: "Idiomas",
+        skills: ["Español", "Inglés", "Italiano", "Francés"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Proyecto de Digitalización",
-        description: "Lideró la transición de sistemas de archivo en papel a digital en 3 departamentos, formando a más de 25 empleados.",
+        description:
+          "Lideró la transición de sistemas de archivo en papel a digital en 3 departamentos, formando a más de 25 empleados.",
         technologies: ["Google Workspace", "DocuSign", "Notion"],
         startDate: "2023-02",
         endDate: "2023-06",
@@ -1237,14 +1352,23 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
     ],
     skillGroups: [
       { id: generateId(), category: "Linguaggi", skills: ["TypeScript", "Python", "Go", "SQL"] },
-      { id: generateId(), category: "Framework", skills: ["React", "Next.js", "Node.js", "FastAPI"] },
-      { id: generateId(), category: "Strumenti", skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"] },
+      {
+        id: generateId(),
+        category: "Framework",
+        skills: ["React", "Next.js", "Node.js", "FastAPI"],
+      },
+      {
+        id: generateId(),
+        category: "Strumenti",
+        skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Strumento CLI Open-Source",
-        description: "Costruita una CLI per lo scaffolding di progetti Next.js con CI/CD, linting e test preconfigurati. Oltre 1,2K stelle su GitHub.",
+        description:
+          "Costruita una CLI per lo scaffolding di progetti Next.js con CI/CD, linting e test preconfigurati. Oltre 1,2K stelle su GitHub.",
         url: "github.com/marcobianchi/create-next-stack",
         technologies: ["TypeScript", "Node.js", "GitHub Actions"],
         startDate: "2022-01",
@@ -1321,14 +1445,23 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Analisi", skills: ["Modellazione Finanziaria", "SQL", "Python", "Excel"] },
-      { id: generateId(), category: "Strumenti", skills: ["Tableau", "Power BI", "Jira", "Confluence"] },
+      {
+        id: generateId(),
+        category: "Analisi",
+        skills: ["Modellazione Finanziaria", "SQL", "Python", "Excel"],
+      },
+      {
+        id: generateId(),
+        category: "Strumenti",
+        skills: ["Tableau", "Power BI", "Jira", "Confluence"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Modello di Previsione Churn",
-        description: "Sviluppato un modello di analisi predittiva che ha identificato clienti a rischio con l'87% di accuratezza, consentendo strategie proattive che hanno ridotto il churn del 15%.",
+        description:
+          "Sviluppato un modello di analisi predittiva che ha identificato clienti a rischio con l'87% di accuratezza, consentendo strategie proattive che hanno ridotto il churn del 15%.",
         technologies: ["Python", "Tableau", "SQL"],
         startDate: "2022-03",
         endDate: "2022-09",
@@ -1403,14 +1536,23 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Design", skills: ["Figma", "Sketch", "Adobe CC", "Prototipazione"] },
-      { id: generateId(), category: "Sviluppo", skills: ["HTML/CSS", "React", "Tailwind CSS", "Storybook"] },
+      {
+        id: generateId(),
+        category: "Design",
+        skills: ["Figma", "Sketch", "Adobe CC", "Prototipazione"],
+      },
+      {
+        id: generateId(),
+        category: "Sviluppo",
+        skills: ["HTML/CSS", "React", "Tailwind CSS", "Storybook"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "DesignTokens.io",
-        description: "Strumento open-source per generare e sincronizzare design token tra Figma e codice. Oltre 2K stelle su GitHub.",
+        description:
+          "Strumento open-source per generare e sincronizzare design token tra Figma e codice. Oltre 2K stelle su GitHub.",
         url: "github.com/andreaconti/designtokens",
         technologies: ["React", "TypeScript", "Figma Plugin API"],
         startDate: "2023-03",
@@ -1486,14 +1628,23 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "HR", skills: ["Reclutamento", "Gestione HR", "Relazioni con i Dipendenti", "Talent Acquisition"] },
-      { id: generateId(), category: "Lingue", skills: ["Italiano", "Inglese", "Francese", "Spagnolo"] },
+      {
+        id: generateId(),
+        category: "HR",
+        skills: ["Reclutamento", "Gestione HR", "Relazioni con i Dipendenti", "Talent Acquisition"],
+      },
+      {
+        id: generateId(),
+        category: "Lingue",
+        skills: ["Italiano", "Inglese", "Francese", "Spagnolo"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Iniziativa Employer Branding",
-        description: "Guidato un progetto aziendale di employer branding che ha rinnovato le pagine carriera e la presenza social, aumentando le candidature qualificate del 40% in 6 mesi.",
+        description:
+          "Guidato un progetto aziendale di employer branding che ha rinnovato le pagine carriera e la presenza social, aumentando le candidature qualificate del 40% in 6 mesi.",
         technologies: ["LinkedIn Recruiter", "Greenhouse", "Canva"],
         startDate: "2023-01",
         endDate: "2023-07",
@@ -1568,14 +1719,28 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Tecnico", skills: ["Strategie di Soluzione", "Pensiero Analitico", "Valutazione di Mercato", "Analisi dei Trend"] },
-      { id: generateId(), category: "Competenze Trasversali", skills: ["Leadership", "Collaborazione", "Vendita Orientata al Cliente", "Networking"] },
+      {
+        id: generateId(),
+        category: "Tecnico",
+        skills: [
+          "Strategie di Soluzione",
+          "Pensiero Analitico",
+          "Valutazione di Mercato",
+          "Analisi dei Trend",
+        ],
+      },
+      {
+        id: generateId(),
+        category: "Competenze Trasversali",
+        skills: ["Leadership", "Collaborazione", "Vendita Orientata al Cliente", "Networking"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Dashboard Previsioni Trimestrali",
-        description: "Costruita una dashboard automatizzata di previsioni finanziarie in Power BI che ha consolidato dati da 5 dipartimenti, riducendo il tempo di generazione report da 3 giorni a 2 ore.",
+        description:
+          "Costruita una dashboard automatizzata di previsioni finanziarie in Power BI che ha consolidato dati da 5 dipartimenti, riducendo il tempo di generazione report da 3 giorni a 2 ore.",
         technologies: ["Power BI", "Excel VBA", "SQL Server"],
         startDate: "2023-06",
         endDate: "2023-12",
@@ -1650,14 +1815,28 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Tecnico", skills: ["Abilità Meccaniche", "Pensiero Critico", "Coordinazione Occhio-Mano", "Utensili Elettrici"] },
-      { id: generateId(), category: "Gestione", skills: ["Gestione del Tempo", "Supervisione", "Controllo Qualità"] },
+      {
+        id: generateId(),
+        category: "Tecnico",
+        skills: [
+          "Abilità Meccaniche",
+          "Pensiero Critico",
+          "Coordinazione Occhio-Mano",
+          "Utensili Elettrici",
+        ],
+      },
+      {
+        id: generateId(),
+        category: "Gestione",
+        skills: ["Gestione del Tempo", "Supervisione", "Controllo Qualità"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Ristrutturazione Cucina Su Misura",
-        description: "Progettato e realizzato una ristrutturazione completa della cucina con mobili su misura, pavimenti in legno e modifiche strutturali. Completato nei tempi e con il 10% di risparmio sul budget.",
+        description:
+          "Progettato e realizzato una ristrutturazione completa della cucina con mobili su misura, pavimenti in legno e modifiche strutturali. Completato nei tempi e con il 10% di risparmio sul budget.",
         technologies: ["AutoCAD", "Falegnameria", "Preventivazione"],
         startDate: "2023-03",
         endDate: "2023-08",
@@ -1732,14 +1911,29 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Competenze", skills: ["Comunicazione", "Multitasking", "Pianificazione", "Tecnologia d'Ufficio", "Contabilità"] },
-      { id: generateId(), category: "Lingue", skills: ["Italiano", "Inglese", "Francese", "Spagnolo"] },
+      {
+        id: generateId(),
+        category: "Competenze",
+        skills: [
+          "Comunicazione",
+          "Multitasking",
+          "Pianificazione",
+          "Tecnologia d'Ufficio",
+          "Contabilità",
+        ],
+      },
+      {
+        id: generateId(),
+        category: "Lingue",
+        skills: ["Italiano", "Inglese", "Francese", "Spagnolo"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Progetto di Digitalizzazione Ufficio",
-        description: "Guidato la transizione da sistemi di archiviazione cartacei a digitali in 3 dipartimenti, formando oltre 25 dipendenti e riducendo il tempo di ricerca documenti del 70%.",
+        description:
+          "Guidato la transizione da sistemi di archiviazione cartacei a digitali in 3 dipartimenti, formando oltre 25 dipendenti e riducendo il tempo di ricerca documenti del 70%.",
         technologies: ["Google Workspace", "DocuSign", "Notion"],
         startDate: "2023-02",
         endDate: "2023-06",
@@ -1752,8 +1946,7 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
   modern: {
     fullName: "王小明",
     headline: "高级软件工程师",
-    summary:
-      "拥有6年以上构建可扩展Web应用经验的全栈工程师。专注于开发者体验、性能优化和整洁架构。",
+    summary: "拥有6年以上构建可扩展Web应用经验的全栈工程师。专注于开发者体验、性能优化和整洁架构。",
     contact: {
       email: "wang.xiaoming@email.com",
       phone: "+86 138 1234 5678",
@@ -1820,13 +2013,18 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
     skillGroups: [
       { id: generateId(), category: "编程语言", skills: ["TypeScript", "Python", "Go", "SQL"] },
       { id: generateId(), category: "框架", skills: ["React", "Next.js", "Node.js", "FastAPI"] },
-      { id: generateId(), category: "工具", skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"] },
+      {
+        id: generateId(),
+        category: "工具",
+        skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "开源CLI工具",
-        description: "构建了一个用于搭建Next.js项目的开发者CLI工具，预配置CI/CD、代码检查和测试。GitHub 1.2K+ 星标。",
+        description:
+          "构建了一个用于搭建Next.js项目的开发者CLI工具，预配置CI/CD、代码检查和测试。GitHub 1.2K+ 星标。",
         url: "github.com/wangxiaoming/create-next-stack",
         technologies: ["TypeScript", "Node.js", "GitHub Actions"],
         startDate: "2022-01",
@@ -1910,7 +2108,8 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
       {
         id: generateId(),
         name: "客户流失预测模型",
-        description: "开发了一个预测分析模型，以87%的准确率识别高风险客户，实施主动留存策略后客户流失率降低15%。",
+        description:
+          "开发了一个预测分析模型，以87%的准确率识别高风险客户，实施主动留存策略后客户流失率降低15%。",
         technologies: ["Python", "Tableau", "SQL"],
         startDate: "2022-03",
         endDate: "2022-09",
@@ -1986,7 +2185,11 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
     ],
     skillGroups: [
       { id: generateId(), category: "设计", skills: ["Figma", "Sketch", "Adobe CC", "原型设计"] },
-      { id: generateId(), category: "开发", skills: ["HTML/CSS", "React", "Tailwind CSS", "Storybook"] },
+      {
+        id: generateId(),
+        category: "开发",
+        skills: ["HTML/CSS", "React", "Tailwind CSS", "Storybook"],
+      },
     ],
     projects: [
       {
@@ -2068,14 +2271,19 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "人力资源", skills: ["招聘", "人力资源管理", "员工关系", "人才获取"] },
+      {
+        id: generateId(),
+        category: "人力资源",
+        skills: ["招聘", "人力资源管理", "员工关系", "人才获取"],
+      },
       { id: generateId(), category: "语言", skills: ["中文", "英文", "日文"] },
     ],
     projects: [
       {
         id: generateId(),
         name: "雇主品牌建设计划",
-        description: "主导全公司雇主品牌项目，改版招聘页面和社交媒体形象，6个月内合格申请量增加40%。",
+        description:
+          "主导全公司雇主品牌项目，改版招聘页面和社交媒体形象，6个月内合格申请量增加40%。",
         technologies: ["LinkedIn Recruiter", "Greenhouse", "Canva"],
         startDate: "2023-01",
         endDate: "2023-07",
@@ -2150,14 +2358,23 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "技术", skills: ["解决方案策略", "分析思维", "市场评估", "趋势分析"] },
-      { id: generateId(), category: "软技能", skills: ["团队领导", "协作能力", "以客户为中心的销售", "人脉拓展"] },
+      {
+        id: generateId(),
+        category: "技术",
+        skills: ["解决方案策略", "分析思维", "市场评估", "趋势分析"],
+      },
+      {
+        id: generateId(),
+        category: "软技能",
+        skills: ["团队领导", "协作能力", "以客户为中心的销售", "人脉拓展"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "季度预测仪表盘",
-        description: "在Power BI中构建了自动化财务预测仪表盘，整合5个部门的数据，将报告生成时间从3天缩短至2小时。",
+        description:
+          "在Power BI中构建了自动化财务预测仪表盘，整合5个部门的数据，将报告生成时间从3天缩短至2小时。",
         technologies: ["Power BI", "Excel VBA", "SQL Server"],
         startDate: "2023-06",
         endDate: "2023-12",
@@ -2232,14 +2449,19 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "技术", skills: ["机械技能", "批判性思维", "手眼协调", "电动工具"] },
+      {
+        id: generateId(),
+        category: "技术",
+        skills: ["机械技能", "批判性思维", "手眼协调", "电动工具"],
+      },
       { id: generateId(), category: "管理", skills: ["时间管理", "监督", "质量控制"] },
     ],
     projects: [
       {
         id: generateId(),
         name: "定制厨房翻新",
-        description: "设计并完成了整体厨房翻新，包括定制橱柜、实木地板和结构改造。按时完工，节省10%预算。",
+        description:
+          "设计并完成了整体厨房翻新，包括定制橱柜、实木地板和结构改造。按时完工，节省10%预算。",
         technologies: ["AutoCAD", "木工", "工程预算"],
         startDate: "2023-03",
         endDate: "2023-08",
@@ -2314,14 +2536,19 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "技能", skills: ["沟通能力", "多任务处理", "排班管理", "办公技术", "记账"] },
+      {
+        id: generateId(),
+        category: "技能",
+        skills: ["沟通能力", "多任务处理", "排班管理", "办公技术", "记账"],
+      },
       { id: generateId(), category: "语言", skills: ["中文", "英文", "日文"] },
     ],
     projects: [
       {
         id: generateId(),
         name: "办公室数字化项目",
-        description: "主导3个部门从纸质到数字化归档系统的转型，培训25+名员工，文件检索时间减少70%。",
+        description:
+          "主导3个部门从纸质到数字化归档系统的转型，培训25+名员工，文件检索时间减少70%。",
         technologies: ["Google Workspace", "DocuSign", "Notion"],
         startDate: "2023-02",
         endDate: "2023-06",
@@ -2401,14 +2628,23 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
     ],
     skillGroups: [
       { id: generateId(), category: "言語", skills: ["TypeScript", "Python", "Go", "SQL"] },
-      { id: generateId(), category: "フレームワーク", skills: ["React", "Next.js", "Node.js", "FastAPI"] },
-      { id: generateId(), category: "ツール", skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"] },
+      {
+        id: generateId(),
+        category: "フレームワーク",
+        skills: ["React", "Next.js", "Node.js", "FastAPI"],
+      },
+      {
+        id: generateId(),
+        category: "ツール",
+        skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "オープンソースCLIツール",
-        description: "CI/CD、リンティング、テストが事前設定されたNext.jsプロジェクトのスキャフォールディング用CLIを構築。GitHub 1.2K以上のスター。",
+        description:
+          "CI/CD、リンティング、テストが事前設定されたNext.jsプロジェクトのスキャフォールディング用CLIを構築。GitHub 1.2K以上のスター。",
         url: "github.com/tanakataro/create-next-stack",
         technologies: ["TypeScript", "Node.js", "GitHub Actions"],
         startDate: "2022-01",
@@ -2486,13 +2722,18 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
     ],
     skillGroups: [
       { id: generateId(), category: "分析", skills: ["財務モデリング", "SQL", "Python", "Excel"] },
-      { id: generateId(), category: "ツール", skills: ["Tableau", "Power BI", "Jira", "Confluence"] },
+      {
+        id: generateId(),
+        category: "ツール",
+        skills: ["Tableau", "Power BI", "Jira", "Confluence"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "顧客離反予測モデル",
-        description: "87%の精度でリスク顧客を特定する予測分析モデルを開発。プロアクティブなリテンション戦略により離反率を15%削減。",
+        description:
+          "87%の精度でリスク顧客を特定する予測分析モデルを開発。プロアクティブなリテンション戦略により離反率を15%削減。",
         technologies: ["Python", "Tableau", "SQL"],
         startDate: "2022-03",
         endDate: "2022-09",
@@ -2567,14 +2808,23 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "デザイン", skills: ["Figma", "Sketch", "Adobe CC", "プロトタイピング"] },
-      { id: generateId(), category: "開発", skills: ["HTML/CSS", "React", "Tailwind CSS", "Storybook"] },
+      {
+        id: generateId(),
+        category: "デザイン",
+        skills: ["Figma", "Sketch", "Adobe CC", "プロトタイピング"],
+      },
+      {
+        id: generateId(),
+        category: "開発",
+        skills: ["HTML/CSS", "React", "Tailwind CSS", "Storybook"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "DesignTokens.io",
-        description: "FigmaとコードのデザイントークンをFigmaとコード間で生成・同期するオープンソースツール。GitHub 2K以上のスター。",
+        description:
+          "FigmaとコードのデザイントークンをFigmaとコード間で生成・同期するオープンソースツール。GitHub 2K以上のスター。",
         url: "github.com/satomisaki/designtokens",
         technologies: ["React", "TypeScript", "Figma Plugin API"],
         startDate: "2023-03",
@@ -2650,14 +2900,19 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "人事", skills: ["採用", "人事管理", "従業員関係", "タレントアクイジション"] },
+      {
+        id: generateId(),
+        category: "人事",
+        skills: ["採用", "人事管理", "従業員関係", "タレントアクイジション"],
+      },
       { id: generateId(), category: "言語", skills: ["日本語", "英語", "中国語"] },
     ],
     projects: [
       {
         id: generateId(),
         name: "エンプロイヤーブランディング施策",
-        description: "全社的なエンプロイヤーブランディングプロジェクトをリードし、キャリアページとSNSプレゼンスを刷新。6ヶ月で応募数を40%増加。",
+        description:
+          "全社的なエンプロイヤーブランディングプロジェクトをリードし、キャリアページとSNSプレゼンスを刷新。6ヶ月で応募数を40%増加。",
         technologies: ["LinkedIn Recruiter", "Greenhouse", "Canva"],
         startDate: "2023-01",
         endDate: "2023-07",
@@ -2732,14 +2987,28 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "テクニカル", skills: ["ソリューション戦略", "分析的思考", "市場評価", "トレンド分析"] },
-      { id: generateId(), category: "ソフトスキル", skills: ["チームリーダーシップ", "コラボレーション", "顧客志向セールス", "ネットワーキング"] },
+      {
+        id: generateId(),
+        category: "テクニカル",
+        skills: ["ソリューション戦略", "分析的思考", "市場評価", "トレンド分析"],
+      },
+      {
+        id: generateId(),
+        category: "ソフトスキル",
+        skills: [
+          "チームリーダーシップ",
+          "コラボレーション",
+          "顧客志向セールス",
+          "ネットワーキング",
+        ],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "四半期予測ダッシュボード",
-        description: "5部門のデータを統合した自動財務予測ダッシュボードをPower BIで構築。レポート生成時間を3日から2時間に短縮。",
+        description:
+          "5部門のデータを統合した自動財務予測ダッシュボードをPower BIで構築。レポート生成時間を3日から2時間に短縮。",
         technologies: ["Power BI", "Excel VBA", "SQL Server"],
         startDate: "2023-06",
         endDate: "2023-12",
@@ -2814,14 +3083,19 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "技術", skills: ["機械スキル", "クリティカルシンキング", "手先の器用さ", "電動工具"] },
+      {
+        id: generateId(),
+        category: "技術",
+        skills: ["機械スキル", "クリティカルシンキング", "手先の器用さ", "電動工具"],
+      },
       { id: generateId(), category: "マネジメント", skills: ["時間管理", "監督", "品質管理"] },
     ],
     projects: [
       {
         id: generateId(),
         name: "カスタムキッチンリノベーション",
-        description: "カスタムキャビネット、無垢材フローリング、構造変更を含むフルキッチンリノベーションを設計・施工。納期通りに完了し、予算を10%削減。",
+        description:
+          "カスタムキャビネット、無垢材フローリング、構造変更を含むフルキッチンリノベーションを設計・施工。納期通りに完了し、予算を10%削減。",
         technologies: ["AutoCAD", "木工", "見積り"],
         startDate: "2023-03",
         endDate: "2023-08",
@@ -2896,14 +3170,25 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "スキル", skills: ["コミュニケーション", "マルチタスク", "スケジューリング", "オフィステクノロジー", "簿記"] },
+      {
+        id: generateId(),
+        category: "スキル",
+        skills: [
+          "コミュニケーション",
+          "マルチタスク",
+          "スケジューリング",
+          "オフィステクノロジー",
+          "簿記",
+        ],
+      },
       { id: generateId(), category: "言語", skills: ["日本語", "英語", "中国語"] },
     ],
     projects: [
       {
         id: generateId(),
         name: "オフィスデジタル化プロジェクト",
-        description: "3部門の紙ベースからデジタルファイリングシステムへの移行をリード。25名以上のスタッフを研修し、書類検索時間を70%削減。",
+        description:
+          "3部門の紙ベースからデジタルファイリングシステムへの移行をリード。25名以上のスタッフを研修し、書類検索時間を70%削減。",
         technologies: ["Google Workspace", "DocuSign", "Notion"],
         startDate: "2023-02",
         endDate: "2023-06",
@@ -2983,14 +3268,23 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
     ],
     skillGroups: [
       { id: generateId(), category: "Sprachen", skills: ["TypeScript", "Python", "Go", "SQL"] },
-      { id: generateId(), category: "Frameworks", skills: ["React", "Next.js", "Node.js", "FastAPI"] },
-      { id: generateId(), category: "Tools", skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"] },
+      {
+        id: generateId(),
+        category: "Frameworks",
+        skills: ["React", "Next.js", "Node.js", "FastAPI"],
+      },
+      {
+        id: generateId(),
+        category: "Tools",
+        skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Open-Source CLI-Tool",
-        description: "Ein Entwickler-CLI zum Scaffolding von Next.js-Projekten mit vorkonfiguriertem CI/CD, Linting und Tests gebaut. 1,2K+ GitHub-Sterne.",
+        description:
+          "Ein Entwickler-CLI zum Scaffolding von Next.js-Projekten mit vorkonfiguriertem CI/CD, Linting und Tests gebaut. 1,2K+ GitHub-Sterne.",
         url: "github.com/maxmueller/create-next-stack",
         technologies: ["TypeScript", "Node.js", "GitHub Actions"],
         startDate: "2022-01",
@@ -3067,14 +3361,23 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Analyse", skills: ["Finanzmodellierung", "SQL", "Python", "Excel"] },
-      { id: generateId(), category: "Tools", skills: ["Tableau", "Power BI", "Jira", "Confluence"] },
+      {
+        id: generateId(),
+        category: "Analyse",
+        skills: ["Finanzmodellierung", "SQL", "Python", "Excel"],
+      },
+      {
+        id: generateId(),
+        category: "Tools",
+        skills: ["Tableau", "Power BI", "Jira", "Confluence"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Kundenabwanderungs-Vorhersagemodell",
-        description: "Ein prädiktives Analysemodell entwickelt, das Risikokunden mit 87% Genauigkeit identifizierte und proaktive Bindungsstrategien ermöglichte, die die Abwanderung um 15% reduzierten.",
+        description:
+          "Ein prädiktives Analysemodell entwickelt, das Risikokunden mit 87% Genauigkeit identifizierte und proaktive Bindungsstrategien ermöglichte, die die Abwanderung um 15% reduzierten.",
         technologies: ["Python", "Tableau", "SQL"],
         startDate: "2022-03",
         endDate: "2022-09",
@@ -3149,14 +3452,23 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Design", skills: ["Figma", "Sketch", "Adobe CC", "Prototyping"] },
-      { id: generateId(), category: "Entwicklung", skills: ["HTML/CSS", "React", "Tailwind CSS", "Storybook"] },
+      {
+        id: generateId(),
+        category: "Design",
+        skills: ["Figma", "Sketch", "Adobe CC", "Prototyping"],
+      },
+      {
+        id: generateId(),
+        category: "Entwicklung",
+        skills: ["HTML/CSS", "React", "Tailwind CSS", "Storybook"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "DesignTokens.io",
-        description: "Open-Source-Tool zur Generierung und Synchronisierung von Design-Tokens zwischen Figma und Code. 2K+ GitHub-Sterne.",
+        description:
+          "Open-Source-Tool zur Generierung und Synchronisierung von Design-Tokens zwischen Figma und Code. 2K+ GitHub-Sterne.",
         url: "github.com/lenafischer/designtokens",
         technologies: ["React", "TypeScript", "Figma Plugin API"],
         startDate: "2023-03",
@@ -3232,14 +3544,23 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "HR", skills: ["Recruiting", "Personalmanagement", "Mitarbeiterbeziehungen", "Talentakquise"] },
-      { id: generateId(), category: "Sprachen", skills: ["Deutsch", "Englisch", "Französisch", "Spanisch"] },
+      {
+        id: generateId(),
+        category: "HR",
+        skills: ["Recruiting", "Personalmanagement", "Mitarbeiterbeziehungen", "Talentakquise"],
+      },
+      {
+        id: generateId(),
+        category: "Sprachen",
+        skills: ["Deutsch", "Englisch", "Französisch", "Spanisch"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Employer-Branding-Initiative",
-        description: "Unternehmensweites Employer-Branding-Projekt geleitet, das Karriereseiten und Social-Media-Präsenz erneuerte und qualifizierte Bewerbungen innerhalb von 6 Monaten um 40% steigerte.",
+        description:
+          "Unternehmensweites Employer-Branding-Projekt geleitet, das Karriereseiten und Social-Media-Präsenz erneuerte und qualifizierte Bewerbungen innerhalb von 6 Monaten um 40% steigerte.",
         technologies: ["LinkedIn Recruiter", "Greenhouse", "Canva"],
         startDate: "2023-01",
         endDate: "2023-07",
@@ -3314,14 +3635,23 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Technisch", skills: ["Lösungsstrategien", "Analytisches Denken", "Marktbewertung", "Trendanalyse"] },
-      { id: generateId(), category: "Soft Skills", skills: ["Teamführung", "Zusammenarbeit", "Kundenorientierter Vertrieb", "Networking"] },
+      {
+        id: generateId(),
+        category: "Technisch",
+        skills: ["Lösungsstrategien", "Analytisches Denken", "Marktbewertung", "Trendanalyse"],
+      },
+      {
+        id: generateId(),
+        category: "Soft Skills",
+        skills: ["Teamführung", "Zusammenarbeit", "Kundenorientierter Vertrieb", "Networking"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Quartals-Prognose-Dashboard",
-        description: "Ein automatisiertes Finanzprognose-Dashboard in Power BI gebaut, das Daten aus 5 Abteilungen konsolidierte und die Berichtserstellungszeit von 3 Tagen auf 2 Stunden reduzierte.",
+        description:
+          "Ein automatisiertes Finanzprognose-Dashboard in Power BI gebaut, das Daten aus 5 Abteilungen konsolidierte und die Berichtserstellungszeit von 3 Tagen auf 2 Stunden reduzierte.",
         technologies: ["Power BI", "Excel VBA", "SQL Server"],
         startDate: "2023-06",
         endDate: "2023-12",
@@ -3396,14 +3726,28 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Technisch", skills: ["Handwerkliche Fähigkeiten", "Kritisches Denken", "Hand-Auge-Koordination", "Elektrowerkzeuge"] },
-      { id: generateId(), category: "Management", skills: ["Zeitmanagement", "Aufsicht", "Qualitätskontrolle"] },
+      {
+        id: generateId(),
+        category: "Technisch",
+        skills: [
+          "Handwerkliche Fähigkeiten",
+          "Kritisches Denken",
+          "Hand-Auge-Koordination",
+          "Elektrowerkzeuge",
+        ],
+      },
+      {
+        id: generateId(),
+        category: "Management",
+        skills: ["Zeitmanagement", "Aufsicht", "Qualitätskontrolle"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Maßgeschneiderte Küchenrenovierung",
-        description: "Vollständige Küchenrenovierung mit Einbauküche, Massivholzboden und Strukturänderungen entworfen und gebaut. Termingerecht fertiggestellt und 10% unter Budget geblieben.",
+        description:
+          "Vollständige Küchenrenovierung mit Einbauküche, Massivholzboden und Strukturänderungen entworfen und gebaut. Termingerecht fertiggestellt und 10% unter Budget geblieben.",
         technologies: ["AutoCAD", "Holzbearbeitung", "Kostenschätzung"],
         startDate: "2023-03",
         endDate: "2023-08",
@@ -3478,14 +3822,23 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
       },
     ],
     skillGroups: [
-      { id: generateId(), category: "Fähigkeiten", skills: ["Kommunikation", "Multitasking", "Terminplanung", "Bürotechnik", "Buchhaltung"] },
-      { id: generateId(), category: "Sprachen", skills: ["Deutsch", "Englisch", "Französisch", "Spanisch"] },
+      {
+        id: generateId(),
+        category: "Fähigkeiten",
+        skills: ["Kommunikation", "Multitasking", "Terminplanung", "Bürotechnik", "Buchhaltung"],
+      },
+      {
+        id: generateId(),
+        category: "Sprachen",
+        skills: ["Deutsch", "Englisch", "Französisch", "Spanisch"],
+      },
     ],
     projects: [
       {
         id: generateId(),
         name: "Büro-Digitalisierungsprojekt",
-        description: "Umstellung von papierbasierten auf digitale Ablagesysteme in 3 Abteilungen geleitet, über 25 Mitarbeiter geschult und Dokumentenabrufzeit um 70% reduziert.",
+        description:
+          "Umstellung von papierbasierten auf digitale Ablagesysteme in 3 Abteilungen geleitet, über 25 Mitarbeiter geschult und Dokumentenabrufzeit um 70% reduziert.",
         technologies: ["Google Workspace", "DocuSign", "Notion"],
         startDate: "2023-02",
         endDate: "2023-06",
@@ -3500,119 +3853,520 @@ const HI_SAMPLE_DATA: Record<string, PartialSampleData> = {
     headline: "सीनियर सॉफ्टवेयर इंजीनियर",
     summary:
       "6+ वर्षों के अनुभव वाले फुल-स्टैक इंजीनियर, स्केलेबल वेब एप्लिकेशन निर्माण में विशेषज्ञ। डेवलपर अनुभव, प्रदर्शन और क्लीन आर्किटेक्चर के प्रति समर्पित।",
-    contact: { email: "aditya.sharma@email.com", phone: "+91 98765 43210", location: "बेंगलुरु, कर्नाटक", linkedin: "linkedin.com/in/adityasharma", website: "adityasharma.dev" },
+    contact: {
+      email: "aditya.sharma@email.com",
+      phone: "+91 98765 43210",
+      location: "बेंगलुरु, कर्नाटक",
+      linkedin: "linkedin.com/in/adityasharma",
+      website: "adityasharma.dev",
+    },
     experience: [
-      { id: generateId(), company: "Flipkart", title: "सीनियर सॉफ्टवेयर इंजीनियर", location: "बेंगलुरु, कर्नाटक", startDate: "2021-03", endDate: null, current: true, description: "पेमेंट्स डैशबोर्ड का React 18 में माइग्रेशन लीड किया, लोड टाइम 40% कम किया\nरियल-टाइम वेबहुक मॉनिटरिंग डिज़ाइन और डिलीवर किया, 50K+ विक्रेताओं द्वारा उपयोग\n4 जूनियर इंजीनियरों को कोड रिव्यू और पेयर प्रोग्रामिंग सेशन के माध्यम से मेंटर किया" },
-      { id: generateId(), company: "Zoho", title: "सॉफ्टवेयर इंजीनियर", location: "चेन्नई, तमिलनाडु", startDate: "2018-06", endDate: "2021-02", current: false, description: "डिप्लॉयमेंट पाइपलाइन ऑप्टिमाइज़ेशन बनाया, बिल्ड टाइम 30% कम किया\n500K+ डेवलपर्स द्वारा उपयोग किए जाने वाले ओपन-सोर्स टूल्स में योगदान\nएज कैशिंग स्ट्रैटेजी लागू की जिससे API लेटेंसी 60% कम हुई" },
-      { id: generateId(), company: "TCS", title: "जूनियर सॉफ्टवेयर डेवलपर", location: "मुंबई, महाराष्ट्र", startDate: "2017-01", endDate: "2018-05", current: false, description: "Node.js और Express के साथ RESTful API विकसित किए, 10K+ दैनिक अनुरोध\nCI/CD पाइपलाइन के लिए आंतरिक टूलिंग विकसित की\nऑन-कॉल रोटेशन में भाग लिया और SLA के अंदर प्रोडक्शन इंसीडेंट्स हल किए" },
+      {
+        id: generateId(),
+        company: "Flipkart",
+        title: "सीनियर सॉफ्टवेयर इंजीनियर",
+        location: "बेंगलुरु, कर्नाटक",
+        startDate: "2021-03",
+        endDate: null,
+        current: true,
+        description:
+          "पेमेंट्स डैशबोर्ड का React 18 में माइग्रेशन लीड किया, लोड टाइम 40% कम किया\nरियल-टाइम वेबहुक मॉनिटरिंग डिज़ाइन और डिलीवर किया, 50K+ विक्रेताओं द्वारा उपयोग\n4 जूनियर इंजीनियरों को कोड रिव्यू और पेयर प्रोग्रामिंग सेशन के माध्यम से मेंटर किया",
+      },
+      {
+        id: generateId(),
+        company: "Zoho",
+        title: "सॉफ्टवेयर इंजीनियर",
+        location: "चेन्नई, तमिलनाडु",
+        startDate: "2018-06",
+        endDate: "2021-02",
+        current: false,
+        description:
+          "डिप्लॉयमेंट पाइपलाइन ऑप्टिमाइज़ेशन बनाया, बिल्ड टाइम 30% कम किया\n500K+ डेवलपर्स द्वारा उपयोग किए जाने वाले ओपन-सोर्स टूल्स में योगदान\nएज कैशिंग स्ट्रैटेजी लागू की जिससे API लेटेंसी 60% कम हुई",
+      },
+      {
+        id: generateId(),
+        company: "TCS",
+        title: "जूनियर सॉफ्टवेयर डेवलपर",
+        location: "मुंबई, महाराष्ट्र",
+        startDate: "2017-01",
+        endDate: "2018-05",
+        current: false,
+        description:
+          "Node.js और Express के साथ RESTful API विकसित किए, 10K+ दैनिक अनुरोध\nCI/CD पाइपलाइन के लिए आंतरिक टूलिंग विकसित की\nऑन-कॉल रोटेशन में भाग लिया और SLA के अंदर प्रोडक्शन इंसीडेंट्स हल किए",
+      },
     ],
     education: [
-      { id: generateId(), school: "IIT दिल्ली", degree: "बी.टेक.", field: "कंप्यूटर साइंस एंड इंजीनियरिंग", startDate: "2013-07", endDate: "2017-05", gpa: "9.1", highlights: "डीन्स लिस्ट, AI में रिसर्च प्रोजेक्ट" },
-      { id: generateId(), school: "AWS", degree: "प्रमाणपत्र", field: "AWS Solutions Architect Associate", startDate: "2020-01", endDate: "2020-03", highlights: "स्कोर 920/1000" },
+      {
+        id: generateId(),
+        school: "IIT दिल्ली",
+        degree: "बी.टेक.",
+        field: "कंप्यूटर साइंस एंड इंजीनियरिंग",
+        startDate: "2013-07",
+        endDate: "2017-05",
+        gpa: "9.1",
+        highlights: "डीन्स लिस्ट, AI में रिसर्च प्रोजेक्ट",
+      },
+      {
+        id: generateId(),
+        school: "AWS",
+        degree: "प्रमाणपत्र",
+        field: "AWS Solutions Architect Associate",
+        startDate: "2020-01",
+        endDate: "2020-03",
+        highlights: "स्कोर 920/1000",
+      },
     ],
     skillGroups: [
       { id: generateId(), category: "भाषाएं", skills: ["TypeScript", "Python", "Go", "SQL"] },
-      { id: generateId(), category: "फ्रेमवर्क", skills: ["React", "Next.js", "Node.js", "FastAPI"] },
-      { id: generateId(), category: "टूल्स", skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"] },
+      {
+        id: generateId(),
+        category: "फ्रेमवर्क",
+        skills: ["React", "Next.js", "Node.js", "FastAPI"],
+      },
+      {
+        id: generateId(),
+        category: "टूल्स",
+        skills: ["PostgreSQL", "Redis", "Docker", "AWS", "GitHub Actions"],
+      },
     ],
-    projects: [{ id: generateId(), name: "ओपन-सोर्स CLI टूल", description: "Next.js प्रोजेक्ट स्कैफोल्डिंग के लिए CLI बनाया, CI/CD, लिंटिंग और टेस्ट प्री-कॉन्फ़िगर्ड। GitHub पर 1.2K+ स्टार्स।", url: "github.com/adityasharma/create-next-stack", technologies: ["TypeScript", "Node.js", "GitHub Actions"], startDate: "2022-01", endDate: "2022-06" }],
+    projects: [
+      {
+        id: generateId(),
+        name: "ओपन-सोर्स CLI टूल",
+        description:
+          "Next.js प्रोजेक्ट स्कैफोल्डिंग के लिए CLI बनाया, CI/CD, लिंटिंग और टेस्ट प्री-कॉन्फ़िगर्ड। GitHub पर 1.2K+ स्टार्स।",
+        url: "github.com/adityasharma/create-next-stack",
+        technologies: ["TypeScript", "Node.js", "GitHub Actions"],
+        startDate: "2022-01",
+        endDate: "2022-06",
+      },
+    ],
   },
   classic: {
     fullName: "प्रिया पटेल",
     headline: "बिज़नेस एनालिस्ट",
-    summary: "5 वर्षों के अनुभव वाली डेटा-ड्रिवन बिज़नेस एनालिस्ट, जटिल डेटासेट को कार्यान्वयन योग्य रणनीतियों में बदलने में विशेषज्ञ। स्टेकहोल्डर मैनेजमेंट और क्रॉस-फंक्शनल सहयोग में कुशल।",
-    contact: { email: "priya.patel@email.com", phone: "+91 87654 32109", location: "मुंबई, महाराष्ट्र", linkedin: "linkedin.com/in/priyapatel", website: "" },
+    summary:
+      "5 वर्षों के अनुभव वाली डेटा-ड्रिवन बिज़नेस एनालिस्ट, जटिल डेटासेट को कार्यान्वयन योग्य रणनीतियों में बदलने में विशेषज्ञ। स्टेकहोल्डर मैनेजमेंट और क्रॉस-फंक्शनल सहयोग में कुशल।",
+    contact: {
+      email: "priya.patel@email.com",
+      phone: "+91 87654 32109",
+      location: "मुंबई, महाराष्ट्र",
+      linkedin: "linkedin.com/in/priyapatel",
+      website: "",
+    },
     experience: [
-      { id: generateId(), company: "Infosys", title: "सीनियर बिज़नेस एनालिस्ट", location: "मुंबई, महाराष्ट्र", startDate: "2021-04", endDate: null, current: true, description: "प्रमुख बैंकिंग क्लाइंट के लिए ₹50 करोड़ के प्रोजेक्ट पोर्टफोलियो का विश्लेषण\nव्यावसायिक आवश्यकताओं को 200+ पेज के फंक्शनल स्पेसिफिकेशन में ट्रांसलेट किया\nस्टेकहोल्डर प्रेजेंटेशन के माध्यम से Q3 बजट में 15% की बचत हासिल की" },
-      { id: generateId(), company: "Wipro", title: "बिज़नेस एनालिस्ट", location: "पुणे, महाराष्ट्र", startDate: "2019-01", endDate: "2021-03", current: false, description: "डेटा विज़ुअलाइज़ेशन डैशबोर्ड बनाए जिनका उपयोग 30+ एग्ज़ीक्यूटिव्स ने किया\nप्रोसेस ऑटोमेशन पहल का नेतृत्व किया जिससे मैन्युअल रिपोर्टिंग 40% कम हुई" },
+      {
+        id: generateId(),
+        company: "Infosys",
+        title: "सीनियर बिज़नेस एनालिस्ट",
+        location: "मुंबई, महाराष्ट्र",
+        startDate: "2021-04",
+        endDate: null,
+        current: true,
+        description:
+          "प्रमुख बैंकिंग क्लाइंट के लिए ₹50 करोड़ के प्रोजेक्ट पोर्टफोलियो का विश्लेषण\nव्यावसायिक आवश्यकताओं को 200+ पेज के फंक्शनल स्पेसिफिकेशन में ट्रांसलेट किया\nस्टेकहोल्डर प्रेजेंटेशन के माध्यम से Q3 बजट में 15% की बचत हासिल की",
+      },
+      {
+        id: generateId(),
+        company: "Wipro",
+        title: "बिज़नेस एनालिस्ट",
+        location: "पुणे, महाराष्ट्र",
+        startDate: "2019-01",
+        endDate: "2021-03",
+        current: false,
+        description:
+          "डेटा विज़ुअलाइज़ेशन डैशबोर्ड बनाए जिनका उपयोग 30+ एग्ज़ीक्यूटिव्स ने किया\nप्रोसेस ऑटोमेशन पहल का नेतृत्व किया जिससे मैन्युअल रिपोर्टिंग 40% कम हुई",
+      },
     ],
-    education: [{ id: generateId(), school: "IIM अहमदाबाद", degree: "MBA", field: "बिज़नेस एनालिटिक्स", startDate: "2017-06", endDate: "2019-04", gpa: "3.8", highlights: "डेटा एनालिटिक्स में विशेषज्ञता, केस कॉम्पिटिशन फाइनलिस्ट" }],
+    education: [
+      {
+        id: generateId(),
+        school: "IIM अहमदाबाद",
+        degree: "MBA",
+        field: "बिज़नेस एनालिटिक्स",
+        startDate: "2017-06",
+        endDate: "2019-04",
+        gpa: "3.8",
+        highlights: "डेटा एनालिटिक्स में विशेषज्ञता, केस कॉम्पिटिशन फाइनलिस्ट",
+      },
+    ],
     skillGroups: [
       { id: generateId(), category: "विश्लेषण", skills: ["SQL", "Python", "Tableau", "Power BI"] },
-      { id: generateId(), category: "व्यवसाय", skills: ["Jira", "Confluence", "Agile/Scrum", "Stakeholder Management"] },
+      {
+        id: generateId(),
+        category: "व्यवसाय",
+        skills: ["Jira", "Confluence", "Agile/Scrum", "Stakeholder Management"],
+      },
     ],
-    projects: [{ id: generateId(), name: "ग्राहक मंथन पूर्वानुमान मॉडल", description: "मशीन लर्निंग मॉडल बनाया जो 89% सटीकता से ग्राहक मंथन की भविष्यवाणी करता है।", url: "", technologies: ["Python", "scikit-learn", "Tableau"], startDate: "2022-06", endDate: "2022-12" }],
+    projects: [
+      {
+        id: generateId(),
+        name: "ग्राहक मंथन पूर्वानुमान मॉडल",
+        description: "मशीन लर्निंग मॉडल बनाया जो 89% सटीकता से ग्राहक मंथन की भविष्यवाणी करता है।",
+        url: "",
+        technologies: ["Python", "scikit-learn", "Tableau"],
+        startDate: "2022-06",
+        endDate: "2022-12",
+      },
+    ],
   },
   minimal: {
     fullName: "नेहा कुमार",
     headline: "प्रोडक्ट डिज़ाइनर",
-    summary: "4+ वर्षों से सहज डिजिटल अनुभव तैयार करने वाली प्रोडक्ट डिज़ाइनर। डिज़ाइन सिस्टम, एक्सेसिबिलिटी और डिज़ाइन-इंजीनियरिंग के बीच सेतु बनाने पर केंद्रित।",
-    contact: { email: "neha.kumar@email.com", phone: "+91 76543 21098", location: "हैदराबाद, तेलंगाना", linkedin: "linkedin.com/in/nehakumar", website: "nehakumar.design" },
+    summary:
+      "4+ वर्षों से सहज डिजिटल अनुभव तैयार करने वाली प्रोडक्ट डिज़ाइनर। डिज़ाइन सिस्टम, एक्सेसिबिलिटी और डिज़ाइन-इंजीनियरिंग के बीच सेतु बनाने पर केंद्रित।",
+    contact: {
+      email: "neha.kumar@email.com",
+      phone: "+91 76543 21098",
+      location: "हैदराबाद, तेलंगाना",
+      linkedin: "linkedin.com/in/nehakumar",
+      website: "nehakumar.design",
+    },
     experience: [
-      { id: generateId(), company: "Swiggy", title: "सीनियर प्रोडक्ट डिज़ाइनर", location: "बेंगलुरु, कर्नाटक", startDate: "2022-01", endDate: null, current: true, description: "5 डिज़ाइनरों की टीम का नेतृत्व करते हुए इनस्टामार्ट ऐप का रीडिज़ाइन किया, उपयोगकर्ता संतुष्टि 35% बढ़ी\n100+ कंपोनेंट्स के साथ डिज़ाइन सिस्टम बनाया और बनाए रखा" },
-      { id: generateId(), company: "Ola", title: "UI/UX डिज़ाइनर", location: "बेंगलुरु, कर्नाटक", startDate: "2019-06", endDate: "2021-12", current: false, description: "ड्राइवर ऐप के लिए यूज़र फ्लो और वायरफ्रेम डिज़ाइन किए\nA/B टेस्टिंग के माध्यम से साइन-अप कन्वर्ज़न 25% बढ़ाया" },
+      {
+        id: generateId(),
+        company: "Swiggy",
+        title: "सीनियर प्रोडक्ट डिज़ाइनर",
+        location: "बेंगलुरु, कर्नाटक",
+        startDate: "2022-01",
+        endDate: null,
+        current: true,
+        description:
+          "5 डिज़ाइनरों की टीम का नेतृत्व करते हुए इनस्टामार्ट ऐप का रीडिज़ाइन किया, उपयोगकर्ता संतुष्टि 35% बढ़ी\n100+ कंपोनेंट्स के साथ डिज़ाइन सिस्टम बनाया और बनाए रखा",
+      },
+      {
+        id: generateId(),
+        company: "Ola",
+        title: "UI/UX डिज़ाइनर",
+        location: "बेंगलुरु, कर्नाटक",
+        startDate: "2019-06",
+        endDate: "2021-12",
+        current: false,
+        description:
+          "ड्राइवर ऐप के लिए यूज़र फ्लो और वायरफ्रेम डिज़ाइन किए\nA/B टेस्टिंग के माध्यम से साइन-अप कन्वर्ज़न 25% बढ़ाया",
+      },
     ],
-    education: [{ id: generateId(), school: "NID अहमदाबाद", degree: "बी.डेस.", field: "इंटरैक्शन डिज़ाइन", startDate: "2015-07", endDate: "2019-05", highlights: "गोल्ड मेडलिस्ट, UX डिज़ाइन में थीसिस" }],
+    education: [
+      {
+        id: generateId(),
+        school: "NID अहमदाबाद",
+        degree: "बी.डेस.",
+        field: "इंटरैक्शन डिज़ाइन",
+        startDate: "2015-07",
+        endDate: "2019-05",
+        highlights: "गोल्ड मेडलिस्ट, UX डिज़ाइन में थीसिस",
+      },
+    ],
     skillGroups: [
-      { id: generateId(), category: "डिज़ाइन", skills: ["Figma", "Sketch", "Adobe XD", "Protopie"] },
-      { id: generateId(), category: "रिसर्च", skills: ["Usability Testing", "A/B Testing", "User Interviews"] },
+      {
+        id: generateId(),
+        category: "डिज़ाइन",
+        skills: ["Figma", "Sketch", "Adobe XD", "Protopie"],
+      },
+      {
+        id: generateId(),
+        category: "रिसर्च",
+        skills: ["Usability Testing", "A/B Testing", "User Interviews"],
+      },
       { id: generateId(), category: "फ्रंटएंड", skills: ["HTML", "CSS", "React", "Tailwind CSS"] },
     ],
-    projects: [{ id: generateId(), name: "Swiggy डिज़ाइन सिस्टम", description: "कंपनी-व्यापी डिज़ाइन सिस्टम बनाया जिससे डिज़ाइन-टू-डेव हैंडऑफ़ 50% तेज़ हुआ।", url: "", technologies: ["Figma", "React", "Storybook"], startDate: "2022-03", endDate: "2022-09" }],
+    projects: [
+      {
+        id: generateId(),
+        name: "Swiggy डिज़ाइन सिस्टम",
+        description: "कंपनी-व्यापी डिज़ाइन सिस्टम बनाया जिससे डिज़ाइन-टू-डेव हैंडऑफ़ 50% तेज़ हुआ।",
+        url: "",
+        technologies: ["Figma", "React", "Storybook"],
+        startDate: "2022-03",
+        endDate: "2022-09",
+      },
+    ],
   },
   executive: {
     fullName: "राजेश मेहता",
     headline: "भर्ती अधिकारी",
-    summary: "HR, भर्ती और प्रतिभा प्रबंधन में व्यापक अनुभव वाले स्व-प्रेरित, परिणाम-उन्मुख भर्ती एवं HR विशेषज्ञ। रणनीतिक योजना के साथ व्यावहारिक डिलीवरी का संतुलन।",
-    contact: { email: "rajesh.mehta@email.com", phone: "+91 99887 76655", location: "दिल्ली, भारत", linkedin: "linkedin.com/in/rajeshmehta", website: "" },
+    summary:
+      "HR, भर्ती और प्रतिभा प्रबंधन में व्यापक अनुभव वाले स्व-प्रेरित, परिणाम-उन्मुख भर्ती एवं HR विशेषज्ञ। रणनीतिक योजना के साथ व्यावहारिक डिलीवरी का संतुलन।",
+    contact: {
+      email: "rajesh.mehta@email.com",
+      phone: "+91 99887 76655",
+      location: "दिल्ली, भारत",
+      linkedin: "linkedin.com/in/rajeshmehta",
+      website: "",
+    },
     experience: [
-      { id: generateId(), company: "Reliance Industries", title: "सीनियर भर्ती अधिकारी", location: "मुंबई, महाराष्ट्र", startDate: "2020-01", endDate: null, current: true, description: "वार्षिक 200+ पदों के लिए एंड-टू-एंड भर्ती प्रक्रिया का प्रबंधन\nभर्ती समय 30% कम किया, ATS और स्ट्रक्चर्ड इंटरव्यू लागू करके\n15+ विभागों के हायरिंग मैनेजर्स के साथ सहयोग" },
-      { id: generateId(), company: "Mahindra Group", title: "HR एग्ज़ीक्यूटिव", location: "पुणे, महाराष्ट्र", startDate: "2017-06", endDate: "2019-12", current: false, description: "कर्मचारी ऑनबोर्डिंग और एंगेजमेंट प्रोग्राम का समन्वय\nकैंपस रिक्रूटमेंट ड्राइव का आयोजन, 500+ कैंडिडेट्स को स्क्रीन किया" },
+      {
+        id: generateId(),
+        company: "Reliance Industries",
+        title: "सीनियर भर्ती अधिकारी",
+        location: "मुंबई, महाराष्ट्र",
+        startDate: "2020-01",
+        endDate: null,
+        current: true,
+        description:
+          "वार्षिक 200+ पदों के लिए एंड-टू-एंड भर्ती प्रक्रिया का प्रबंधन\nभर्ती समय 30% कम किया, ATS और स्ट्रक्चर्ड इंटरव्यू लागू करके\n15+ विभागों के हायरिंग मैनेजर्स के साथ सहयोग",
+      },
+      {
+        id: generateId(),
+        company: "Mahindra Group",
+        title: "HR एग्ज़ीक्यूटिव",
+        location: "पुणे, महाराष्ट्र",
+        startDate: "2017-06",
+        endDate: "2019-12",
+        current: false,
+        description:
+          "कर्मचारी ऑनबोर्डिंग और एंगेजमेंट प्रोग्राम का समन्वय\nकैंपस रिक्रूटमेंट ड्राइव का आयोजन, 500+ कैंडिडेट्स को स्क्रीन किया",
+      },
     ],
-    education: [{ id: generateId(), school: "XLRI जमशेदपुर", degree: "MBA", field: "मानव संसाधन प्रबंधन", startDate: "2015-06", endDate: "2017-04", gpa: "3.7", highlights: "HR क्लब अध्यक्ष, समर इंटर्नशिप एक्सीलेंस अवार्ड" }],
+    education: [
+      {
+        id: generateId(),
+        school: "XLRI जमशेदपुर",
+        degree: "MBA",
+        field: "मानव संसाधन प्रबंधन",
+        startDate: "2015-06",
+        endDate: "2017-04",
+        gpa: "3.7",
+        highlights: "HR क्लब अध्यक्ष, समर इंटर्नशिप एक्सीलेंस अवार्ड",
+      },
+    ],
     skillGroups: [
-      { id: generateId(), category: "भर्ती", skills: ["ATS", "LinkedIn Recruiter", "Interview Design", "Employer Branding"] },
-      { id: generateId(), category: "HR", skills: ["SAP SuccessFactors", "Workday", "Labour Law", "POSH Compliance"] },
+      {
+        id: generateId(),
+        category: "भर्ती",
+        skills: ["ATS", "LinkedIn Recruiter", "Interview Design", "Employer Branding"],
+      },
+      {
+        id: generateId(),
+        category: "HR",
+        skills: ["SAP SuccessFactors", "Workday", "Labour Law", "POSH Compliance"],
+      },
     ],
-    projects: [{ id: generateId(), name: "कैंपस कनेक्ट प्रोग्राम", description: "20 शीर्ष इंजीनियरिंग कॉलेजों के साथ कैंपस हायरिंग प्रोग्राम शुरू किया, भर्ती गुणवत्ता 25% बढ़ी।", url: "", technologies: ["SAP SuccessFactors", "Power BI", "MS Teams"], startDate: "2021-01", endDate: "2021-06" }],
+    projects: [
+      {
+        id: generateId(),
+        name: "कैंपस कनेक्ट प्रोग्राम",
+        description:
+          "20 शीर्ष इंजीनियरिंग कॉलेजों के साथ कैंपस हायरिंग प्रोग्राम शुरू किया, भर्ती गुणवत्ता 25% बढ़ी।",
+        url: "",
+        technologies: ["SAP SuccessFactors", "Power BI", "MS Teams"],
+        startDate: "2021-01",
+        endDate: "2021-06",
+      },
+    ],
   },
   bold: {
     fullName: "अंकित वर्मा",
     headline: "वित्तीय विश्लेषक",
-    summary: "मल्टी-मिलियन डॉलर बजट प्रबंधन में प्रभावशाली पृष्ठभूमि वाले अनुभवी और प्रेरित वित्तीय विश्लेषक। प्रोडक्ट डेवलपमेंट विभागों में विश्लेषण और खाता सहायता प्रदान करने में अनुभवी।",
-    contact: { email: "ankit.verma@email.com", phone: "+91 88776 65544", location: "गुड़गांव, हरियाणा", linkedin: "linkedin.com/in/ankitverma", website: "" },
+    summary:
+      "मल्टी-मिलियन डॉलर बजट प्रबंधन में प्रभावशाली पृष्ठभूमि वाले अनुभवी और प्रेरित वित्तीय विश्लेषक। प्रोडक्ट डेवलपमेंट विभागों में विश्लेषण और खाता सहायता प्रदान करने में अनुभवी।",
+    contact: {
+      email: "ankit.verma@email.com",
+      phone: "+91 88776 65544",
+      location: "गुड़गांव, हरियाणा",
+      linkedin: "linkedin.com/in/ankitverma",
+      website: "",
+    },
     experience: [
-      { id: generateId(), company: "HDFC Bank", title: "सीनियर वित्तीय विश्लेषक", location: "मुंबई, महाराष्ट्र", startDate: "2020-09", endDate: null, current: true, description: "₹200 करोड़ के वार्षिक बजट का पूर्वानुमान और विश्लेषण प्रबंधित\nतिमाही वित्तीय रिपोर्ट तैयार की, प्रमुख KPI और विचलन का विश्लेषण\nप्रोसेस ऑटोमेशन के माध्यम से रिपोर्टिंग समय 50% कम किया" },
-      { id: generateId(), company: "Deloitte India", title: "वित्तीय विश्लेषक", location: "बेंगलुरु, कर्नाटक", startDate: "2018-07", endDate: "2020-08", current: false, description: "10+ क्लाइंट्स के लिए वित्तीय मॉडलिंग और वैल्यूएशन किया\nDue diligence रिपोर्ट तैयार की, ₹500 करोड़+ के M&A डील्स में सहायता" },
+      {
+        id: generateId(),
+        company: "HDFC Bank",
+        title: "सीनियर वित्तीय विश्लेषक",
+        location: "मुंबई, महाराष्ट्र",
+        startDate: "2020-09",
+        endDate: null,
+        current: true,
+        description:
+          "₹200 करोड़ के वार्षिक बजट का पूर्वानुमान और विश्लेषण प्रबंधित\nतिमाही वित्तीय रिपोर्ट तैयार की, प्रमुख KPI और विचलन का विश्लेषण\nप्रोसेस ऑटोमेशन के माध्यम से रिपोर्टिंग समय 50% कम किया",
+      },
+      {
+        id: generateId(),
+        company: "Deloitte India",
+        title: "वित्तीय विश्लेषक",
+        location: "बेंगलुरु, कर्नाटक",
+        startDate: "2018-07",
+        endDate: "2020-08",
+        current: false,
+        description:
+          "10+ क्लाइंट्स के लिए वित्तीय मॉडलिंग और वैल्यूएशन किया\nDue diligence रिपोर्ट तैयार की, ₹500 करोड़+ के M&A डील्स में सहायता",
+      },
     ],
-    education: [{ id: generateId(), school: "IIM बेंगलुरु", degree: "MBA", field: "वित्त", startDate: "2016-06", endDate: "2018-04", gpa: "3.9", highlights: "वित्त क्लब सचिव, CFA Level II उत्तीर्ण" }],
+    education: [
+      {
+        id: generateId(),
+        school: "IIM बेंगलुरु",
+        degree: "MBA",
+        field: "वित्त",
+        startDate: "2016-06",
+        endDate: "2018-04",
+        gpa: "3.9",
+        highlights: "वित्त क्लब सचिव, CFA Level II उत्तीर्ण",
+      },
+    ],
     skillGroups: [
-      { id: generateId(), category: "वित्तीय", skills: ["Financial Modeling", "Valuation", "Budgeting", "Forecasting"] },
-      { id: generateId(), category: "टूल्स", skills: ["Excel", "Python", "Bloomberg Terminal", "SAP", "Power BI"] },
+      {
+        id: generateId(),
+        category: "वित्तीय",
+        skills: ["Financial Modeling", "Valuation", "Budgeting", "Forecasting"],
+      },
+      {
+        id: generateId(),
+        category: "टूल्स",
+        skills: ["Excel", "Python", "Bloomberg Terminal", "SAP", "Power BI"],
+      },
     ],
-    projects: [{ id: generateId(), name: "बजट ऑटोमेशन डैशबोर्ड", description: "Power BI डैशबोर्ड बनाया जो रियल-टाइम बजट ट्रैकिंग प्रदान करता है, मैन्युअल रिपोर्टिंग 70% कम की।", url: "", technologies: ["Power BI", "Python", "SQL"], startDate: "2021-03", endDate: "2021-08" }],
+    projects: [
+      {
+        id: generateId(),
+        name: "बजट ऑटोमेशन डैशबोर्ड",
+        description:
+          "Power BI डैशबोर्ड बनाया जो रियल-टाइम बजट ट्रैकिंग प्रदान करता है, मैन्युअल रिपोर्टिंग 70% कम की।",
+        url: "",
+        technologies: ["Power BI", "Python", "SQL"],
+        startDate: "2021-03",
+        endDate: "2021-08",
+      },
+    ],
   },
   balanced: {
     fullName: "सुरेश यादव",
     headline: "बढ़ई / कारपेंटर",
-    summary: "आवासीय और वाणिज्यिक निर्माण में 10+ वर्षों के अनुभव वाले कुशल और समर्पित बढ़ई। गुणवत्ता कार्य, समयबद्ध निर्माण और बजट के अंदर प्रोजेक्ट पूरा करने की सकारात्मक प्रतिष्ठा।",
-    contact: { email: "suresh.yadav@email.com", phone: "+91 77665 54433", location: "जयपुर, राजस्थान", linkedin: "", website: "" },
+    summary:
+      "आवासीय और वाणिज्यिक निर्माण में 10+ वर्षों के अनुभव वाले कुशल और समर्पित बढ़ई। गुणवत्ता कार्य, समयबद्ध निर्माण और बजट के अंदर प्रोजेक्ट पूरा करने की सकारात्मक प्रतिष्ठा।",
+    contact: {
+      email: "suresh.yadav@email.com",
+      phone: "+91 77665 54433",
+      location: "जयपुर, राजस्थान",
+      linkedin: "",
+      website: "",
+    },
     experience: [
-      { id: generateId(), company: "शर्मा कंस्ट्रक्शन", title: "लीड कारपेंटर", location: "जयपुर, राजस्थान", startDate: "2018-03", endDate: null, current: true, description: "5 कारपेंटर्स की टीम का नेतृत्व, आवासीय फर्नीचर और फिटिंग प्रोजेक्ट\nकस्टम किचन और वार्डरोब डिज़ाइन और इंस्टॉल किए, 100+ संतुष्ट ग्राहक\nसामग्री अपव्यय 20% कम किया" },
-      { id: generateId(), company: "राजपूत इंटीरियर्स", title: "कारपेंटर", location: "जयपुर, राजस्थान", startDate: "2014-01", endDate: "2018-02", current: false, description: "ऑफिस और रेस्टोरेंट इंटीरियर फिटिंग में विशेषज्ञता\nब्लूप्रिंट पढ़कर कस्टम फर्नीचर बनाया" },
+      {
+        id: generateId(),
+        company: "शर्मा कंस्ट्रक्शन",
+        title: "लीड कारपेंटर",
+        location: "जयपुर, राजस्थान",
+        startDate: "2018-03",
+        endDate: null,
+        current: true,
+        description:
+          "5 कारपेंटर्स की टीम का नेतृत्व, आवासीय फर्नीचर और फिटिंग प्रोजेक्ट\nकस्टम किचन और वार्डरोब डिज़ाइन और इंस्टॉल किए, 100+ संतुष्ट ग्राहक\nसामग्री अपव्यय 20% कम किया",
+      },
+      {
+        id: generateId(),
+        company: "राजपूत इंटीरियर्स",
+        title: "कारपेंटर",
+        location: "जयपुर, राजस्थान",
+        startDate: "2014-01",
+        endDate: "2018-02",
+        current: false,
+        description:
+          "ऑफिस और रेस्टोरेंट इंटीरियर फिटिंग में विशेषज्ञता\nब्लूप्रिंट पढ़कर कस्टम फर्नीचर बनाया",
+      },
     ],
-    education: [{ id: generateId(), school: "ITI जयपुर", degree: "डिप्लोमा", field: "कारपेंट्री", startDate: "2012-07", endDate: "2014-06", highlights: "प्रथम श्रेणी, प्रैक्टिकल एग्ज़ाम में सर्वोच्च अंक" }],
+    education: [
+      {
+        id: generateId(),
+        school: "ITI जयपुर",
+        degree: "डिप्लोमा",
+        field: "कारपेंट्री",
+        startDate: "2012-07",
+        endDate: "2014-06",
+        highlights: "प्रथम श्रेणी, प्रैक्टिकल एग्ज़ाम में सर्वोच्च अंक",
+      },
+    ],
     skillGroups: [
-      { id: generateId(), category: "कौशल", skills: ["फर्नीचर निर्माण", "इंटीरियर फिटिंग", "ब्लूप्रिंट रीडिंग", "CNC मशीन"] },
-      { id: generateId(), category: "सामग्री", skills: ["सागौन", "प्लाईवुड", "MDF", "लैमिनेट", "हार्डवेयर फिटिंग"] },
+      {
+        id: generateId(),
+        category: "कौशल",
+        skills: ["फर्नीचर निर्माण", "इंटीरियर फिटिंग", "ब्लूप्रिंट रीडिंग", "CNC मशीन"],
+      },
+      {
+        id: generateId(),
+        category: "सामग्री",
+        skills: ["सागौन", "प्लाईवुड", "MDF", "लैमिनेट", "हार्डवेयर फिटिंग"],
+      },
     ],
-    projects: [{ id: generateId(), name: "होटल लॉबी रीनोवेशन", description: "5-स्टार होटल के लॉबी का कस्टम वुडवर्क, रिसेप्शन डेस्क और बुकशेल्फ सहित। समय पर और बजट के अंदर पूरा।", url: "", technologies: ["सागौन", "CNC", "हैंड कार्विंग"], startDate: "2023-01", endDate: "2023-04" }],
+    projects: [
+      {
+        id: generateId(),
+        name: "होटल लॉबी रीनोवेशन",
+        description:
+          "5-स्टार होटल के लॉबी का कस्टम वुडवर्क, रिसेप्शन डेस्क और बुकशेल्फ सहित। समय पर और बजट के अंदर पूरा।",
+        url: "",
+        technologies: ["सागौन", "CNC", "हैंड कार्विंग"],
+        startDate: "2023-01",
+        endDate: "2023-04",
+      },
+    ],
   },
   clear: {
     fullName: "मीनाक्षी राव",
     headline: "रिसेप्शनिस्ट",
-    summary: "उच्च-मात्रा वाले क्लाइंट सेटिंग्स में कई वर्षों के अनुभव वाली मेहनती और अनुभवी रिसेप्शनिस्ट। शेड्यूल बनाने, अपॉइंटमेंट लेने और ग्राहकों को बेहतरीन सेवा प्रदान करने में अनुभवी।",
-    contact: { email: "meenakshi.rao@email.com", phone: "+91 66554 43322", location: "चेन्नई, तमिलनाडु", linkedin: "linkedin.com/in/meenakshirao", website: "" },
+    summary:
+      "उच्च-मात्रा वाले क्लाइंट सेटिंग्स में कई वर्षों के अनुभव वाली मेहनती और अनुभवी रिसेप्शनिस्ट। शेड्यूल बनाने, अपॉइंटमेंट लेने और ग्राहकों को बेहतरीन सेवा प्रदान करने में अनुभवी।",
+    contact: {
+      email: "meenakshi.rao@email.com",
+      phone: "+91 66554 43322",
+      location: "चेन्नई, तमिलनाडु",
+      linkedin: "linkedin.com/in/meenakshirao",
+      website: "",
+    },
     experience: [
-      { id: generateId(), company: "Taj Hotels", title: "सीनियर रिसेप्शनिस्ट", location: "चेन्नई, तमिलनाडु", startDate: "2020-06", endDate: null, current: true, description: "प्रतिदिन 100+ अतिथियों का चेक-इन/चेक-आउट प्रबंधित\nVIP गेस्ट सर्विसेज़ का समन्वय, गेस्ट सैटिस्फैक्शन स्कोर 95%+ बनाए रखा\nनए स्टाफ सदस्यों को PMS सॉफ्टवेयर और गेस्ट रिलेशन प्रोटोकॉल में प्रशिक्षित किया" },
-      { id: generateId(), company: "Apollo Hospitals", title: "फ्रंट डेस्क एग्ज़ीक्यूटिव", location: "चेन्नई, तमिलनाडु", startDate: "2018-01", endDate: "2020-05", current: false, description: "रोगी अपॉइंटमेंट और डॉक्टर शेड्यूल का प्रबंधन\nबीमा सत्यापन और बिलिंग पूछताछ में सहायता\nमल्टी-लाइन फ़ोन सिस्टम संचालित, 200+ दैनिक कॉल" },
+      {
+        id: generateId(),
+        company: "Taj Hotels",
+        title: "सीनियर रिसेप्शनिस्ट",
+        location: "चेन्नई, तमिलनाडु",
+        startDate: "2020-06",
+        endDate: null,
+        current: true,
+        description:
+          "प्रतिदिन 100+ अतिथियों का चेक-इन/चेक-आउट प्रबंधित\nVIP गेस्ट सर्विसेज़ का समन्वय, गेस्ट सैटिस्फैक्शन स्कोर 95%+ बनाए रखा\nनए स्टाफ सदस्यों को PMS सॉफ्टवेयर और गेस्ट रिलेशन प्रोटोकॉल में प्रशिक्षित किया",
+      },
+      {
+        id: generateId(),
+        company: "Apollo Hospitals",
+        title: "फ्रंट डेस्क एग्ज़ीक्यूटिव",
+        location: "चेन्नई, तमिलनाडु",
+        startDate: "2018-01",
+        endDate: "2020-05",
+        current: false,
+        description:
+          "रोगी अपॉइंटमेंट और डॉक्टर शेड्यूल का प्रबंधन\nबीमा सत्यापन और बिलिंग पूछताछ में सहायता\nमल्टी-लाइन फ़ोन सिस्टम संचालित, 200+ दैनिक कॉल",
+      },
     ],
-    education: [{ id: generateId(), school: "मद्रास विश्वविद्यालय", degree: "बी.ए.", field: "अंग्रेज़ी साहित्य", startDate: "2014-06", endDate: "2017-04", highlights: "हॉस्पिटैलिटी मैनेजमेंट में प्रमाणपत्र" }],
+    education: [
+      {
+        id: generateId(),
+        school: "मद्रास विश्वविद्यालय",
+        degree: "बी.ए.",
+        field: "अंग्रेज़ी साहित्य",
+        startDate: "2014-06",
+        endDate: "2017-04",
+        highlights: "हॉस्पिटैलिटी मैनेजमेंट में प्रमाणपत्र",
+      },
+    ],
     skillGroups: [
-      { id: generateId(), category: "कौशल", skills: ["ग्राहक सेवा", "शेड्यूलिंग", "MS Office", "PMS सॉफ्टवेयर"] },
+      {
+        id: generateId(),
+        category: "कौशल",
+        skills: ["ग्राहक सेवा", "शेड्यूलिंग", "MS Office", "PMS सॉफ्टवेयर"],
+      },
       { id: generateId(), category: "भाषाएं", skills: ["हिन्दी", "अंग्रेज़ी", "तमिल", "तेलुगु"] },
     ],
-    projects: [{ id: generateId(), name: "डिजिटल चेक-इन सिस्टम", description: "iPad-आधारित सेल्फ-चेक-इन सिस्टम लागू करने में सहायता की, फ्रंट डेस्क प्रतीक्षा समय 40% कम किया।", url: "", technologies: ["PMS", "iPad", "QR Code"], startDate: "2021-06", endDate: "2021-09" }],
+    projects: [
+      {
+        id: generateId(),
+        name: "डिजिटल चेक-इन सिस्टम",
+        description:
+          "iPad-आधारित सेल्फ-चेक-इन सिस्टम लागू करने में सहायता की, फ्रंट डेस्क प्रतीक्षा समय 40% कम किया।",
+        url: "",
+        technologies: ["PMS", "iPad", "QR Code"],
+        startDate: "2021-06",
+        endDate: "2021-09",
+      },
+    ],
   },
 };
 

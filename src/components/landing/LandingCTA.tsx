@@ -16,9 +16,7 @@ export default function LandingCTA() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
     if (cardRef.current) {
@@ -42,36 +40,32 @@ export default function LandingCTA() {
   }, []);
 
   return (
-    <section className="py-32 px-6 md:px-12">
-      <div className="max-w-2xl mx-auto text-center">
-        <div
-          ref={cardRef}
-          className="relative inline-block w-full"
-          style={{ opacity: 0 }}
-        >
+    <section className="px-6 py-32 md:px-12">
+      <div className="mx-auto max-w-2xl text-center">
+        <div ref={cardRef} className="relative inline-block w-full" style={{ opacity: 0 }}>
           <GlowBorderCanvas
             borderRadius={12}
-            className="absolute inset-0 w-full h-full pointer-events-none"
+            className="pointer-events-none absolute inset-0 h-full w-full"
           />
 
-          <div className="relative bg-card border border-border rounded-xl p-6 sm:p-12 shadow-sm">
-            <p className="font-sans text-xs uppercase tracking-[0.2em] text-text-subtle mb-4">
+          <div className="bg-card border-border relative rounded-xl border p-6 shadow-sm sm:p-12">
+            <p className="text-text-subtle mb-4 font-sans text-xs tracking-[0.2em] uppercase">
               {t("ctaLabel")}
             </p>
             <h2
-              className="font-sans font-bold text-foreground mb-6"
+              className="text-foreground mb-6 font-sans font-bold"
               style={{ fontSize: "clamp(1.8rem, 4vw, 3.5rem)" }}
             >
               {t("ctaHeading")}
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-sm mx-auto leading-relaxed">
+            <p className="text-muted-foreground mx-auto mb-8 max-w-sm leading-relaxed">
               {t("ctaDesc")}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Button
                 size="lg"
                 onClick={() => router.push("/dashboard")}
-                className="bg-foreground text-background hover:bg-foreground/90 font-sans text-xs uppercase tracking-widest px-10"
+                className="bg-foreground text-background hover:bg-foreground/90 px-10 font-sans text-xs tracking-widest uppercase"
               >
                 {t("ctaButton")}
               </Button>

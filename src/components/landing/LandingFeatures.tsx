@@ -10,9 +10,18 @@ import { Eye, Download, GripVertical } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 
 const ROTATION_PAIRS: [[number, number], [number, number]][] = [
-  [[0, 1], [1, 2]],
-  [[0, 1], [1, 2]],
-  [[0, 1], [1, 2]],
+  [
+    [0, 1],
+    [1, 2],
+  ],
+  [
+    [0, 1],
+    [1, 2],
+  ],
+  [
+    [0, 1],
+    [1, 2],
+  ],
 ];
 
 export default function LandingFeatures() {
@@ -24,9 +33,7 @@ export default function LandingFeatures() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
     gsap.fromTo(
@@ -79,8 +86,7 @@ export default function LandingFeatures() {
     );
 
     if (reorderRef.current) {
-      const items =
-        reorderRef.current.querySelectorAll<HTMLElement>(".reorder-item");
+      const items = reorderRef.current.querySelectorAll<HTMLElement>(".reorder-item");
       if (items.length === 3) {
         const ROW_HEIGHT = items[0].offsetHeight + 8;
 
@@ -147,47 +153,45 @@ export default function LandingFeatures() {
   }, []);
 
   return (
-    <section className="py-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section className="px-6 py-24 md:px-12">
+      <div className="mx-auto max-w-7xl">
         <div className="features-heading mb-12">
           <SectionHeading className="mb-3">{t("featuresLabel")}</SectionHeading>
           <h2
-            className="font-sans font-bold text-foreground"
+            className="text-foreground font-sans font-bold"
             style={{ fontSize: "clamp(1.6rem, 3vw, 3rem)" }}
           >
             {t("featuresHeading")}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
           <div className="flex flex-col gap-4 md:gap-6">
-            <GlassCard className="feature-card-left opacity-0 p-6 flex flex-col gap-4 min-h-65">
-              <div className="w-10 h-10 flex items-center justify-center rounded-md bg-surface-soft border border-border">
-                <Eye className="w-5 h-5 text-foreground" strokeWidth={1.5} />
+            <GlassCard className="feature-card-left flex min-h-65 flex-col gap-4 p-6 opacity-0">
+              <div className="bg-surface-soft border-border flex h-10 w-10 items-center justify-center rounded-md border">
+                <Eye className="text-foreground h-5 w-5" strokeWidth={1.5} />
               </div>
               <div>
-                <h3 className="font-sans font-semibold text-foreground text-lg mb-2">
+                <h3 className="text-foreground mb-2 font-sans text-lg font-semibold">
                   {t("previewTitle")}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {t("previewDesc")}
-                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{t("previewDesc")}</p>
               </div>
               <div className="mt-auto flex gap-2 opacity-60">
-                <div className="flex-1 bg-surface-soft rounded border border-border p-2 space-y-1.5">
+                <div className="bg-surface-soft border-border flex-1 space-y-1.5 rounded border p-2">
                   {[70, 50, 85, 45].map((w, i) => (
                     <div
                       key={i}
-                      className="h-1 bg-surface-strong rounded"
+                      className="bg-surface-strong h-1 rounded"
                       style={{ width: `${w}%` }}
                     />
                   ))}
                 </div>
-                <div className="flex-1 bg-surface-soft rounded border border-border p-2 space-y-1.5">
+                <div className="bg-surface-soft border-border flex-1 space-y-1.5 rounded border p-2">
                   {[80, 55, 70, 40].map((w, i) => (
                     <div
                       key={i}
-                      className="h-1 bg-surface-strong rounded"
+                      className="bg-surface-strong h-1 rounded"
                       style={{ width: `${w}%` }}
                     />
                   ))}
@@ -195,65 +199,51 @@ export default function LandingFeatures() {
               </div>
             </GlassCard>
 
-            <GlassCard className="feature-card-left opacity-0 p-6 flex flex-col gap-4 min-h-65">
-              <div className="w-10 h-10 flex items-center justify-center rounded-md bg-surface-soft border border-border">
-                <Download
-                  className="w-5 h-5 text-foreground"
-                  strokeWidth={1.5}
-                />
+            <GlassCard className="feature-card-left flex min-h-65 flex-col gap-4 p-6 opacity-0">
+              <div className="bg-surface-soft border-border flex h-10 w-10 items-center justify-center rounded-md border">
+                <Download className="text-foreground h-5 w-5" strokeWidth={1.5} />
               </div>
               <div>
-                <h3 className="font-sans font-semibold text-foreground text-lg mb-2">
+                <h3 className="text-foreground mb-2 font-sans text-lg font-semibold">
                   {t("exportTitle")}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {t("exportDesc")}
-                </p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{t("exportDesc")}</p>
               </div>
               <div className="mt-auto">
                 <Link
                   href="/dashboard"
-                  className="inline-flex cursor-pointer items-center gap-2 bg-foreground text-background text-[10px] font-sans uppercase tracking-widest rounded px-3 py-2"
+                  className="bg-foreground text-background inline-flex cursor-pointer items-center gap-2 rounded px-3 py-2 font-sans text-[10px] tracking-widest uppercase"
                 >
-                  <Download className="w-3 h-3" strokeWidth={2} />
+                  <Download className="h-3 w-3" strokeWidth={2} />
                   {t("downloadPdf")}
                 </Link>
               </div>
             </GlassCard>
           </div>
 
-          <div className="feature-card-right opacity-0 rounded-xl bg-foreground text-background p-6 flex flex-col gap-4 min-h-135">
-            <div className="w-10 h-10 flex items-center justify-center rounded-md bg-white/10 border border-white/10">
-              <GripVertical
-                className="w-5 h-5 text-background/70"
-                strokeWidth={1.5}
-              />
+          <div className="feature-card-right bg-foreground text-background flex min-h-135 flex-col gap-4 rounded-xl p-6 opacity-0">
+            <div className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/10">
+              <GripVertical className="text-background/70 h-5 w-5" strokeWidth={1.5} />
             </div>
             <div>
-              <h3 className="font-sans font-semibold text-background text-lg mb-2">
+              <h3 className="text-background mb-2 font-sans text-lg font-semibold">
                 {t("reorderTitle")}
               </h3>
-              <p className="text-sm text-background/60 leading-relaxed">
-                {t("reorderDesc")}
-              </p>
+              <p className="text-background/60 text-sm leading-relaxed">{t("reorderDesc")}</p>
             </div>
 
             <div ref={reorderRef} className="mt-auto space-y-2">
               {SECTION_ROWS.map((label, i) => (
                 <div
                   key={label}
-                  className={`reorder-item flex items-center justify-between rounded-lg px-4 py-3 border ${
-                    i === 0
-                      ? "border-white/20 bg-white/10"
-                      : "border-white/10 bg-white/5"
+                  className={`reorder-item flex items-center justify-between rounded-lg border px-4 py-3 ${
+                    i === 0 ? "border-white/20 bg-white/10" : "border-white/10 bg-white/5"
                   }`}
                 >
-                  <span className="text-xs font-sans uppercase tracking-widest text-background/70">
+                  <span className="text-background/70 font-sans text-xs tracking-widest uppercase">
                     {label}
                   </span>
-                  <span className="text-background/30 text-sm font-sans">
-                    —
-                  </span>
+                  <span className="text-background/30 font-sans text-sm">—</span>
                 </div>
               ))}
             </div>

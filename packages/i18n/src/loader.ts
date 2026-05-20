@@ -28,10 +28,7 @@ export function getMessages(locale: string): Messages {
 }
 
 /** Get a specific namespace from messages. */
-export function getNamespace(
-  locale: string,
-  ns: string,
-): Record<string, string> {
+export function getNamespace(locale: string, ns: string): Record<string, string> {
   const msgs = getMessages(locale);
   return msgs[ns] ?? {};
 }

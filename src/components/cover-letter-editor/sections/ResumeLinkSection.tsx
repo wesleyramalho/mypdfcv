@@ -41,34 +41,32 @@ export default function ResumeLinkSection({ coverLetterId, data }: Props) {
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-sans uppercase tracking-widest text-foreground font-medium">
+        <h3 className="text-foreground font-sans text-sm font-medium tracking-widest uppercase">
           {t("resumeLink")}
         </h3>
         {linkedResume && (
           <Badge
             variant="secondary"
-            className="text-[10px] font-sans uppercase tracking-widest bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/20"
+            className="border-emerald-500/20 bg-emerald-500/10 font-sans text-[10px] tracking-widest text-emerald-700 uppercase dark:text-emerald-300"
           >
-            <Link2 className="w-3 h-3 mr-1" />
+            <Link2 className="mr-1 h-3 w-3" />
             {t("linked")}
           </Badge>
         )}
       </div>
-      <p className="text-xs text-muted-foreground">{t("resumeLinkDesc")}</p>
+      <p className="text-muted-foreground text-xs">{t("resumeLinkDesc")}</p>
 
       {linkedResume ? (
         <div className="flex items-center gap-2">
-          <span className="text-sm text-foreground flex-1 truncate">
-            {linkedResume.name}
-          </span>
+          <span className="text-foreground flex-1 truncate text-sm">{linkedResume.name}</span>
           <Button
             type="button"
             variant="ghost"
             size="sm"
             onClick={handleUnlink}
-            className="font-sans text-xs uppercase tracking-widest gap-1.5 text-muted-foreground"
+            className="text-muted-foreground gap-1.5 font-sans text-xs tracking-widest uppercase"
           >
-            <Link2Off className="w-3.5 h-3.5" />
+            <Link2Off className="h-3.5 w-3.5" />
             {t("unlink")}
           </Button>
         </div>
@@ -78,7 +76,7 @@ export default function ResumeLinkSection({ coverLetterId, data }: Props) {
           onChange={(e) => {
             if (e.target.value) handleLink(e.target.value);
           }}
-          className="w-full bg-input border border-border rounded-md px-3 py-2 text-sm text-foreground focus:outline-none focus:border-ring transition-colors"
+          className="bg-input border-border text-foreground focus:border-ring w-full rounded-md border px-3 py-2 text-sm transition-colors focus:outline-none"
         >
           <option value="">{t("selectResume")}</option>
           {resumes.map((resume) => (

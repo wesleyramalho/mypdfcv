@@ -20,11 +20,11 @@
 
 MyPDFCV's core logic is published as standalone npm packages — no Next.js required:
 
-| Package | Description |
-| --- | --- |
-| [`@mypdfcv/pdf-core`](https://www.npmjs.com/package/@mypdfcv/pdf-core) | Resume types, templates, validation schemas, and PDF generation |
-| [`@mypdfcv/i18n`](https://www.npmjs.com/package/@mypdfcv/i18n) | Internationalization with 7 bundled locales |
-| [`@mypdfcv/mcp-server`](https://www.npmjs.com/package/@mypdfcv/mcp-server) | MCP server for AI-powered resume PDF generation |
+| Package                                                                    | Description                                                     |
+| -------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| [`@mypdfcv/pdf-core`](https://www.npmjs.com/package/@mypdfcv/pdf-core)     | Resume types, templates, validation schemas, and PDF generation |
+| [`@mypdfcv/i18n`](https://www.npmjs.com/package/@mypdfcv/i18n)             | Internationalization with 7 bundled locales                     |
+| [`@mypdfcv/mcp-server`](https://www.npmjs.com/package/@mypdfcv/mcp-server) | MCP server for AI-powered resume PDF generation                 |
 
 ### MCP Server
 
@@ -48,7 +48,7 @@ Or add to Claude Desktop / Cursor config:
 }
 ```
 
-Then ask your assistant: *"Generate a resume PDF for John Doe, a senior software engineer"*
+Then ask your assistant: _"Generate a resume PDF for John Doe, a senior software engineer"_
 
 See the [MCP server repo](https://github.com/wesleyramalho/mypdfcv-mcp-server) for full documentation.
 
@@ -99,16 +99,16 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Available Scripts
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm run build:packages` | Build packages |
-| `npm run test:e2e` | Run Playwright e2e tests (headless) |
-| `npm run test:e2e:ui` | Open Playwright UI for interactive debugging |
-| `npm run test:e2e:headed` | Run e2e tests with visible browser |
+| Command                   | Description                                  |
+| ------------------------- | -------------------------------------------- |
+| `npm run dev`             | Start development server                     |
+| `npm run build`           | Build for production                         |
+| `npm run start`           | Start production server                      |
+| `npm run lint`            | Run ESLint                                   |
+| `npm run build:packages`  | Build packages                               |
+| `npm run test:e2e`        | Run Playwright e2e tests (headless)          |
+| `npm run test:e2e:ui`     | Open Playwright UI for interactive debugging |
+| `npm run test:e2e:headed` | Run e2e tests with visible browser           |
 
 ## E2E Tests
 
@@ -125,16 +125,16 @@ Tests reuse a dev server on port 3000 (`reuseExistingServer: true`). Make sure `
 
 Copy `.env.example` to `.env.local` and fill in the values:
 
-| Variable | Description |
-| --- | --- |
-| `AUTH_SECRET` | NextAuth.js secret for session encryption |
-| `NEXTAUTH_URL` | App URL for NextAuth.js callbacks |
-| `LINKEDIN_CLIENT_ID` | LinkedIn OAuth app client ID |
-| `LINKEDIN_CLIENT_SECRET` | LinkedIn OAuth app client secret |
-| `NEXT_PUBLIC_LINKEDIN_OAUTH_ENABLED` | Enable/disable LinkedIn import feature (`true`/`false`) |
-| `NEXT_PUBLIC_APP_URL` | Public-facing app URL |
-| `NEXT_PUBLIC_POSTHOG_KEY` | PostHog project API key (optional) |
-| `NEXT_PUBLIC_POSTHOG_HOST` | PostHog ingest host (default: `https://us.i.posthog.com`) |
+| Variable                             | Description                                               |
+| ------------------------------------ | --------------------------------------------------------- |
+| `AUTH_SECRET`                        | NextAuth.js secret for session encryption                 |
+| `NEXTAUTH_URL`                       | App URL for NextAuth.js callbacks                         |
+| `LINKEDIN_CLIENT_ID`                 | LinkedIn OAuth app client ID                              |
+| `LINKEDIN_CLIENT_SECRET`             | LinkedIn OAuth app client secret                          |
+| `NEXT_PUBLIC_LINKEDIN_OAUTH_ENABLED` | Enable/disable LinkedIn import feature (`true`/`false`)   |
+| `NEXT_PUBLIC_APP_URL`                | Public-facing app URL                                     |
+| `NEXT_PUBLIC_POSTHOG_KEY`            | PostHog project API key (optional)                        |
+| `NEXT_PUBLIC_POSTHOG_HOST`           | PostHog ingest host (default: `https://us.i.posthog.com`) |
 
 ## LinkedIn OAuth Setup (Optional)
 
@@ -148,6 +148,7 @@ AUTH_SECRET=your_auth_secret
 ```
 
 LinkedIn app requirements:
+
 - Scopes: `openid`, `profile`, `email`
 - Authorized redirect URL: `http://localhost:3000/api/auth/callback/linkedin`
 - Production redirect URL: `https://mypdfcv.com/api/auth/callback/linkedin`
@@ -167,20 +168,20 @@ Privacy: anonymous profiles only, IP not stored, Do Not Track respected.
 
 ### Tracked Events
 
-| Event | Properties | Metric |
-| --- | --- | --- |
-| `resume_created` | `templateId`, `source` (blank/template/import) | Resume creation rate |
-| `resume_deleted` | — | Churn signal |
-| `resume_duplicated` | — | Engagement |
-| `template_selected` | `templateId` | Most popular templates |
-| `pdf_exported` | `templateId`, `locale` | Export conversion rate |
-| `ai_improve_requested` | `fieldType` | AI feature usage |
-| `ai_improve_accepted` | `fieldType` | AI acceptance rate |
-| `file_imported` | `fileType` | Import method preference |
-| `linkedin_import` | — | LinkedIn import usage |
-| `locale_changed` | `from`, `to` | Language preferences |
-| `$pageview` | (automatic) | Page traffic |
-| `$pageleave` | (automatic) | Editor dropoff |
+| Event                  | Properties                                     | Metric                   |
+| ---------------------- | ---------------------------------------------- | ------------------------ |
+| `resume_created`       | `templateId`, `source` (blank/template/import) | Resume creation rate     |
+| `resume_deleted`       | —                                              | Churn signal             |
+| `resume_duplicated`    | —                                              | Engagement               |
+| `template_selected`    | `templateId`                                   | Most popular templates   |
+| `pdf_exported`         | `templateId`, `locale`                         | Export conversion rate   |
+| `ai_improve_requested` | `fieldType`                                    | AI feature usage         |
+| `ai_improve_accepted`  | `fieldType`                                    | AI acceptance rate       |
+| `file_imported`        | `fileType`                                     | Import method preference |
+| `linkedin_import`      | —                                              | LinkedIn import usage    |
+| `locale_changed`       | `from`, `to`                                   | Language preferences     |
+| `$pageview`            | (automatic)                                    | Page traffic             |
+| `$pageleave`           | (automatic)                                    | Editor dropoff           |
 
 ## Deployment
 

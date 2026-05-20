@@ -46,10 +46,11 @@ export default function CoverLetterPreview({ data, templateId }: Props) {
   ].filter(Boolean);
 
   const formattedDate = data.date
-    ? new Date(data.date + "T00:00:00").toLocaleDateString(
-        toLocaleTag(locale),
-        { year: "numeric", month: "long", day: "numeric" },
-      )
+    ? new Date(data.date + "T00:00:00").toLocaleDateString(toLocaleTag(locale), {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
     : "";
 
   const isCentered = style.headerLayout === "centered";
@@ -57,7 +58,7 @@ export default function CoverLetterPreview({ data, templateId }: Props) {
   return (
     <div
       ref={containerRef}
-      className="w-full h-full overflow-auto scrollbar-none bg-zinc-100"
+      className="scrollbar-none h-full w-full overflow-auto bg-zinc-100"
       style={{ padding: "16px" }}
     >
       <div
@@ -71,9 +72,7 @@ export default function CoverLetterPreview({ data, templateId }: Props) {
           transformOrigin: "top left",
           transform: `scale(${scale})`,
           marginLeft:
-            scale < 1
-              ? `${containerWidth / 2 - (PAPER_WIDTH_PX * scale) / 2 - 16}px`
-              : "auto",
+            scale < 1 ? `${containerWidth / 2 - (PAPER_WIDTH_PX * scale) / 2 - 16}px` : "auto",
           marginRight: scale < 1 ? "0" : "auto",
           paddingLeft: "60pt",
           paddingRight: "60pt",
@@ -119,9 +118,7 @@ export default function CoverLetterPreview({ data, templateId }: Props) {
 
         {/* Date */}
         {formattedDate && (
-          <p style={{ fontSize: "9pt", color: "#6b7280", marginBottom: "16pt" }}>
-            {formattedDate}
-          </p>
+          <p style={{ fontSize: "9pt", color: "#6b7280", marginBottom: "16pt" }}>{formattedDate}</p>
         )}
 
         {/* Recipient */}

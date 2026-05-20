@@ -58,7 +58,10 @@ export default function MonthYearPicker({
   return (
     <div className="flex flex-col gap-1">
       {label && (
-        <label htmlFor={id} className="text-xs font-sans uppercase tracking-widest text-text-subtle">
+        <label
+          htmlFor={id}
+          className="text-text-subtle font-sans text-xs tracking-widest uppercase"
+        >
           {label}
         </label>
       )}
@@ -66,9 +69,9 @@ export default function MonthYearPicker({
         <PopoverPrimitive.Trigger
           id={id}
           disabled={disabled}
-          className="flex items-center gap-2 w-full bg-input border border-border rounded-md px-3 py-2 text-sm text-left transition-colors hover:border-ring focus:outline-none focus:border-ring disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-input border-border hover:border-ring focus:border-ring flex w-full items-center gap-2 rounded-md border px-3 py-2 text-left text-sm transition-colors focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
         >
-          <CalendarDays className="w-4 h-4 text-muted-foreground shrink-0" />
+          <CalendarDays className="text-muted-foreground h-4 w-4 shrink-0" />
           <span className={value ? "text-foreground" : "text-muted-foreground"}>
             {value ? formatDisplay(value) : (placeholder ?? t("selectDate"))}
           </span>
@@ -76,25 +79,23 @@ export default function MonthYearPicker({
 
         <PopoverPrimitive.Portal>
           <PopoverPrimitive.Positioner sideOffset={4} align="start">
-            <PopoverPrimitive.Popup className="z-50 bg-card border border-border rounded-lg shadow-lg p-3 w-[220px]">
+            <PopoverPrimitive.Popup className="bg-card border-border z-50 w-[220px] rounded-lg border p-3 shadow-lg">
               {/* Year navigation */}
-              <div className="flex items-center justify-between mb-3">
+              <div className="mb-3 flex items-center justify-between">
                 <button
                   type="button"
                   onClick={() => setViewYear((y) => y - 1)}
-                  className="p-1 rounded hover:bg-surface-soft text-muted-foreground hover:text-foreground transition-colors"
+                  className="hover:bg-surface-soft text-muted-foreground hover:text-foreground rounded p-1 transition-colors"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <ChevronLeft className="h-4 w-4" />
                 </button>
-                <span className="text-sm font-sans font-semibold text-foreground">
-                  {viewYear}
-                </span>
+                <span className="text-foreground font-sans text-sm font-semibold">{viewYear}</span>
                 <button
                   type="button"
                   onClick={() => setViewYear((y) => y + 1)}
-                  className="p-1 rounded hover:bg-surface-soft text-muted-foreground hover:text-foreground transition-colors"
+                  className="hover:bg-surface-soft text-muted-foreground hover:text-foreground rounded p-1 transition-colors"
                 >
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="h-4 w-4" />
                 </button>
               </div>
 
@@ -107,7 +108,7 @@ export default function MonthYearPicker({
                       key={month}
                       type="button"
                       onClick={() => handleSelect(i)}
-                      className={`rounded-md px-2 py-1.5 text-xs font-sans transition-colors ${
+                      className={`rounded-md px-2 py-1.5 font-sans text-xs transition-colors ${
                         isSelected
                           ? "bg-foreground text-background"
                           : "text-foreground hover:bg-surface-soft"

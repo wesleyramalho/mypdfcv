@@ -7,16 +7,19 @@ interface MoreMenuTriggerProps {
   className?: string;
 }
 
-export default function MoreMenuTrigger({ orientation = "vertical", className }: MoreMenuTriggerProps) {
+export default function MoreMenuTrigger({
+  orientation = "vertical",
+  className,
+}: MoreMenuTriggerProps) {
   const Icon = orientation === "horizontal" ? MoreHorizontal : MoreVertical;
   return (
     <DropdownMenuTrigger
       className={cn(
-        "inline-flex items-center justify-center w-8 h-8 rounded-md border border-border bg-surface-soft hover:bg-surface-strong text-muted-foreground hover:text-foreground transition-colors shrink-0",
-        className
+        "border-border bg-surface-soft hover:bg-surface-strong text-muted-foreground hover:text-foreground inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md border transition-colors",
+        className,
       )}
     >
-      <Icon className="w-4 h-4" />
+      <Icon className="h-4 w-4" />
     </DropdownMenuTrigger>
   );
 }

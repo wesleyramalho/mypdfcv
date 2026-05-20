@@ -69,25 +69,23 @@ export default function SubscribePromptModal() {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-lg">{t("title")}</DialogTitle>
-          <DialogDescription className="leading-relaxed pt-1">
-            {t("description")}
-          </DialogDescription>
+          <DialogDescription className="pt-1 leading-relaxed">{t("description")}</DialogDescription>
         </DialogHeader>
-        <DialogFooter className="sm:justify-end gap-2">
+        <DialogFooter className="gap-2 sm:justify-end">
           <Button
             variant="ghost"
             size="sm"
             onClick={() => handleDismiss("later")}
-            className="font-sans text-xs uppercase tracking-widest"
+            className="font-sans text-xs tracking-widest uppercase"
           >
             {t("later")}
           </Button>
           <Button
             size="sm"
             onClick={handleSubscribe}
-            className="font-sans text-xs uppercase tracking-widest gap-2"
+            className="gap-2 font-sans text-xs tracking-widest uppercase"
           >
-            <YouTubeIcon className="w-4 h-4" />
+            <YouTubeIcon className="h-4 w-4" />
             {t("subscribe")}
           </Button>
         </DialogFooter>

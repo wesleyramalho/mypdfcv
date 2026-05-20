@@ -61,9 +61,7 @@ test.describe("PDF Export", () => {
     }
   });
 
-  test("PDF contains all expected content (comprehensive check)", async ({
-    page,
-  }) => {
+  test("PDF contains all expected content (comprehensive check)", async ({ page }) => {
     const downloadPromise = page.waitForEvent("download");
     await page.getByRole("button", { name: /export/i }).click();
     const download = await downloadPromise;

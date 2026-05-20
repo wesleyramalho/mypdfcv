@@ -24,34 +24,34 @@ export default function CoverLetterToolbar({ coverLetter }: Props) {
   const { exportPDF, exporting } = useExportCoverLetterPDF();
 
   return (
-    <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 border-b border-border bg-background/95 backdrop-blur-sm sticky top-0 z-30">
+    <div className="border-border bg-background/95 sticky top-0 z-30 flex items-center gap-2 border-b px-3 py-2 backdrop-blur-sm sm:gap-3 sm:px-4 sm:py-3">
       <button
         onClick={() => router.push("/dashboard")}
         className="text-muted-foreground hover:text-foreground transition-colors"
         aria-label={t("backToDashboard")}
       >
-        <ArrowLeft className="w-4 h-4" />
+        <ArrowLeft className="h-4 w-4" />
       </button>
 
-      <div className="h-4 w-px bg-border" />
+      <div className="bg-border h-4 w-px" />
 
       <input
         value={coverLetter.name}
         onChange={(e) => updateName(coverLetter.id, e.target.value)}
-        className="flex-1 min-w-0 bg-transparent text-sm font-sans text-foreground placeholder:text-muted-foreground focus:outline-none"
+        className="text-foreground placeholder:text-muted-foreground min-w-0 flex-1 bg-transparent font-sans text-sm focus:outline-none"
         placeholder={t("coverLetterName")}
         aria-label={t("coverLetterName")}
       />
 
-      <div className="hidden sm:flex items-center gap-1 text-[10px] font-sans uppercase tracking-widest text-muted-foreground">
+      <div className="text-muted-foreground hidden items-center gap-1 font-sans text-[10px] tracking-widest uppercase sm:flex">
         {saveStatus === "saving" ? (
           <>
-            <Loader2 className="w-3 h-3 animate-spin" />
+            <Loader2 className="h-3 w-3 animate-spin" />
             {tc("saving")}
           </>
         ) : (
           <>
-            <Check className="w-3 h-3 text-emerald-500" />
+            <Check className="h-3 w-3 text-emerald-500" />
             {tc("saved")}
           </>
         )}
@@ -61,7 +61,7 @@ export default function CoverLetterToolbar({ coverLetter }: Props) {
         size="sm"
         onClick={() => exportPDF(coverLetter)}
         disabled={exporting}
-        className="font-sans text-xs uppercase tracking-widest gap-2"
+        className="gap-2 font-sans text-xs tracking-widest uppercase"
       >
         {exporting ? <Loader2 className="animate-spin" /> : <FileDown />}
         <span className="hidden sm:inline">{tc("export")}</span>

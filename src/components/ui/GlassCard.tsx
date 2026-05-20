@@ -33,7 +33,7 @@ export default function GlassCard({ children, className = "", role }: GlassCardP
   return (
     <div
       ref={cardRef}
-      className={`bg-card border border-border rounded-lg relative overflow-hidden shadow-sm ${className}`}
+      className={`bg-card border-border relative overflow-hidden rounded-lg border shadow-sm ${className}`}
       role={role}
       onMouseMove={onMouseMove}
       onMouseEnter={onMouseEnter}

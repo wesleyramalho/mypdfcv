@@ -22,9 +22,7 @@ interface Props {
 
 export default function CoverLetterEditorPage({ params }: Props) {
   const { id } = use(params);
-  const coverLetter = useCoverLetterStore((s) =>
-    s.coverLetters.find((cl) => cl.id === id),
-  );
+  const coverLetter = useCoverLetterStore((s) => s.coverLetters.find((cl) => cl.id === id));
   const t = useTranslations("editor");
 
   useEffect(() => {
@@ -40,36 +38,33 @@ export default function CoverLetterEditorPage({ params }: Props) {
   const formContent = (
     <div className="space-y-8">
       <ResumeLinkSection coverLetterId={id} data={data} />
-      <div className="h-px bg-border" />
+      <div className="bg-border h-px" />
       <SenderInfoSection coverLetterId={id} data={data} />
-      <div className="h-px bg-border" />
+      <div className="bg-border h-px" />
       <RecipientSection coverLetterId={id} data={data} />
-      <div className="h-px bg-border" />
+      <div className="bg-border h-px" />
       <LetterContentSection coverLetterId={id} data={data} />
     </div>
   );
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="bg-background flex min-h-screen flex-col">
       <CoverLetterToolbar coverLetter={coverLetter} />
 
       {/* Desktop: two-column layout */}
-      <div
-        className="hidden lg:grid flex-1"
-        style={{ gridTemplateColumns: "1fr 1fr" }}
-      >
+      <div className="hidden flex-1 lg:grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
         {/* Left: form */}
-        <div className="border-r border-border flex flex-col overflow-hidden bg-card">
+        <div className="border-border bg-card flex flex-col overflow-hidden border-r">
           <ScrollArea className="flex-1">
             <div className="px-6 py-6">{formContent}</div>
           </ScrollArea>
         </div>
 
         {/* Right: live preview */}
-        <div className="flex flex-col overflow-hidden sticky top-0 h-screen">
-          <div className="px-4 py-3 border-b border-border flex items-center gap-2 bg-card">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <p className="font-sans text-[10px] uppercase tracking-widest text-text-subtle">
+        <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
+          <div className="border-border bg-card flex items-center gap-2 border-b px-4 py-3">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
+            <p className="text-text-subtle font-sans text-[10px] tracking-widest uppercase">
               {t("livePreviewRendering")}
             </p>
           </div>
@@ -80,31 +75,28 @@ export default function CoverLetterEditorPage({ params }: Props) {
       </div>
 
       {/* Mobile: tabs */}
-      <div className="lg:hidden flex-1">
-        <Tabs defaultValue="edit" className="h-full flex flex-col">
-          <TabsList className="rounded-none border-b border-border bg-background w-full h-12 p-0 gap-0 sticky top-0 z-20">
+      <div className="flex-1 lg:hidden">
+        <Tabs defaultValue="edit" className="flex h-full flex-col">
+          <TabsList className="border-border bg-background sticky top-0 z-20 h-12 w-full gap-0 rounded-none border-b p-0">
             <TabsTrigger
               value="edit"
-              className="flex-1 flex items-center justify-center gap-2 font-sans text-xs uppercase tracking-widest rounded-none h-full text-muted-foreground transition-colors data-[state=active]:text-foreground data-[state=active]:tab-glow-border"
+              className="text-muted-foreground data-[state=active]:text-foreground data-[state=active]:tab-glow-border flex h-full flex-1 items-center justify-center gap-2 rounded-none font-sans text-xs tracking-widest uppercase transition-colors"
             >
-              <Pencil className="w-3.5 h-3.5" />
+              <Pencil className="h-3.5 w-3.5" />
               {t("tabEdit")}
             </TabsTrigger>
             <TabsTrigger
               value="preview"
-              className="flex-1 flex items-center justify-center gap-2 font-sans text-xs uppercase tracking-widest rounded-none h-full text-muted-foreground transition-colors data-[state=active]:text-foreground data-[state=active]:tab-glow-border"
+              className="text-muted-foreground data-[state=active]:text-foreground data-[state=active]:tab-glow-border flex h-full flex-1 items-center justify-center gap-2 rounded-none font-sans text-xs tracking-widest uppercase transition-colors"
             >
-              <Eye className="w-3.5 h-3.5" />
+              <Eye className="h-3.5 w-3.5" />
               {t("tabPreview")}
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="edit" className="flex-1 overflow-auto mt-0">
+          <TabsContent value="edit" className="mt-0 flex-1 overflow-auto">
             <div className="px-3 py-4 sm:px-4">{formContent}</div>
           </TabsContent>
-          <TabsContent
-            value="preview"
-            className="flex-1 overflow-hidden mt-0 h-full"
-          >
+          <TabsContent value="preview" className="mt-0 h-full flex-1 overflow-hidden">
             <CoverLetterPreview data={data} templateId={coverLetter.templateId} />
           </TabsContent>
         </Tabs>
