@@ -13,11 +13,11 @@ export default function SiteNav() {
   const t = useTranslations("common");
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-4 md:px-12 py-4 border-b border-border bg-background/85 backdrop-blur-md">
+    <nav className="border-border bg-background/85 fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b px-4 py-4 backdrop-blur-md md:px-12">
       <div className="flex items-center gap-8">
         <Link
           href="/"
-          className="font-sans text-sm font-bold uppercase tracking-widest text-foreground"
+          className="text-foreground font-sans text-sm font-bold tracking-widest uppercase"
         >
           {t("appName")}
         </Link>
@@ -29,10 +29,12 @@ export default function SiteNav() {
         <Button
           size="sm"
           onClick={() => router.push("/dashboard")}
-          className="bg-foreground text-background hover:bg-foreground/90 font-sans text-xs uppercase tracking-widest"
+          className="bg-foreground text-background hover:bg-foreground/90 font-sans text-xs tracking-widest uppercase"
         >
           <span className="sm:hidden">{session ? t("resumes") : t("start")}</span>
-          <span className="hidden sm:inline">{session ? t("myResumes") : t("buildYourResume")}</span>
+          <span className="hidden sm:inline">
+            {session ? t("myResumes") : t("buildYourResume")}
+          </span>
         </Button>
       </div>
     </nav>

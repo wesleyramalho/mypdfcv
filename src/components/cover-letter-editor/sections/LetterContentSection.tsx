@@ -70,7 +70,7 @@ export default function LetterContentSection({ coverLetterId, data }: Props) {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-sm font-sans uppercase tracking-widest text-foreground font-medium">
+      <h3 className="text-foreground font-sans text-sm font-medium tracking-widest uppercase">
         {t("letterContent")}
       </h3>
 
@@ -98,10 +98,7 @@ export default function LetterContentSection({ coverLetterId, data }: Props) {
             placeholder={t("bodyPlaceholder")}
             rows={4}
             maxLength={5000}
-            error={resolveValidationError(
-              errors.bodyParagraphs?.[index]?.message,
-              tv,
-            )}
+            error={resolveValidationError(errors.bodyParagraphs?.[index]?.message, tv)}
             {...register(`bodyParagraphs.${index}`)}
             action={
               <div className="flex items-center gap-1">
@@ -114,10 +111,10 @@ export default function LetterContentSection({ coverLetterId, data }: Props) {
                   <button
                     type="button"
                     onClick={() => removeParagraph(index)}
-                    className="text-muted-foreground hover:text-destructive transition-colors p-1"
+                    className="text-muted-foreground hover:text-destructive p-1 transition-colors"
                     aria-label={t("removeParagraph")}
                   >
-                    <Trash2 className="w-3.5 h-3.5" />
+                    <Trash2 className="h-3.5 w-3.5" />
                   </button>
                 )}
               </div>
@@ -131,9 +128,9 @@ export default function LetterContentSection({ coverLetterId, data }: Props) {
         variant="outline"
         size="sm"
         onClick={addParagraph}
-        className="font-sans text-xs uppercase tracking-widest gap-1.5"
+        className="gap-1.5 font-sans text-xs tracking-widest uppercase"
       >
-        <Plus className="w-3.5 h-3.5" />
+        <Plus className="h-3.5 w-3.5" />
         {t("addParagraph")}
       </Button>
 

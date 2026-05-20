@@ -4,15 +4,15 @@ Internationalization package for [MyPDFCV](https://mypdfcv.com) — 7 bundled lo
 
 ## Supported Locales
 
-| Code | Language |
-| --- | --- |
-| `en` | English |
+| Code    | Language            |
+| ------- | ------------------- |
+| `en`    | English             |
 | `pt-BR` | Portuguese (Brazil) |
-| `es` | Spanish |
-| `it` | Italian |
-| `zh` | Chinese |
-| `ja` | Japanese |
-| `de` | German |
+| `es`    | Spanish             |
+| `it`    | Italian             |
+| `zh`    | Chinese             |
+| `ja`    | Japanese            |
+| `de`    | German              |
 
 ## Installation
 

@@ -1,0 +1,41 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    groups:
+      dev-dependencies:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+      react-ecosystem:
+        patterns:
+          - react
+          - react-dom
+          - "@types/react*"
+      next-ecosystem:
+        patterns:
+          - next
+          - next-*
+          - eslint-config-next
+      playwright:
+        patterns:
+          - "@playwright/*"
+          - playwright*
+      storybook:
+        patterns:
+          - "@storybook/*"
+          - storybook
+    ignore:
+      - dependency-name: next
+        update-types:
+          - version-update:semver-major
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

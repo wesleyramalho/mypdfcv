@@ -19,15 +19,50 @@ const LOCATION_RE =
 
 const MONTH_NAMES: Record<string, string> = {
   // English
-  jan: "01", january: "01", feb: "02", february: "02", mar: "03", march: "03",
-  apr: "04", april: "04", may: "05", jun: "06", june: "06",
-  jul: "07", july: "07", aug: "08", august: "08", sep: "09", september: "09",
-  oct: "10", october: "10", nov: "11", november: "11", dec: "12", december: "12",
+  jan: "01",
+  january: "01",
+  feb: "02",
+  february: "02",
+  mar: "03",
+  march: "03",
+  apr: "04",
+  april: "04",
+  may: "05",
+  jun: "06",
+  june: "06",
+  jul: "07",
+  july: "07",
+  aug: "08",
+  august: "08",
+  sep: "09",
+  september: "09",
+  oct: "10",
+  october: "10",
+  nov: "11",
+  november: "11",
+  dec: "12",
+  december: "12",
   // Portuguese
-  janeiro: "01", fevereiro: "02", fev: "02", março: "03", marco: "03",
-  abril: "04", abr: "04", maio: "05", mai: "05", junho: "06",
-  julho: "07", agosto: "08", ago: "08", setembro: "09", set: "09",
-  outubro: "10", out: "10", novembro: "11", dezembro: "12", dez: "12",
+  janeiro: "01",
+  fevereiro: "02",
+  fev: "02",
+  março: "03",
+  marco: "03",
+  abril: "04",
+  abr: "04",
+  maio: "05",
+  mai: "05",
+  junho: "06",
+  julho: "07",
+  agosto: "08",
+  ago: "08",
+  setembro: "09",
+  set: "09",
+  outubro: "10",
+  out: "10",
+  novembro: "11",
+  dezembro: "12",
+  dez: "12",
 };
 
 // Matches English and Portuguese month names + year, also plain year and MM/YYYY
@@ -76,15 +111,20 @@ const DEGREE_RE =
 // ── LinkedIn PDF preprocessing ──────────────────────────────────────────────
 
 function preprocessLinkedInText(text: string): string {
-  return text
-    // Remove "Page X of Y" footers
-    .replace(/\bPage\s+\d+\s+of\s+\d+\b/gi, "")
-    // Remove LinkedIn URL labels like "(LinkedIn)", "(Portfolio)", "(Other)"
-    .replace(/\s*\((?:LinkedIn|Portfolio|Other|Outro|Portfólio)\)\s*/gi, "")
-    // Remove duration suffixes like "(1 ano)", "(10 meses)", "(2 anos 3 meses)", "(1 year)", "(9 months)"
-    .replace(/\s*\(\d+\s*(?:anos?|meses?|mês|years?|months?)\s*(?:\d+\s*(?:anos?|meses?|mês|years?|months?))?\)\s*/gi, "")
-    // Remove standalone duration lines
-    .replace(/^\d+\s+(?:anos?|meses?|years?|months?)\s*$/gim, "");
+  return (
+    text
+      // Remove "Page X of Y" footers
+      .replace(/\bPage\s+\d+\s+of\s+\d+\b/gi, "")
+      // Remove LinkedIn URL labels like "(LinkedIn)", "(Portfolio)", "(Other)"
+      .replace(/\s*\((?:LinkedIn|Portfolio|Other|Outro|Portfólio)\)\s*/gi, "")
+      // Remove duration suffixes like "(1 ano)", "(10 meses)", "(2 anos 3 meses)", "(1 year)", "(9 months)"
+      .replace(
+        /\s*\(\d+\s*(?:anos?|meses?|mês|years?|months?)\s*(?:\d+\s*(?:anos?|meses?|mês|years?|months?))?\)\s*/gi,
+        "",
+      )
+      // Remove standalone duration lines
+      .replace(/^\d+\s+(?:anos?|meses?|years?|months?)\s*$/gim, "")
+  );
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -192,7 +232,9 @@ function isDateLine(line: string): boolean {
   DATE_RANGE_RE.lastIndex = 0;
   if (DATE_RANGE_RE.test(line)) return true;
   // Also match single dates like "abril de 2025 - Present"
-  return /(?:janeiro|fevereiro|março|marco|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+(?:de\s+)?\d{4}\s*[-–—]/i.test(line);
+  return /(?:janeiro|fevereiro|março|marco|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro|jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+(?:de\s+)?\d{4}\s*[-–—]/i.test(
+    line,
+  );
 }
 
 function parseExperience(lines: string[]): ExperienceEntry[] {
@@ -205,8 +247,7 @@ function parseExperience(lines: string[]): ExperienceEntry[] {
   }
 
   // LinkedIn format: date lines with at least 2 lines before them (company + title)
-  const isLinkedInFormat =
-    dateIndices.length > 0 && dateIndices.some((di) => di >= 2);
+  const isLinkedInFormat = dateIndices.length > 0 && dateIndices.some((di) => di >= 2);
 
   if (isLinkedInFormat) {
     return parseExperienceByDateAnchors(lines, dateIndices);
@@ -217,10 +258,7 @@ function parseExperience(lines: string[]): ExperienceEntry[] {
 }
 
 /** LinkedIn: anchor on date lines, look back for company/title, forward for location + description */
-function parseExperienceByDateAnchors(
-  lines: string[],
-  dateIndices: number[],
-): ExperienceEntry[] {
+function parseExperienceByDateAnchors(lines: string[], dateIndices: number[]): ExperienceEntry[] {
   const entries: ExperienceEntry[] = [];
 
   for (let d = 0; d < dateIndices.length; d++) {
@@ -284,13 +322,10 @@ function parseExperienceByDateAnchors(
 
     // Description: from after date+location until 2 lines before the next date line
     const descStart = location ? afterDate + 1 : afterDate;
-    const nextDateIdx =
-      d + 1 < dateIndices.length ? dateIndices[d + 1] : lines.length;
+    const nextDateIdx = d + 1 < dateIndices.length ? dateIndices[d + 1] : lines.length;
     // Next entry's company starts 2 lines before next date
     const descEnd =
-      d + 1 < dateIndices.length
-        ? Math.max(descStart, nextDateIdx - 2)
-        : lines.length;
+      d + 1 < dateIndices.length ? Math.max(descStart, nextDateIdx - 2) : lines.length;
 
     const descLines: string[] = [];
     for (let j = descStart; j < descEnd; j++) {
@@ -342,11 +377,7 @@ function parseExperienceByBlocks(lines: string[]): ExperienceEntry[] {
     }
 
     const titleLines = block.filter(
-      (l) =>
-        !isDateLine(l) &&
-        !l.startsWith("•") &&
-        !l.startsWith("-") &&
-        l.length < 80,
+      (l) => !isDateLine(l) && !l.startsWith("•") && !l.startsWith("-") && l.length < 80,
     );
 
     let company = "";
@@ -450,9 +481,7 @@ function parseEducation(lines: string[]): EducationEntry[] {
       const degreeMatch = text.match(DEGREE_RE);
       degree = degreeMatch ? degreeMatch[0] : "";
       if (degreeMatch) {
-        const afterDegree = text.slice(
-          text.indexOf(degreeMatch[0]) + degreeMatch[0].length,
-        );
+        const afterDegree = text.slice(text.indexOf(degreeMatch[0]) + degreeMatch[0].length);
         const fieldMatch = afterDegree.match(/\s*(?:in|of|em)\s+([^,·\n]+)/i);
         if (fieldMatch) field = fieldMatch[1].trim();
       }
@@ -460,13 +489,7 @@ function parseEducation(lines: string[]): EducationEntry[] {
 
     if (!school) {
       for (const l of block) {
-        if (
-          !DEGREE_RE.test(l) &&
-          !isDateLine(l) &&
-          !l.includes("·") &&
-          l.length < 80 &&
-          l.trim()
-        ) {
+        if (!DEGREE_RE.test(l) && !isDateLine(l) && !l.includes("·") && l.length < 80 && l.trim()) {
           school = l.trim();
           break;
         }
@@ -549,9 +572,7 @@ function parseProjects(lines: string[]): ProjectEntry[] {
   for (const block of blocks) {
     const text = block.join(" ");
     const name =
-      block
-        .find((l) => l.length < 60 && !l.startsWith("•") && !l.startsWith("-"))
-        ?.trim() ?? "";
+      block.find((l) => l.length < 60 && !l.startsWith("•") && !l.startsWith("-"))?.trim() ?? "";
     const urlMatch = text.match(URL_RE);
     const descLines = block
       .filter((l) => l !== name && !URL_RE.test(l))
@@ -642,30 +663,18 @@ export function parseResumeText(text: string): Partial<ResumeData> {
   const allUrls = fullText.match(URL_RE) ?? [];
   const website =
     allUrls.find(
-      (u) =>
-        !LINKEDIN_RE.test(u) &&
-        !u.includes("mailto:") &&
-        !u.includes("github.com"),
+      (u) => !LINKEDIN_RE.test(u) && !u.includes("mailto:") && !u.includes("github.com"),
     ) ?? "";
 
   // ── Name: first header line that isn't contact info ──
   const fullName =
-    header.find(
-      (l) =>
-        l.length > 1 &&
-        l.length < 60 &&
-        !isContactLine(l) &&
-        !isSectionHeader(l),
-    ) ?? "";
+    header.find((l) => l.length > 1 && l.length < 60 && !isContactLine(l) && !isSectionHeader(l)) ??
+    "";
 
   // ── Headline: second short non-contact header line ──
   const headlineCandidate = header.find(
     (l) =>
-      l !== fullName &&
-      l.length > 1 &&
-      l.length < 100 &&
-      !isContactLine(l) &&
-      !isSectionHeader(l),
+      l !== fullName && l.length > 1 && l.length < 100 && !isContactLine(l) && !isSectionHeader(l),
   );
   const headline = headlineCandidate ?? "";
 
@@ -684,15 +693,9 @@ export function parseResumeText(text: string): Partial<ResumeData> {
   const experience = sectionMap.has("experience")
     ? parseExperience(sectionMap.get("experience")!)
     : [];
-  const education = sectionMap.has("education")
-    ? parseEducation(sectionMap.get("education")!)
-    : [];
-  const skillGroups = sectionMap.has("skills")
-    ? parseSkills(sectionMap.get("skills")!)
-    : [];
-  const projects = sectionMap.has("projects")
-    ? parseProjects(sectionMap.get("projects")!)
-    : [];
+  const education = sectionMap.has("education") ? parseEducation(sectionMap.get("education")!) : [];
+  const skillGroups = sectionMap.has("skills") ? parseSkills(sectionMap.get("skills")!) : [];
+  const projects = sectionMap.has("projects") ? parseProjects(sectionMap.get("projects")!) : [];
 
   const summaryLines = sectionMap.get("summary");
   const summary = summaryLines ? summaryLines.filter(Boolean).join(" ") : "";

@@ -6,10 +6,7 @@ import { LinkedInProfile } from "@/types/linkedin";
 
 export async function POST() {
   if (!isLinkedInServerEnabled()) {
-    return NextResponse.json(
-      { error: "LinkedIn import is disabled" },
-      { status: 503 },
-    );
+    return NextResponse.json({ error: "LinkedIn import is disabled" }, { status: 503 });
   }
 
   const session = await auth();
@@ -31,7 +28,7 @@ export async function POST() {
   if (!profileRes.ok) {
     return NextResponse.json(
       { error: "Failed to fetch LinkedIn profile" },
-      { status: profileRes.status }
+      { status: profileRes.status },
     );
   }
 

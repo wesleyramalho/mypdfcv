@@ -1,7 +1,9 @@
 <!-- BEGIN:nextjs-agent-rules -->
+
 # This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+
 <!-- END:nextjs-agent-rules -->
 
 # Project Patterns
@@ -29,9 +31,9 @@ Supported locales: `en`, `pt-BR`, `es`, `it`, `zh`, `ja`, `de`, `hi`.
 
 Zustand + `persist` (localStorage) + `immer` for immutable updates.
 
-| Store | File | localStorage Key |
-|-------|------|-----------------|
-| Resumes | `src/store/useResumeStore.ts` | `architect-suite-resumes` |
+| Store         | File                               | localStorage Key                |
+| ------------- | ---------------------------------- | ------------------------------- |
+| Resumes       | `src/store/useResumeStore.ts`      | `architect-suite-resumes`       |
 | Cover Letters | `src/store/useCoverLetterStore.ts` | `architect-suite-cover-letters` |
 
 Both follow the same pattern: CRUD operations, `computeStatus()` for draft/complete, analytics tracking via `track()`.
@@ -49,9 +51,9 @@ Validation mode: `"onTouched"`. Schemas defined in `packages/pdf/src/lib/schemas
 
 Server-side rendering via `@react-pdf/renderer`.
 
-| Route | Generator | Document Component |
-|-------|-----------|-------------------|
-| `POST /api/pdf/[id]` | `generateResumePDF()` | `ResumePDFDocument.tsx` |
+| Route                             | Generator                  | Document Component           |
+| --------------------------------- | -------------------------- | ---------------------------- |
+| `POST /api/pdf/[id]`              | `generateResumePDF()`      | `ResumePDFDocument.tsx`      |
 | `POST /api/cover-letter-pdf/[id]` | `generateCoverLetterPDF()` | `CoverLetterPDFDocument.tsx` |
 
 **Fonts:** `packages/pdf/src/lib/pdfFonts.ts` — lazy-registers locale-specific fonts from CDN (jsDelivr). Latin locales use built-in Helvetica. Hindi uses Noto Sans Devanagari, CJK uses Noto Sans CJK. Always register italic variants (even as fallback to regular) to prevent crashes.
@@ -64,14 +66,14 @@ Server-side rendering via `@react-pdf/renderer`.
 
 Feature-based organization under `src/components/`:
 
-| Directory | Purpose |
-|-----------|---------|
-| `landing/` | Landing page sections (Nav, Hero, Features, Templates, FAQ, CTA) |
-| `editor/` | Resume editor (EditorNav, EditorToolbar, sections/, preview/) |
-| `cover-letter-editor/` | Cover letter editor (Toolbar, sections/, preview/) |
-| `dashboard/` | Dashboard (Header, ResumeGrid/Card, CoverLetterGrid/Card, Thumbnails, TemplatePicker) |
-| `ui/` | Shared primitives (Button, Accordion, Tabs, Dialog, FormInput, etc.) |
-| `providers/` | React context providers (Theme, PostHog, Session) |
+| Directory              | Purpose                                                                               |
+| ---------------------- | ------------------------------------------------------------------------------------- |
+| `landing/`             | Landing page sections (Nav, Hero, Features, Templates, FAQ, CTA)                      |
+| `editor/`              | Resume editor (EditorNav, EditorToolbar, sections/, preview/)                         |
+| `cover-letter-editor/` | Cover letter editor (Toolbar, sections/, preview/)                                    |
+| `dashboard/`           | Dashboard (Header, ResumeGrid/Card, CoverLetterGrid/Card, Thumbnails, TemplatePicker) |
+| `ui/`                  | Shared primitives (Button, Accordion, Tabs, Dialog, FormInput, etc.)                  |
+| `providers/`           | React context providers (Theme, PostHog, Session)                                     |
 
 UI components wrap `@base-ui/react` primitives with Tailwind styling.
 

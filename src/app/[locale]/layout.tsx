@@ -24,8 +24,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   const messages = await getMessages();
   const h = await headers();
-  const country =
-    h.get("x-vercel-ip-country") ?? process.env.DEV_COUNTRY ?? null;
+  const country = h.get("x-vercel-ip-country") ?? process.env.DEV_COUNTRY ?? null;
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <ConsentProvider country={country}>

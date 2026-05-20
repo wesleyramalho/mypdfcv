@@ -1,10 +1,4 @@
-import {
-  Document,
-  Page,
-  Text,
-  View,
-  StyleSheet,
-} from "@react-pdf/renderer";
+import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 import { CoverLetter } from "../types/coverLetter";
 import { getCoverLetterStyle, type CoverLetterStyle } from "../lib/coverLetterTemplates";
 import { toLocaleTag } from "../lib/utils";
@@ -130,9 +124,7 @@ export default function CoverLetterPDFDocument({ coverLetter, locale = "en" }: P
         <View style={s.senderBlock}>
           <Text style={s.senderName}>{data.senderName}</Text>
           {contactParts.length > 0 && (
-            <Text style={s.senderContact}>
-              {contactParts.join("  ·  ")}
-            </Text>
+            <Text style={s.senderContact}>{contactParts.join("  ·  ")}</Text>
           )}
         </View>
 
@@ -144,12 +136,8 @@ export default function CoverLetterPDFDocument({ coverLetter, locale = "en" }: P
         {/* Recipient */}
         {(data.recipient.name || data.recipient.company) && (
           <View style={s.recipientBlock}>
-            {data.recipient.name && (
-              <Text style={s.recipientText}>{data.recipient.name}</Text>
-            )}
-            {data.recipient.title && (
-              <Text style={s.recipientText}>{data.recipient.title}</Text>
-            )}
+            {data.recipient.name && <Text style={s.recipientText}>{data.recipient.name}</Text>}
+            {data.recipient.title && <Text style={s.recipientText}>{data.recipient.title}</Text>}
             {data.recipient.company && (
               <Text style={s.recipientText}>{data.recipient.company}</Text>
             )}

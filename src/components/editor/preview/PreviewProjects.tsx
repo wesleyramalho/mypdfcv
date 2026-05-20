@@ -23,7 +23,10 @@ export default function PreviewProjects({ projects, style: tmpl }: Props) {
           textTransform: "uppercase",
           letterSpacing: "1.5pt",
           color: hexWithAlpha(tmpl.accentColor, 0.4),
-          borderBottom: tmpl.sectionDivider === "line" ? `0.5pt solid ${hexWithAlpha(tmpl.accentColor, 0.15)}` : "none",
+          borderBottom:
+            tmpl.sectionDivider === "line"
+              ? `0.5pt solid ${hexWithAlpha(tmpl.accentColor, 0.15)}`
+              : "none",
           paddingBottom: "3pt",
           marginBottom: "6pt",
         }}
@@ -32,7 +35,9 @@ export default function PreviewProjects({ projects, style: tmpl }: Props) {
       </h2>
       {projects.map((proj) => (
         <div key={proj.id} style={{ marginBottom: "8pt" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+          <div
+            style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}
+          >
             <div>
               <p
                 style={{
@@ -51,9 +56,7 @@ export default function PreviewProjects({ projects, style: tmpl }: Props) {
                 </p>
               )}
               {proj.url && (
-                <p style={{ fontSize: "7.5pt", color: "#9ca3af", marginTop: "1pt" }}>
-                  {proj.url}
-                </p>
+                <p style={{ fontSize: "7.5pt", color: "#9ca3af", marginTop: "1pt" }}>{proj.url}</p>
               )}
             </div>
             <span
@@ -64,7 +67,8 @@ export default function PreviewProjects({ projects, style: tmpl }: Props) {
                 whiteSpace: "nowrap",
               }}
             >
-              {formatMonthYear(proj.startDate, localeTag, t("present"))} – {formatMonthYear(proj.endDate, localeTag, t("present"))}
+              {formatMonthYear(proj.startDate, localeTag, t("present"))} –{" "}
+              {formatMonthYear(proj.endDate, localeTag, t("present"))}
             </span>
           </div>
           {proj.description && (

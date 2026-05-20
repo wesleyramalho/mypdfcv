@@ -36,47 +36,43 @@ export default function CareerInsights({ resumes }: Props) {
 
   return (
     <div className="space-y-4">
-      <p className="font-sans text-xs uppercase tracking-[0.2em] text-text-subtle mb-4">
+      <p className="text-text-subtle mb-4 font-sans text-xs tracking-[0.2em] uppercase">
         Career Insights
       </p>
 
       {/* Total Exports */}
-      <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
-        <p className="font-sans text-[10px] uppercase tracking-widest text-text-subtle mb-1">
+      <div className="bg-card border-border rounded-lg border p-5 shadow-sm">
+        <p className="text-text-subtle mb-1 font-sans text-[10px] tracking-widest uppercase">
           Total Exports
         </p>
-        <p className="font-sans font-bold text-3xl text-foreground">
-          {totalExports}
-        </p>
-        <p className="font-sans text-[10px] text-muted-foreground mt-1">PDFs</p>
+        <p className="text-foreground font-sans text-3xl font-bold">{totalExports}</p>
+        <p className="text-muted-foreground mt-1 font-sans text-[10px]">PDFs</p>
       </div>
 
       {/* Profile Score */}
-      <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
-        <p className="font-sans text-[10px] uppercase tracking-widest text-text-subtle mb-1">
+      <div className="bg-card border-border rounded-lg border p-5 shadow-sm">
+        <p className="text-text-subtle mb-1 font-sans text-[10px] tracking-widest uppercase">
           Profile Score
         </p>
-        <p className="font-sans font-bold text-3xl text-foreground">
-          {profileScore}%
-        </p>
+        <p className="text-foreground font-sans text-3xl font-bold">{profileScore}%</p>
         {/* Progress bar */}
-        <div className="mt-2 h-px bg-border rounded-full overflow-hidden">
+        <div className="bg-border mt-2 h-px overflow-hidden rounded-full">
           <div
-            className="h-full bg-foreground rounded-full transition-all duration-700"
+            className="bg-foreground h-full rounded-full transition-all duration-700"
             style={{ width: `${profileScore}%` }}
           />
         </div>
       </div>
 
       {/* Active Goal */}
-      <div className="bg-brand-secondary text-white rounded-lg p-5">
-        <p className="font-sans text-[10px] uppercase tracking-widest opacity-60 mb-1">
+      <div className="bg-brand-secondary rounded-lg p-5 text-white">
+        <p className="mb-1 font-sans text-[10px] tracking-widest uppercase opacity-60">
           Completed Resumes
         </p>
-        <p className="font-sans font-bold text-2xl">
+        <p className="font-sans text-2xl font-bold">
           {completeCount} / {resumes.length}
         </p>
-        <button className="font-sans text-[10px] uppercase tracking-widest mt-2 opacity-60 hover:opacity-100 transition-opacity">
+        <button className="mt-2 font-sans text-[10px] tracking-widest uppercase opacity-60 transition-opacity hover:opacity-100">
           View Plan →
         </button>
       </div>

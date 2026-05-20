@@ -59,9 +59,7 @@ test.describe("Preview Content", () => {
     }
   });
 
-  test("contains all expected content (comprehensive check)", async ({
-    page,
-  }) => {
+  test("contains all expected content (comprehensive check)", async ({ page }) => {
     const preview = page.locator(".bg-white.shadow-lg");
     const text = await preview.innerText();
     assertResumeContent(text, EXPECTED, "Preview");

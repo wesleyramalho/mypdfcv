@@ -1,11 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
-import {
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FormTextarea } from "@/components/ui/FormInput";
 import { ResumeData } from "@/types/resume";
 import { useResumeForm } from "@/hooks/useResumeForm";
@@ -29,12 +25,14 @@ export default function SummarySection({ resumeId, data }: Props) {
   const t = useTranslations("editor");
   const tv = useTranslations("validation");
 
-  const toResumeData = useCallback(
-    (values: SummaryFormValues): Partial<ResumeData> => values,
-    [],
-  );
+  const toResumeData = useCallback((values: SummaryFormValues): Partial<ResumeData> => values, []);
 
-  const { register, setValue, watch, formState: { errors } } = useResumeForm<SummaryFormValues>({
+  const {
+    register,
+    setValue,
+    watch,
+    formState: { errors },
+  } = useResumeForm<SummaryFormValues>({
     resumeId,
     schema: summarySchema,
     defaultValues: {
@@ -47,10 +45,10 @@ export default function SummarySection({ resumeId, data }: Props) {
 
   return (
     <AccordionItem value="summary" className="border-border">
-      <AccordionTrigger className="text-sm font-sans uppercase tracking-widest text-foreground hover:no-underline hover:text-foreground/80 py-4">
+      <AccordionTrigger className="text-foreground hover:text-foreground/80 py-4 font-sans text-sm tracking-widest uppercase hover:no-underline">
         {t("summary")}
       </AccordionTrigger>
-      <AccordionContent className="pb-6 space-y-4">
+      <AccordionContent className="space-y-4 pb-6">
         <FormTextarea
           id="summary"
           label={t("professionalSummary")}

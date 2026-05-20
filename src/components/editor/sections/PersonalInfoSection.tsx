@@ -34,7 +34,10 @@ export default function PersonalInfoSection({ resumeId, data }: Props) {
     [],
   );
 
-  const { register, formState: { errors } } = useResumeForm<PersonalInfoFormValues>({
+  const {
+    register,
+    formState: { errors },
+  } = useResumeForm<PersonalInfoFormValues>({
     resumeId,
     schema: personalInfoSchema,
     defaultValues: {
@@ -67,22 +70,22 @@ export default function PersonalInfoSection({ resumeId, data }: Props) {
 
   return (
     <AccordionItem value="personal" className="border-border">
-      <AccordionTrigger className="text-sm font-sans uppercase tracking-widest text-foreground hover:no-underline hover:text-foreground/80 py-4">
+      <AccordionTrigger className="text-foreground hover:text-foreground/80 py-4 font-sans text-sm tracking-widest uppercase hover:no-underline">
         {t("personalInfo")}
       </AccordionTrigger>
-      <AccordionContent className="pb-6 space-y-4">
+      <AccordionContent className="space-y-4 pb-6">
         {/* Photo upload */}
         <div className="flex items-center gap-4">
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="relative w-16 h-16 rounded-full border-2 border-dashed border-border hover:border-ring flex items-center justify-center overflow-hidden transition-colors shrink-0 bg-surface-soft"
+            className="border-border hover:border-ring bg-surface-soft relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-dashed transition-colors"
           >
             {data.photo ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={data.photo} alt="Profile" className="w-full h-full object-cover" />
+              <img src={data.photo} alt="Profile" className="h-full w-full object-cover" />
             ) : (
-              <Camera className="w-5 h-5 text-muted-foreground" />
+              <Camera className="text-muted-foreground h-5 w-5" />
             )}
           </button>
           <input
@@ -93,30 +96,28 @@ export default function PersonalInfoSection({ resumeId, data }: Props) {
             className="hidden"
           />
           <div className="flex flex-col gap-1">
-            <p className="text-xs font-sans uppercase tracking-widest text-text-subtle">
+            <p className="text-text-subtle font-sans text-xs tracking-widest uppercase">
               {t("profilePhoto")}
             </p>
-            <p className="text-[10px] text-muted-foreground">
-              {t("photoOptional")}
-            </p>
+            <p className="text-muted-foreground text-[10px]">{t("photoOptional")}</p>
             {data.photo && (
-              <div className="flex gap-2 mt-0.5">
+              <div className="mt-0.5 flex gap-2">
                 <button
                   type="button"
                   onClick={() => {
                     setEditorSrc(data.photo!);
                     setEditorOpen(true);
                   }}
-                  className="text-[10px] text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground text-[10px] transition-colors"
                 >
                   {tc("edit")}
                 </button>
                 <button
                   type="button"
                   onClick={() => updateResume(resumeId, { photo: undefined })}
-                  className="inline-flex items-center gap-1 text-[10px] text-destructive hover:text-destructive/80 transition-colors"
+                  className="text-destructive hover:text-destructive/80 inline-flex items-center gap-1 text-[10px] transition-colors"
                 >
-                  <X className="w-3 h-3" />
+                  <X className="h-3 w-3" />
                   {tc("remove")}
                 </button>
               </div>
@@ -131,7 +132,7 @@ export default function PersonalInfoSection({ resumeId, data }: Props) {
           onSave={handlePhotoSave}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <FormInput
             id="fullName"
             label={t("fullName")}
@@ -150,9 +151,11 @@ export default function PersonalInfoSection({ resumeId, data }: Props) {
           />
         </div>
 
-        <div className="border-t border-border pt-4">
-          <p className="text-xs font-sans uppercase tracking-widest text-text-subtle mb-3">{t("contact")}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="border-border border-t pt-4">
+          <p className="text-text-subtle mb-3 font-sans text-xs tracking-widest uppercase">
+            {t("contact")}
+          </p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <FormInput
               id="email"
               label={t("email")}

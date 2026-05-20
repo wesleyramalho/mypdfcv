@@ -31,10 +31,7 @@ export async function importResumeFromFile(file: File): Promise<{
   const data = parseResumeText(trimmed);
 
   if (process.env.NODE_ENV === "development") {
-    console.log(
-      "[resume-import] Parsed data:",
-      JSON.stringify(data, null, 2).slice(0, 2000),
-    );
+    console.log("[resume-import] Parsed data:", JSON.stringify(data, null, 2).slice(0, 2000));
   }
 
   return { data, textLength: trimmed.length };

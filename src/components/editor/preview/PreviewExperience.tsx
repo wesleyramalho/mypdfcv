@@ -24,7 +24,10 @@ export default function PreviewExperience({ experience, style: tmpl }: Props) {
           textTransform: "uppercase",
           letterSpacing: "1.5pt",
           color: hexWithAlpha(tmpl.accentColor, 0.4),
-          borderBottom: tmpl.sectionDivider === "line" ? `0.5pt solid ${hexWithAlpha(tmpl.accentColor, 0.15)}` : "none",
+          borderBottom:
+            tmpl.sectionDivider === "line"
+              ? `0.5pt solid ${hexWithAlpha(tmpl.accentColor, 0.15)}`
+              : "none",
           paddingBottom: "3pt",
           marginBottom: "6pt",
         }}
@@ -33,7 +36,9 @@ export default function PreviewExperience({ experience, style: tmpl }: Props) {
       </h2>
       {experience.map((exp) => (
         <div key={exp.id} style={{ marginBottom: "8pt" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+          <div
+            style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}
+          >
             <div>
               <p
                 style={{
@@ -59,7 +64,8 @@ export default function PreviewExperience({ experience, style: tmpl }: Props) {
                 whiteSpace: "nowrap",
               }}
             >
-              {formatMonthYear(exp.startDate, localeTag, t("present"))} – {exp.current ? t("present") : formatMonthYear(exp.endDate, localeTag, t("present"))}
+              {formatMonthYear(exp.startDate, localeTag, t("present"))} –{" "}
+              {exp.current ? t("present") : formatMonthYear(exp.endDate, localeTag, t("present"))}
             </span>
           </div>
           {exp.description &&
@@ -76,7 +82,9 @@ export default function PreviewExperience({ experience, style: tmpl }: Props) {
                   }}
                 >
                   <span style={{ fontSize: "9pt", color: "#d1d5db", marginTop: "0.5pt" }}>•</span>
-                  <span style={{ fontSize: "8.5pt", color: "#374151", lineHeight: 1.4 }}>{line}</span>
+                  <span style={{ fontSize: "8.5pt", color: "#374151", lineHeight: 1.4 }}>
+                    {line}
+                  </span>
                 </div>
               ))}
         </div>

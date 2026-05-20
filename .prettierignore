@@ -1,0 +1,11 @@
+node_modules
+dist
+.next
+out
+build
+package-lock.json
+playwright-report
+test-results
+storybook-static
+*.tsbuildinfo
+packages/**/dist

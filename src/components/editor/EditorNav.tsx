@@ -47,8 +47,9 @@ interface SortableItemProps {
 }
 
 function SortableItem({ id, activeSection, onSelect }: SortableItemProps) {
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
-    useSortable({ id });
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id,
+  });
   const t = useTranslations("editor");
   const tc = useTranslations("common");
 
@@ -62,7 +63,7 @@ function SortableItem({ id, activeSection, onSelect }: SortableItemProps) {
       style={{ transform: CSS.Transform.toString(transform), transition }}
       className={cn(
         "flex items-center gap-1 rounded-md transition-colors",
-        isDragging && "opacity-50 bg-surface-strong",
+        isDragging && "bg-surface-strong opacity-50",
       )}
     >
       {/* Drag handle */}
@@ -71,22 +72,22 @@ function SortableItem({ id, activeSection, onSelect }: SortableItemProps) {
         {...attributes}
         tabIndex={-1}
         aria-label={tc("dragToReorder")}
-        className="p-1 text-muted-foreground/40 hover:text-muted-foreground cursor-grab active:cursor-grabbing shrink-0"
+        className="text-muted-foreground/40 hover:text-muted-foreground shrink-0 cursor-grab p-1 active:cursor-grabbing"
       >
-        <GripVertical className="w-3.5 h-3.5" strokeWidth={1.5} />
+        <GripVertical className="h-3.5 w-3.5" strokeWidth={1.5} />
       </button>
 
       {/* Section button */}
       <button
         onClick={() => onSelect(id)}
         className={cn(
-          "flex-1 flex items-center gap-2.5 px-2 py-2.5 rounded-md text-left text-xs font-sans uppercase tracking-widest transition-colors",
+          "flex flex-1 items-center gap-2.5 rounded-md px-2 py-2.5 text-left font-sans text-xs tracking-widest uppercase transition-colors",
           activeSection === id
             ? "bg-surface-strong text-foreground"
-            : "text-muted-foreground hover:text-foreground hover:bg-surface-soft"
+            : "text-muted-foreground hover:text-foreground hover:bg-surface-soft",
         )}
       >
-        <Icon className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+        <Icon className="h-4 w-4 shrink-0" strokeWidth={1.5} />
         {t(labelKey)}
       </button>
     </div>
@@ -122,13 +123,13 @@ export default function EditorNav({ resumeId, sectionOrder, activeSection, onSel
       <button
         onClick={() => onSelect("personal")}
         className={cn(
-          "flex items-center gap-2.5 px-3 py-2.5 ml-5 rounded-md text-left text-xs font-sans uppercase tracking-widest transition-colors",
+          "ml-5 flex items-center gap-2.5 rounded-md px-3 py-2.5 text-left font-sans text-xs tracking-widest uppercase transition-colors",
           activeSection === "personal"
             ? "bg-surface-strong text-foreground"
-            : "text-muted-foreground hover:text-foreground hover:bg-surface-soft"
+            : "text-muted-foreground hover:text-foreground hover:bg-surface-soft",
         )}
       >
-        <User className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+        <User className="h-4 w-4 shrink-0" strokeWidth={1.5} />
         {t("personalInfo")}
       </button>
 

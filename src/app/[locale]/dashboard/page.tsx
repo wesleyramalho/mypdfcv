@@ -20,13 +20,13 @@ export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState<"resumes" | "cover-letters">("resumes");
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background min-h-screen">
       {/* Top nav bar */}
-      <nav className="border-b border-border px-6 md:px-12 py-4 flex items-center justify-between sticky top-0 z-40 bg-background/90 backdrop-blur-md">
+      <nav className="border-border bg-background/90 sticky top-0 z-40 flex items-center justify-between border-b px-6 py-4 backdrop-blur-md md:px-12">
         <div className="flex items-center gap-8">
           <Link
             href="/"
-            className="font-sans text-sm font-bold uppercase tracking-widest text-foreground"
+            className="text-foreground font-sans text-sm font-bold tracking-widest uppercase"
           >
             {t("appName")}
           </Link>
@@ -38,13 +38,13 @@ export default function DashboardPage() {
       </nav>
 
       {/* Sticky tabs bar */}
-      <div className="sticky top-14.25 z-30 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex gap-1">
+      <div className="bg-background/95 border-border sticky top-14.25 z-30 border-b backdrop-blur-sm">
+        <div className="mx-auto flex max-w-7xl gap-1 px-6 md:px-12">
           <button
             onClick={() => setActiveTab("resumes")}
-            className={`relative font-sans text-sm uppercase tracking-widest px-4 py-3 transition-colors ${
+            className={`relative px-4 py-3 font-sans text-sm tracking-widest uppercase transition-colors ${
               activeTab === "resumes"
-                ? "text-foreground after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-foreground"
+                ? "text-foreground after:bg-foreground after:absolute after:inset-x-0 after:bottom-0 after:h-0.5"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -52,9 +52,9 @@ export default function DashboardPage() {
           </button>
           <button
             onClick={() => setActiveTab("cover-letters")}
-            className={`relative font-sans text-sm uppercase tracking-widest px-4 py-3 transition-colors ${
+            className={`relative px-4 py-3 font-sans text-sm tracking-widest uppercase transition-colors ${
               activeTab === "cover-letters"
-                ? "text-foreground after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-foreground"
+                ? "text-foreground after:bg-foreground after:absolute after:inset-x-0 after:bottom-0 after:h-0.5"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -63,12 +63,12 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
         <Suspense>
           <DashboardHeader activeTab={activeTab} />
         </Suspense>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_280px]">
           <div>
             {activeTab === "resumes" && <ResumeGrid resumes={resumes} />}
             {activeTab === "cover-letters" && <CoverLetterGrid coverLetters={coverLetters} />}

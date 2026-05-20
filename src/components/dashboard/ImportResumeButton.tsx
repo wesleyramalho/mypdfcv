@@ -9,12 +9,7 @@ import { useResumeStore } from "@/store/useResumeStore";
 import { importResumeFromFile } from "@/lib/resumeImport";
 import { toast } from "sonner";
 import { track } from "@/lib/analytics";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function ImportResumeButton() {
   const router = useRouter();
@@ -42,17 +37,14 @@ export default function ImportResumeButton() {
 
       const exp = data.experience?.length ?? 0;
       const edu = data.education?.length ?? 0;
-      const skills =
-        data.skillGroups?.reduce((n, g) => n + g.skills.length, 0) ?? 0;
+      const skills = data.skillGroups?.reduce((n, g) => n + g.skills.length, 0) ?? 0;
       toast.success(
         t("importSuccess", { exp, edu, skills: skills > 0 ? `, ${skills} skills` : "" }),
       );
 
       router.push(`/editor/${resume.id}`);
     } catch (err) {
-      toast.error(
-        err instanceof Error ? err.message : t("parseFailed"),
-      );
+      toast.error(err instanceof Error ? err.message : t("parseFailed"));
     } finally {
       setImporting(false);
     }
@@ -77,13 +69,9 @@ export default function ImportResumeButton() {
                 variant="outline"
                 disabled={importing}
                 onClick={() => fileInputRef.current?.click()}
-                className="font-sans text-xs uppercase tracking-widest gap-1.5"
+                className="gap-1.5 font-sans text-xs tracking-widest uppercase"
               >
-                {importing ? (
-                  <Loader2 className="animate-spin" />
-                ) : (
-                  <Upload />
-                )}
+                {importing ? <Loader2 className="animate-spin" /> : <Upload />}
                 <span className="hidden sm:inline">
                   {importing ? tc("importing") : t("importResume")}
                 </span>

@@ -52,11 +52,7 @@ void main() {
 }
 `;
 
-function compile(
-  gl: WebGLRenderingContext,
-  type: number,
-  src: string,
-): WebGLShader {
+function compile(gl: WebGLRenderingContext, type: number, src: string): WebGLShader {
   const shader = gl.createShader(type);
   if (!shader) throw new Error("createShader failed (context may be lost)");
   gl.shaderSource(shader, src);
@@ -69,11 +65,7 @@ function compile(
   return shader;
 }
 
-function link(
-  gl: WebGLRenderingContext,
-  vert: string,
-  frag: string,
-): WebGLProgram {
+function link(gl: WebGLRenderingContext, vert: string, frag: string): WebGLProgram {
   const prog = gl.createProgram();
   if (!prog) throw new Error("createProgram failed");
   gl.attachShader(prog, compile(gl, gl.VERTEX_SHADER, vert));
@@ -84,11 +76,7 @@ function link(
   return prog;
 }
 
-export default function GlowBorderCanvas({
-  borderRadius = 16,
-  className,
-  style,
-}: Props) {
+export default function GlowBorderCanvas({ borderRadius = 16, className, style }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -118,11 +106,7 @@ export default function GlowBorderCanvas({
 
     const buf = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(
-      gl.ARRAY_BUFFER,
-      new Float32Array([-1, -1, 3, -1, -1, 3]),
-      gl.STATIC_DRAW,
-    );
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
 
     gl.useProgram(prog);
     const posLoc = gl.getAttribLocation(prog, "position");

@@ -9,14 +9,16 @@ import { createEmptyCoverLetterData } from "@/lib/coverLetterDefaults";
 import { track } from "@/lib/analytics";
 
 function computeStatus(data: CoverLetterData): CoverLetterStatus {
-  return data.senderName.trim() && data.bodyParagraphs.some((p) => p.trim())
-    ? "complete"
-    : "draft";
+  return data.senderName.trim() && data.bodyParagraphs.some((p) => p.trim()) ? "complete" : "draft";
 }
 
 interface CoverLetterStore {
   coverLetters: CoverLetter[];
-  createCoverLetter: (name?: string, initialData?: Partial<CoverLetterData>, templateId?: string) => CoverLetter;
+  createCoverLetter: (
+    name?: string,
+    initialData?: Partial<CoverLetterData>,
+    templateId?: string,
+  ) => CoverLetter;
   updateCoverLetter: (id: string, data: Partial<CoverLetterData>) => void;
   updateCoverLetterName: (id: string, name: string) => void;
   deleteCoverLetter: (id: string) => void;
@@ -36,7 +38,11 @@ export const useCoverLetterStore = create<CoverLetterStore>()(
     immer((set, get) => ({
       coverLetters: [],
 
-      createCoverLetter: (name = "Untitled Cover Letter", initialData = {}, templateId?: string) => {
+      createCoverLetter: (
+        name = "Untitled Cover Letter",
+        initialData = {},
+        templateId?: string,
+      ) => {
         const data: CoverLetterData = { ...createEmptyCoverLetterData(), ...initialData };
         const coverLetter: CoverLetter = {
           id: generateId(),
@@ -122,8 +128,8 @@ export const useCoverLetterStore = create<CoverLetterStore>()(
     {
       name: "architect-suite-cover-letters",
       storage: createJSONStorage(() =>
-        typeof window !== "undefined" ? localStorage : noopStorage
+        typeof window !== "undefined" ? localStorage : noopStorage,
       ),
-    }
-  )
+    },
+  ),
 );

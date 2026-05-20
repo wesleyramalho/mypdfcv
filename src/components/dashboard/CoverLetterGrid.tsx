@@ -19,9 +19,7 @@ export default function CoverLetterGrid({ coverLetters }: Props) {
   const t = useTranslations("coverLetter");
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced || coverLetters.length === 0) return;
 
     gsap.fromTo(
@@ -44,7 +42,7 @@ export default function CoverLetterGrid({ coverLetters }: Props) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+    <div className="mb-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {coverLetters.map((cl) => (
         <div key={cl.id} className="cover-letter-card opacity-0">
           <CoverLetterCard coverLetter={cl} />
@@ -53,14 +51,14 @@ export default function CoverLetterGrid({ coverLetters }: Props) {
 
       <button
         onClick={handleCreate}
-        className="group border border-dashed border-border rounded-lg aspect-[3/4] flex flex-col items-center justify-center gap-3 hover:border-brand-secondary/60 hover:bg-surface-soft transition-all text-muted-foreground hover:text-foreground"
+        className="group border-border hover:border-brand-secondary/60 hover:bg-surface-soft text-muted-foreground hover:text-foreground flex aspect-[3/4] flex-col items-center justify-center gap-3 rounded-lg border border-dashed transition-all"
       >
-        <div className="w-10 h-10 rounded-full border border-border group-hover:border-brand-secondary/60 flex items-center justify-center transition-colors">
-          <Plus className="w-5 h-5" />
+        <div className="border-border group-hover:border-brand-secondary/60 flex h-10 w-10 items-center justify-center rounded-full border transition-colors">
+          <Plus className="h-5 w-5" />
         </div>
         <div className="text-center">
-          <p className="font-sans font-medium text-sm">{t("newCoverLetter")}</p>
-          <p className="font-sans text-[10px] uppercase tracking-widest text-muted-foreground/60 mt-1">
+          <p className="font-sans text-sm font-medium">{t("newCoverLetter")}</p>
+          <p className="text-muted-foreground/60 mt-1 font-sans text-[10px] tracking-widest uppercase">
             {t("chooseToStart")}
           </p>
         </div>

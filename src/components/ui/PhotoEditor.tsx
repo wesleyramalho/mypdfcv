@@ -1,12 +1,7 @@
 "use client";
 
 import { useRef, useState, useCallback, useEffect } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ZoomIn, ZoomOut } from "lucide-react";
 
@@ -138,7 +133,7 @@ export default function PhotoEditor({ open, onOpenChange, imageSrc, onSave }: Ph
         <div className="flex flex-col items-center gap-4">
           {/* Preview canvas */}
           <div
-            className="rounded-full overflow-hidden cursor-grab active:cursor-grabbing"
+            className="cursor-grab overflow-hidden rounded-full active:cursor-grabbing"
             style={{ width: PREVIEW_SIZE, height: PREVIEW_SIZE }}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
@@ -153,42 +148,40 @@ export default function PhotoEditor({ open, onOpenChange, imageSrc, onSave }: Ph
             />
           </div>
 
-          <p className="text-[10px] text-muted-foreground font-sans">
-            Drag to reposition
-          </p>
+          <p className="text-muted-foreground font-sans text-[10px]">Drag to reposition</p>
 
           {/* Zoom controls */}
           <div className="flex items-center gap-3">
             <button
               type="button"
               onClick={() => setZoom((z) => Math.max(1, z - 0.25))}
-              className="p-1.5 rounded-md border border-border hover:bg-surface-soft transition-colors"
+              className="border-border hover:bg-surface-soft rounded-md border p-1.5 transition-colors"
             >
-              <ZoomOut className="w-4 h-4 text-muted-foreground" />
+              <ZoomOut className="text-muted-foreground h-4 w-4" />
             </button>
-            <span className="text-xs font-sans text-muted-foreground w-10 text-center">
+            <span className="text-muted-foreground w-10 text-center font-sans text-xs">
               {Math.round(zoom * 100)}%
             </span>
             <button
               type="button"
               onClick={() => setZoom((z) => Math.min(3, z + 0.25))}
-              className="p-1.5 rounded-md border border-border hover:bg-surface-soft transition-colors"
+              className="border-border hover:bg-surface-soft rounded-md border p-1.5 transition-colors"
             >
-              <ZoomIn className="w-4 h-4 text-muted-foreground" />
+              <ZoomIn className="text-muted-foreground h-4 w-4" />
             </button>
           </div>
 
           {/* Actions */}
-          <div className="flex gap-2 w-full">
+          <div className="flex w-full gap-2">
             <Button
               variant="outline"
-              className="flex-1 font-sans text-xs uppercase tracking-widest"
+              className="flex-1 font-sans text-xs tracking-widest uppercase"
               onClick={() => onOpenChange(false)}
             >
               Cancel
             </Button>
             <Button
-              className="flex-1 bg-foreground text-background hover:bg-foreground/90 font-sans text-xs uppercase tracking-widest"
+              className="bg-foreground text-background hover:bg-foreground/90 flex-1 font-sans text-xs tracking-widest uppercase"
               onClick={handleSave}
             >
               Save

@@ -20,7 +20,7 @@ export default function CoverLetterThumbnail({ data, templateId }: Props) {
   ].filter(Boolean);
 
   return (
-    <div className="w-full aspect-[3/4] bg-white relative overflow-hidden rounded pointer-events-none select-none">
+    <div className="pointer-events-none relative aspect-[3/4] w-full overflow-hidden rounded bg-white select-none">
       <div
         className="absolute origin-top-left"
         style={{
@@ -47,9 +47,7 @@ export default function CoverLetterThumbnail({ data, templateId }: Props) {
             {data.senderName || "Your Name"}
           </p>
           {contactParts.length > 0 && (
-            <p style={{ fontSize: "0.6rem", color: "#6b7280" }}>
-              {contactParts.join("  ·  ")}
-            </p>
+            <p style={{ fontSize: "0.6rem", color: "#6b7280" }}>{contactParts.join("  ·  ")}</p>
           )}
         </div>
 

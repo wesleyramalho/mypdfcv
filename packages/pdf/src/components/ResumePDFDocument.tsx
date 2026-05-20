@@ -1,18 +1,7 @@
-import {
-  Document,
-  Image,
-  Page,
-  Text,
-  View,
-  StyleSheet,
-} from "@react-pdf/renderer";
+import { Document, Image, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 import { Resume } from "../types/resume";
 import { formatMonthYear, toLocaleTag } from "../lib/utils";
-import {
-  getResumeStyle,
-  hexWithAlpha,
-  type ResumeStyle,
-} from "../lib/resumeTemplates";
+import { getResumeStyle, hexWithAlpha, type ResumeStyle } from "../lib/resumeTemplates";
 import { getMessages } from "@mypdfcv/i18n/server";
 import { getPdfFont } from "../lib/pdfFonts";
 
@@ -58,9 +47,7 @@ function buildStyles(tmpl: ResumeStyle, font: string = PDF_FONT) {
             paddingBottom: 20,
           }
         : {}),
-      ...(isCentered
-        ? { alignItems: "center" as const }
-        : {}),
+      ...(isCentered ? { alignItems: "center" as const } : {}),
     },
     name: {
       fontSize: 16,
@@ -70,9 +57,7 @@ function buildStyles(tmpl: ResumeStyle, font: string = PDF_FONT) {
       letterSpacing: 1.5,
       color: nameColor,
       marginBottom: 8,
-      ...(isCentered
-        ? { textAlign: "center" as const }
-        : {}),
+      ...(isCentered ? { textAlign: "center" as const } : {}),
     },
     headline: {
       fontSize: 8,
@@ -82,9 +67,7 @@ function buildStyles(tmpl: ResumeStyle, font: string = PDF_FONT) {
       color: headlineColor,
       marginTop: 2,
       marginBottom: 4,
-      ...(isCentered
-        ? { textAlign: "center" as const }
-        : {}),
+      ...(isCentered ? { textAlign: "center" as const } : {}),
     },
     contactRow: {
       flexDirection: "row",
@@ -92,9 +75,7 @@ function buildStyles(tmpl: ResumeStyle, font: string = PDF_FONT) {
       flexWrap: "wrap",
       gap: 8,
       marginTop: 4,
-      ...(isCentered
-        ? { justifyContent: "center" as const }
-        : {}),
+      ...(isCentered ? { justifyContent: "center" as const } : {}),
     },
     contactText: {
       fontFamily: font,
@@ -230,13 +211,7 @@ interface Props {
   messages?: Record<string, Record<string, string>>;
 }
 
-const DEFAULT_SECTION_ORDER = [
-  "experience",
-  "education",
-  "skills",
-  "projects",
-  "summary",
-];
+const DEFAULT_SECTION_ORDER = ["experience", "education", "skills", "projects", "summary"];
 
 type PDFStyles = ReturnType<typeof buildStyles>;
 type RD = import("../types/resume").ResumeData;
@@ -319,11 +294,20 @@ function EducationSection({ data, s, font, localeTag, presentLabel, t }: PDFSect
               </Text>
             </View>
             <Text style={s.expDate}>
-              {formatMonthYear(edu.startDate, localeTag, presentLabel)} – {formatMonthYear(edu.endDate, localeTag, presentLabel)}
+              {formatMonthYear(edu.startDate, localeTag, presentLabel)} –{" "}
+              {formatMonthYear(edu.endDate, localeTag, presentLabel)}
             </Text>
           </View>
           {edu.highlights ? (
-            <Text style={{ fontFamily: font, fontSize: 7.5, color: "#6b7280", marginTop: 2, fontStyle: "italic" }}>
+            <Text
+              style={{
+                fontFamily: font,
+                fontSize: 7.5,
+                color: "#6b7280",
+                marginTop: 2,
+                fontStyle: "italic",
+              }}
+            >
               {edu.highlights}
             </Text>
           ) : null}
@@ -340,9 +324,7 @@ function SkillsSection({ data, s, t }: PDFSectionProps) {
       <Text style={s.sectionTitle}>{t("resume", "technicalSkills")}</Text>
       {data.skillGroups.map((group) => (
         <View key={group.id} style={s.skillGroupRow}>
-          {group.category ? (
-            <Text style={s.skillCategory}>{group.category}</Text>
-          ) : null}
+          {group.category ? <Text style={s.skillCategory}>{group.category}</Text> : null}
           <View style={s.skillsRow}>
             {group.skills.map((skill, i) => (
               <Text key={i} style={s.skillTag}>
@@ -369,11 +351,7 @@ function ProjectsSection({ data, s, localeTag, presentLabel, t }: PDFSectionProp
               {proj.technologies.length > 0 ? (
                 <Text style={s.expTitle}>{proj.technologies.join(" · ")}</Text>
               ) : null}
-              {proj.url ? (
-                <Text style={[s.expTitle, { color: "#9ca3af" }]}>
-                  {proj.url}
-                </Text>
-              ) : null}
+              {proj.url ? <Text style={[s.expTitle, { color: "#9ca3af" }]}>{proj.url}</Text> : null}
             </View>
             <Text style={s.expDate}>
               {formatMonthYear(proj.startDate, localeTag, presentLabel)} –{" "}
@@ -397,9 +375,7 @@ export default function ResumePDFDocument({ resume, locale = "en", messages }: P
   const t = getT(locale, messages);
   const localeTag = toLocaleTag(locale);
   const presentLabel = t("resume", "present");
-  const order = data.sectionOrder?.length
-    ? data.sectionOrder
-    : DEFAULT_SECTION_ORDER;
+  const order = data.sectionOrder?.length ? data.sectionOrder : DEFAULT_SECTION_ORDER;
   const contactParts = [
     data.contact.location,
     data.contact.email,
@@ -415,9 +391,14 @@ export default function ResumePDFDocument({ resume, locale = "en", messages }: P
       style={[
         s.header,
         {
-          flexDirection: (tmpl.photoPosition === "top-center" || tmpl.headerLayout === "centered") ? "column" : "row",
+          flexDirection:
+            tmpl.photoPosition === "top-center" || tmpl.headerLayout === "centered"
+              ? "column"
+              : "row",
           alignItems:
-            (tmpl.photoPosition === "top-center" || tmpl.headerLayout === "centered") ? "center" : "flex-start",
+            tmpl.photoPosition === "top-center" || tmpl.headerLayout === "centered"
+              ? "center"
+              : "flex-start",
         },
       ]}
     >
@@ -428,18 +409,16 @@ export default function ResumePDFDocument({ resume, locale = "en", messages }: P
             width: 32,
             height: 32,
             borderRadius: 16,
-            ...((tmpl.photoPosition === "top-center" || tmpl.headerLayout === "centered")
+            ...(tmpl.photoPosition === "top-center" || tmpl.headerLayout === "centered"
               ? { marginBottom: 10 }
               : { marginRight: 10 }),
-            ...(tmpl.headerBgColor
-              ? { borderWidth: 2, borderColor: "rgba(255,255,255,0.3)" }
-              : {}),
+            ...(tmpl.headerBgColor ? { borderWidth: 2, borderColor: "rgba(255,255,255,0.3)" } : {}),
           }}
         />
       ) : null}
       <View
         style={{
-          ...((tmpl.photoPosition === "top-center" || tmpl.headerLayout === "centered")
+          ...(tmpl.photoPosition === "top-center" || tmpl.headerLayout === "centered"
             ? { width: "100%" }
             : { flex: 1 }),
         }}
@@ -464,9 +443,7 @@ export default function ResumePDFDocument({ resume, locale = "en", messages }: P
             height: 32,
             borderRadius: 16,
             marginLeft: 10,
-            ...(tmpl.headerBgColor
-              ? { borderWidth: 2, borderColor: "rgba(255,255,255,0.3)" }
-              : {}),
+            ...(tmpl.headerBgColor ? { borderWidth: 2, borderColor: "rgba(255,255,255,0.3)" } : {}),
           }}
         />
       ) : null}
@@ -476,16 +453,12 @@ export default function ResumePDFDocument({ resume, locale = "en", messages }: P
   const sectionProps = { data, s, font, localeTag, presentLabel, t };
 
   const sectionsBlock = order.map((sectionId) => {
-    if (sectionId === "summary")
-      return <SummarySection key={sectionId} {...sectionProps} />;
-    if (sectionId === "experience")
-      return <ExperienceSection key={sectionId} {...sectionProps} />;
-    if (sectionId === "education")
-      return <EducationSection key={sectionId} {...sectionProps} />;
+    if (sectionId === "summary") return <SummarySection key={sectionId} {...sectionProps} />;
+    if (sectionId === "experience") return <ExperienceSection key={sectionId} {...sectionProps} />;
+    if (sectionId === "education") return <EducationSection key={sectionId} {...sectionProps} />;
     if (sectionId === "skills" && !hasSidebar)
       return <SkillsSection key={sectionId} {...sectionProps} />;
-    if (sectionId === "projects")
-      return <ProjectsSection key={sectionId} {...sectionProps} />;
+    if (sectionId === "projects") return <ProjectsSection key={sectionId} {...sectionProps} />;
     return null;
   });
 
@@ -494,10 +467,7 @@ export default function ResumePDFDocument({ resume, locale = "en", messages }: P
       <Document>
         <Page
           size="A4"
-          style={[
-            s.page,
-            { paddingHorizontal: 0, paddingVertical: 0, flexDirection: "row" },
-          ]}
+          style={[s.page, { paddingHorizontal: 0, paddingVertical: 0, flexDirection: "row" }]}
         >
           {/* Sidebar */}
           <View

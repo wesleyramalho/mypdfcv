@@ -12,11 +12,7 @@ import {
   useSensors,
   DragEndEvent,
 } from "@dnd-kit/core";
-import {
-  SortableContext,
-  verticalListSortingStrategy,
-  useSortable,
-} from "@dnd-kit/sortable";
+import { SortableContext, verticalListSortingStrategy, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -53,9 +49,19 @@ interface SortableExpItemProps {
   tv: (key: string) => string;
 }
 
-function SortableExpItem({ field, idx, register, setValue, watch, remove, errors, tv }: SortableExpItemProps) {
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
-    useSortable({ id: field.id });
+function SortableExpItem({
+  field,
+  idx,
+  register,
+  setValue,
+  watch,
+  remove,
+  errors,
+  tv,
+}: SortableExpItemProps) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id: field.id,
+  });
   const t = useTranslations("editor");
   const tc = useTranslations("common");
 
@@ -66,20 +72,20 @@ function SortableExpItem({ field, idx, register, setValue, watch, remove, errors
     <div
       ref={setNodeRef}
       style={{ transform: CSS.Transform.toString(transform), transition }}
-      className={`border border-border bg-card rounded-lg p-4 space-y-3 ${isDragging ? "opacity-50 shadow-lg" : ""}`}
+      className={`border-border bg-card space-y-3 rounded-lg border p-4 ${isDragging ? "opacity-50 shadow-lg" : ""}`}
     >
-      <div className="flex items-center justify-between mb-1">
+      <div className="mb-1 flex items-center justify-between">
         <div className="flex items-center gap-1">
           <button
             {...listeners}
             {...attributes}
             tabIndex={-1}
             aria-label={tc("dragToReorder")}
-            className="p-1 text-muted-foreground/40 hover:text-muted-foreground cursor-grab active:cursor-grabbing shrink-0"
+            className="text-muted-foreground/40 hover:text-muted-foreground shrink-0 cursor-grab p-1 active:cursor-grabbing"
           >
-            <GripVertical className="w-3.5 h-3.5" strokeWidth={1.5} />
+            <GripVertical className="h-3.5 w-3.5" strokeWidth={1.5} />
           </button>
-          <p className="text-xs font-sans text-text-subtle">
+          <p className="text-text-subtle font-sans text-xs">
             {exp?.company || t("experienceFallback", { idx: idx + 1 })}
           </p>
         </div>
@@ -88,11 +94,11 @@ function SortableExpItem({ field, idx, register, setValue, watch, remove, errors
           className="text-muted-foreground hover:text-destructive transition-colors"
           aria-label={t("removeExperience")}
         >
-          <Trash2 className="w-4 h-4" />
+          <Trash2 className="h-4 w-4" />
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <FormInput
           id={`company-${field.id}`}
           label={t("companyStudio")}
@@ -132,7 +138,7 @@ function SortableExpItem({ field, idx, register, setValue, watch, remove, errors
             disabled={exp?.current}
             onChange={(v) => setValue(`experience.${idx}.endDate`, v || null)}
           />
-          <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer mt-1">
+          <label className="text-muted-foreground mt-1 flex cursor-pointer items-center gap-2 text-xs">
             <input
               type="checkbox"
               {...register(`experience.${idx}.current`)}
@@ -180,7 +186,14 @@ export default function ExperienceSection({ resumeId, data }: Props) {
 
   const lastSyncedJson = useRef(JSON.stringify(data.experience));
 
-  const { register, control, watch, setValue, reset, formState: { errors } } = useForm<FormValues>({
+  const {
+    register,
+    control,
+    watch,
+    setValue,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: { experience: structuredClone(data.experience) },
     mode: "onTouched",
@@ -207,7 +220,9 @@ export default function ExperienceSection({ resumeId, data }: Props) {
       debounceRef.current = setTimeout(() => {
         if (values.experience) {
           lastSyncedJson.current = JSON.stringify(values.experience);
-          updateResumeRef.current(resumeIdRef.current, { experience: structuredClone(values.experience) as ResumeData["experience"] });
+          updateResumeRef.current(resumeIdRef.current, {
+            experience: structuredClone(values.experience) as ResumeData["experience"],
+          });
         }
       }, 300);
     });
@@ -226,13 +241,13 @@ export default function ExperienceSection({ resumeId, data }: Props) {
 
   return (
     <AccordionItem value="experience" className="border-border">
-      <AccordionTrigger className="text-sm font-sans uppercase tracking-widest text-foreground hover:no-underline hover:text-foreground/80 py-4">
+      <AccordionTrigger className="text-foreground hover:text-foreground/80 py-4 font-sans text-sm tracking-widest uppercase hover:no-underline">
         {t("experience")}
-        <span className="ml-auto mr-2 text-xs text-muted-foreground font-normal">
+        <span className="text-muted-foreground mr-2 ml-auto text-xs font-normal">
           {fields.length} {fields.length === 1 ? tc("entry") : tc("entries")}
         </span>
       </AccordionTrigger>
-      <AccordionContent className="pb-6 space-y-6">
+      <AccordionContent className="space-y-6 pb-6">
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
           <SortableContext items={fields.map((f) => f.id)} strategy={verticalListSortingStrategy}>
             {fields.map((field, idx) => (
@@ -253,19 +268,21 @@ export default function ExperienceSection({ resumeId, data }: Props) {
 
         <Button
           variant="ghost"
-          onClick={() => append({
-            id: generateId(),
-            company: "",
-            title: "",
-            location: "",
-            startDate: "",
-            endDate: null,
-            current: false,
-            description: "",
-          })}
-          className="w-full border border-dashed border-border hover:border-brand-secondary/60 hover:bg-surface-soft font-sans text-xs uppercase tracking-widest gap-2 h-10"
+          onClick={() =>
+            append({
+              id: generateId(),
+              company: "",
+              title: "",
+              location: "",
+              startDate: "",
+              endDate: null,
+              current: false,
+              description: "",
+            })
+          }
+          className="border-border hover:border-brand-secondary/60 hover:bg-surface-soft h-10 w-full gap-2 border border-dashed font-sans text-xs tracking-widest uppercase"
         >
-          <Plus className="w-4 h-4" />
+          <Plus className="h-4 w-4" />
           {t("addExperience")}
         </Button>
       </AccordionContent>

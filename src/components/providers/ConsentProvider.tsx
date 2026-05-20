@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import posthog from "posthog-js";
 import { PostHogProvider as PHProvider } from "posthog-js/react";
 import {
@@ -73,7 +66,6 @@ export function ConsentProvider({ country, children }: ConsentProviderProps) {
     const stored = readConsent();
     const dnt = navigator.doNotTrack === "1";
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStatus(stored);
     setMounted(true);
 
@@ -96,7 +88,6 @@ export function ConsentProvider({ country, children }: ConsentProviderProps) {
     } else {
       setAnalyticsEnabled(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isBR]);
 
   const accept = useCallback(() => {

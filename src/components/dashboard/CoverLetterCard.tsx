@@ -54,14 +54,14 @@ export default function CoverLetterCard({ coverLetter }: Props) {
 
   return (
     <>
-      <div className="group bg-card border border-border rounded-lg overflow-hidden hover:border-brand-secondary/50 transition-colors shadow-sm">
-        <div className="relative p-3 bg-surface-soft/70 cursor-pointer" onClick={handleEdit}>
+      <div className="group bg-card border-border hover:border-brand-secondary/50 overflow-hidden rounded-lg border shadow-sm transition-colors">
+        <div className="bg-surface-soft/70 relative cursor-pointer p-3" onClick={handleEdit}>
           <CoverLetterThumbnail data={coverLetter.data} templateId={coverLetter.templateId} />
           {coverLetter.status === "draft" && (
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-background/90 backdrop-blur-sm border border-border rounded-full px-3 py-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                <span className="font-sans text-[10px] uppercase tracking-widest text-amber-400">
+              <div className="bg-background/90 border-border flex items-center gap-1.5 rounded-full border px-3 py-1 backdrop-blur-sm">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
+                <span className="font-sans text-[10px] tracking-widest text-amber-400 uppercase">
                   {t("drafting")}
                 </span>
               </div>
@@ -70,25 +70,26 @@ export default function CoverLetterCard({ coverLetter }: Props) {
         </div>
 
         <div className="p-4">
-          <div className="flex items-start justify-between gap-2 mb-1">
+          <div className="mb-1 flex items-start justify-between gap-2">
             <h3
-              className="font-sans font-semibold text-sm text-foreground truncate cursor-pointer hover:text-foreground/80 transition-colors"
+              className="text-foreground hover:text-foreground/80 cursor-pointer truncate font-sans text-sm font-semibold transition-colors"
               onClick={handleEdit}
             >
               {coverLetter.name}
             </h3>
             <Badge
               variant={coverLetter.status === "complete" ? "default" : "secondary"}
-              className={`text-[10px] font-sans uppercase tracking-widest flex-shrink-0 ${
+              className={`flex-shrink-0 font-sans text-[10px] tracking-widest uppercase ${
                 coverLetter.status === "complete"
-                  ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/20"
-                  : "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20"
+                  ? "border-emerald-500/20 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
+                  : "border-amber-500/20 bg-amber-500/10 text-amber-700 dark:text-amber-300"
               }`}
             >
-              {coverLetter.data.recipient.company || (coverLetter.status === "draft" ? t("drafting") : t("lastEdited"))}
+              {coverLetter.data.recipient.company ||
+                (coverLetter.status === "draft" ? t("drafting") : t("lastEdited"))}
             </Badge>
           </div>
-          <p className="text-[11px] text-muted-foreground font-sans mb-3">
+          <p className="text-muted-foreground mb-3 font-sans text-[11px]">
             {coverLetter.status === "draft" ? t("created") : t("lastEdited")}{" "}
             {formatDate(coverLetter.updatedAt, locale)}
           </p>
@@ -97,7 +98,7 @@ export default function CoverLetterCard({ coverLetter }: Props) {
             <Button
               size="sm"
               onClick={handleEdit}
-              className="flex-1 font-sans text-xs uppercase tracking-widest h-8"
+              className="h-8 flex-1 font-sans text-xs tracking-widest uppercase"
             >
               {coverLetter.status === "draft" ? t("continueDrafting") : tc("edit")}
             </Button>
@@ -106,19 +107,19 @@ export default function CoverLetterCard({ coverLetter }: Props) {
               <MoreMenuTrigger className="h-9 w-9 sm:h-8 sm:w-8" />
               <DropdownMenuContent align="end" className="bg-card border-border">
                 <DropdownMenuItem onClick={handleEdit} className="gap-2">
-                  <Pencil className="w-4 h-4" />
+                  <Pencil className="h-4 w-4" />
                   {tc("edit")}
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={handleDuplicate} className="gap-2">
-                  <Copy className="w-4 h-4" />
+                  <Copy className="h-4 w-4" />
                   {t("duplicate")}
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
                   onClick={() => setShowDelete(true)}
-                  className="gap-2 text-destructive focus:text-destructive"
+                  className="text-destructive focus:text-destructive gap-2"
                 >
-                  <Trash2 className="w-4 h-4" />
+                  <Trash2 className="h-4 w-4" />
                   {tc("delete")}
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -141,7 +142,7 @@ export default function CoverLetterCard({ coverLetter }: Props) {
             </Button>
             <Button
               onClick={handleDelete}
-              className="bg-destructive text-white hover:bg-destructive/90"
+              className="bg-destructive hover:bg-destructive/90 text-white"
             >
               {tc("delete")}
             </Button>

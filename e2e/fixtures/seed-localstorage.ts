@@ -8,10 +8,7 @@ import type { TestResume } from "./test-resume";
  * Zustand persist middleware stores data under "architect-suite-resumes" with shape:
  * { state: { resumes: Resume[] }, version: 0 }
  */
-export async function seedResumes(
-  page: Page,
-  resumes: TestResume[],
-): Promise<void> {
+export async function seedResumes(page: Page, resumes: TestResume[]): Promise<void> {
   // Navigate to a page so we have access to localStorage
   await page.goto("/");
   await page.evaluate((data) => {

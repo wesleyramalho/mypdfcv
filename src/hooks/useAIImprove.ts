@@ -29,10 +29,9 @@ function setState(partial: Partial<AIState>) {
 function getWorker(): Worker {
   if (worker) return worker;
 
-  worker = new Worker(
-    new URL("../workers/ai-improve.worker.ts", import.meta.url),
-    { type: "module" },
-  );
+  worker = new Worker(new URL("../workers/ai-improve.worker.ts", import.meta.url), {
+    type: "module",
+  });
 
   worker.addEventListener("message", (e: MessageEvent<WorkerResponse>) => {
     const msg = e.data;
@@ -97,19 +96,16 @@ export function useAIImprove() {
     setState({ modelStatus: "downloading", downloadProgress: 0 });
   }, []);
 
-  const improve = useCallback(
-    (text: string, fieldType: FieldType): Promise<string> => {
-      const w = getWorker();
-      const id = generateId();
+  const improve = useCallback((text: string, fieldType: FieldType): Promise<string> => {
+    const w = getWorker();
+    const id = generateId();
 
-      return new Promise<string>((resolve, reject) => {
-        pendingRequests.set(id, { resolve, reject });
-        w.postMessage({ type: "improve", id, text, fieldType });
-        track("ai_improve_requested", { fieldType });
-      });
-    },
-    [],
-  );
+    return new Promise<string>((resolve, reject) => {
+      pendingRequests.set(id, { resolve, reject });
+      w.postMessage({ type: "improve", id, text, fieldType });
+      track("ai_improve_requested", { fieldType });
+    });
+  }, []);
 
   return { improve, preloadModel, modelStatus, downloadProgress };
 }

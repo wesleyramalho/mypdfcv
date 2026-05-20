@@ -31,10 +31,7 @@ export async function extractTextFromPDF(file: File): Promise<string> {
       // New line when Y coordinate changes significantly
       if (lastY !== null && y !== undefined && Math.abs(y - lastY) > 2) {
         chunks.push("\n");
-      } else if (
-        chunks.length > 0 &&
-        !chunks[chunks.length - 1].endsWith(" ")
-      ) {
+      } else if (chunks.length > 0 && !chunks[chunks.length - 1].endsWith(" ")) {
         chunks.push(" ");
       }
 

@@ -10,9 +10,7 @@ export async function generateCoverLetterPDF(
   const element = React.createElement(CoverLetterPDFDocument, {
     coverLetter,
     locale,
-  }) as unknown as React.ReactElement<
-    import("@react-pdf/renderer").DocumentProps
-  >;
+  }) as unknown as React.ReactElement<import("@react-pdf/renderer").DocumentProps>;
   const buffer = await renderToBuffer(element);
   return Buffer.from(buffer);
 }

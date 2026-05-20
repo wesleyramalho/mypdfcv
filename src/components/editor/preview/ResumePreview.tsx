@@ -10,13 +10,7 @@ import PreviewEducation from "./PreviewEducation";
 import PreviewSkills from "./PreviewSkills";
 import PreviewProjects from "./PreviewProjects";
 
-const DEFAULT_ORDER = [
-  "experience",
-  "education",
-  "skills",
-  "projects",
-  "summary",
-];
+const DEFAULT_ORDER = ["experience", "education", "skills", "projects", "summary"];
 
 /** A4 width in CSS px (210mm ≈ 793.7px at 96dpi) */
 const PAPER_WIDTH_PX = 793.7;
@@ -59,7 +53,10 @@ export default function ResumePreview({ data, templateId }: Props) {
     textTransform: "uppercase",
     letterSpacing: "1.5pt",
     color: hexWithAlpha(style.accentColor, 0.4),
-    borderBottom: style.sectionDivider === "line" ? `0.5pt solid ${hexWithAlpha(style.accentColor, 0.15)}` : "none",
+    borderBottom:
+      style.sectionDivider === "line"
+        ? `0.5pt solid ${hexWithAlpha(style.accentColor, 0.15)}`
+        : "none",
     paddingBottom: "3pt",
     marginBottom: "6pt",
   };
@@ -67,7 +64,7 @@ export default function ResumePreview({ data, templateId }: Props) {
   return (
     <div
       ref={containerRef}
-      className="w-full h-full overflow-auto scrollbar-none bg-zinc-100"
+      className="scrollbar-none h-full w-full overflow-auto bg-zinc-100"
       style={{ padding: "16px" }}
     >
       <div
@@ -80,7 +77,8 @@ export default function ResumePreview({ data, templateId }: Props) {
           color: "#1a1a1a",
           transformOrigin: "top left",
           transform: `scale(${scale})`,
-          marginLeft: scale < 1 ? `${containerWidth / 2 - (PAPER_WIDTH_PX * scale) / 2 - 16}px` : "auto",
+          marginLeft:
+            scale < 1 ? `${containerWidth / 2 - (PAPER_WIDTH_PX * scale) / 2 - 16}px` : "auto",
           marginRight: scale < 1 ? "0" : "auto",
           display: style.sidebarColor ? "flex" : "block",
         }}
@@ -114,39 +112,93 @@ export default function ResumePreview({ data, templateId }: Props) {
               />
             )}
             <div style={{ textAlign: "center" }}>
-              <p style={{ fontSize: "10pt", fontWeight: 700, color: "#ffffff", textTransform: "uppercase", letterSpacing: "1pt" }}>
+              <p
+                style={{
+                  fontSize: "10pt",
+                  fontWeight: 700,
+                  color: "#ffffff",
+                  textTransform: "uppercase",
+                  letterSpacing: "1pt",
+                }}
+              >
                 {data.fullName || t("yourName")}
               </p>
-              <p style={{ fontSize: "7pt", color: "rgba(255,255,255,0.7)", marginTop: "2pt", textTransform: "uppercase", letterSpacing: "0.5pt" }}>
+              <p
+                style={{
+                  fontSize: "7pt",
+                  color: "rgba(255,255,255,0.7)",
+                  marginTop: "2pt",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5pt",
+                }}
+              >
                 {data.headline}
               </p>
             </div>
             {/* Contact in sidebar */}
-            <div style={{ fontSize: "6.5pt", color: "rgba(255,255,255,0.6)", textAlign: "center", lineHeight: 1.6 }}>
-              {[data.contact.location, data.contact.email, data.contact.phone, data.contact.linkedin, data.contact.website].filter(Boolean).map((item, i) => (
-                <p key={i}>{item}</p>
-              ))}
+            <div
+              style={{
+                fontSize: "6.5pt",
+                color: "rgba(255,255,255,0.6)",
+                textAlign: "center",
+                lineHeight: 1.6,
+              }}
+            >
+              {[
+                data.contact.location,
+                data.contact.email,
+                data.contact.phone,
+                data.contact.linkedin,
+                data.contact.website,
+              ]
+                .filter(Boolean)
+                .map((item, i) => (
+                  <p key={i}>{item}</p>
+                ))}
             </div>
             {/* Skills in sidebar */}
             {data.skillGroups.length > 0 && (
               <div style={{ width: "100%", marginTop: "8pt" }}>
-                <p style={{ fontSize: "6pt", color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: "1pt", marginBottom: "4pt" }}>
+                <p
+                  style={{
+                    fontSize: "6pt",
+                    color: "rgba(255,255,255,0.5)",
+                    textTransform: "uppercase",
+                    letterSpacing: "1pt",
+                    marginBottom: "4pt",
+                  }}
+                >
                   {t("skills")}
                 </p>
                 {data.skillGroups.map((group, gi) => (
-                <div key={gi} style={{ marginBottom: "4pt", width: "100%" }}>
-                  {group.category && (
-                    <p style={{ fontSize: "5.5pt", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.5pt", marginBottom: "1pt" }}>
-                      {group.category}
-                    </p>
-                  )}
-                  {group.skills.map((skill, i) => (
-                    <p key={i} style={{ fontSize: "6.5pt", color: "rgba(255,255,255,0.8)", marginBottom: "2pt" }}>
-                      {skill}
-                    </p>
-                  ))}
-                </div>
-              ))}
+                  <div key={gi} style={{ marginBottom: "4pt", width: "100%" }}>
+                    {group.category && (
+                      <p
+                        style={{
+                          fontSize: "5.5pt",
+                          color: "rgba(255,255,255,0.4)",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.5pt",
+                          marginBottom: "1pt",
+                        }}
+                      >
+                        {group.category}
+                      </p>
+                    )}
+                    {group.skills.map((skill, i) => (
+                      <p
+                        key={i}
+                        style={{
+                          fontSize: "6.5pt",
+                          color: "rgba(255,255,255,0.8)",
+                          marginBottom: "2pt",
+                        }}
+                      >
+                        {skill}
+                      </p>
+                    ))}
+                  </div>
+                ))}
               </div>
             )}
           </div>
@@ -164,9 +216,7 @@ export default function ResumePreview({ data, templateId }: Props) {
         >
           {/* Header — skip name/contact in sidebar mode (shown in sidebar) */}
           {!style.sidebarColor && <PreviewHeader data={data} style={style} />}
-          {style.sidebarColor && (
-            <div style={{ marginBottom: "10pt" }} />
-          )}
+          {style.sidebarColor && <div style={{ marginBottom: "10pt" }} />}
           {order.map((id) => {
             if (id === "summary" && data.sections.summary && data.summary)
               return (

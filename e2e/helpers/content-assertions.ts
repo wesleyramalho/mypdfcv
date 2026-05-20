@@ -42,7 +42,9 @@ export function assertResumeContent(
 
   if (expected.projectNames) {
     for (const project of expected.projectNames) {
-      expect(contains(rawText, project), `${label}: should contain project "${project}"`).toBe(true);
+      expect(contains(rawText, project), `${label}: should contain project "${project}"`).toBe(
+        true,
+      );
     }
   }
 }

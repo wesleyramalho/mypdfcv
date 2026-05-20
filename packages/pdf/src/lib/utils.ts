@@ -8,13 +8,13 @@ export function generateId(): string {
 export function toLocaleTag(locale: string): string {
   const map: Record<string, string> = {
     "pt-BR": "pt-BR",
-    "hi": "hi-IN",
-    "zh": "zh-CN",
-    "ja": "ja-JP",
-    "de": "de-DE",
-    "es": "es-ES",
-    "it": "it-IT",
-    "en": "en-US",
+    hi: "hi-IN",
+    zh: "zh-CN",
+    ja: "ja-JP",
+    de: "de-DE",
+    es: "es-ES",
+    it: "it-IT",
+    en: "en-US",
   };
   return map[locale] ?? locale;
 }

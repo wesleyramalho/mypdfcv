@@ -5,7 +5,9 @@ interface SectionHeadingProps {
 
 export default function SectionHeading({ children, className = "" }: SectionHeadingProps) {
   return (
-    <h2 className={`font-sans font-bold uppercase tracking-widest text-xs text-text-subtle ${className}`}>
+    <h2
+      className={`text-text-subtle font-sans text-xs font-bold tracking-widest uppercase ${className}`}
+    >
       {children}
     </h2>
   );

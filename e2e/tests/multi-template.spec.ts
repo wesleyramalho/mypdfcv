@@ -1,9 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { seedResumes } from "../fixtures/seed-localstorage";
-import {
-  TEMPLATE_EXPECTATIONS,
-  type TestResume,
-} from "../fixtures/test-resume";
+import { TEMPLATE_EXPECTATIONS, type TestResume } from "../fixtures/test-resume";
 import { extractTextFromDownload, normalizeText, pdfContains } from "../helpers/pdf-extractor";
 
 /**
@@ -88,9 +85,7 @@ for (const templateId of templateIds) {
     });
 
     test("preview shows correct content", async ({ page }) => {
-      const previewText = normalizeText(
-        await page.locator(".bg-white.shadow-lg").innerText(),
-      );
+      const previewText = normalizeText(await page.locator(".bg-white.shadow-lg").innerText());
 
       expect(previewText).toContain(expected.fullName.toLowerCase());
       for (const company of expected.companies) {
@@ -123,9 +118,7 @@ for (const templateId of templateIds) {
     });
 
     test("preview and PDF are consistent", async ({ page }) => {
-      const previewText = normalizeText(
-        await page.locator(".bg-white.shadow-lg").innerText(),
-      );
+      const previewText = normalizeText(await page.locator(".bg-white.shadow-lg").innerText());
 
       const downloadPromise = page.waitForEvent("download");
       await page.getByRole("button", { name: /export/i }).click();

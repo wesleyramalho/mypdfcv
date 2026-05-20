@@ -43,18 +43,17 @@ async function improve(id: string, text: string, fieldType: WorkerRequest & { ty
 
   try {
     // For experience bullets, improve each line individually for better results
-    const lines = fieldType.fieldType === "experience"
-      ? text.split("\n").filter((l) => l.trim().length > 0)
-      : [text];
+    const lines =
+      fieldType.fieldType === "experience"
+        ? text.split("\n").filter((l) => l.trim().length > 0)
+        : [text];
 
     const improved: string[] = [];
     for (const line of lines) {
       const prompt = buildPrompt(fieldType.fieldType, line);
       const result = await generator(prompt, { max_new_tokens: 150 });
       const output = Array.isArray(result) ? result[0] : result;
-      improved.push(
-        (output as GenerationOutput).generated_text?.trim() ?? line
-      );
+      improved.push((output as GenerationOutput).generated_text?.trim() ?? line);
     }
 
     post({ type: "result", id, improved: improved.join("\n") });

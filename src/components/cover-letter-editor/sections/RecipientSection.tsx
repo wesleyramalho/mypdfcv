@@ -44,10 +44,10 @@ export default function RecipientSection({ coverLetterId, data }: Props) {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-sm font-sans uppercase tracking-widest text-foreground font-medium">
+      <h3 className="text-foreground font-sans text-sm font-medium tracking-widest uppercase">
         {t("recipient")}
       </h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <FormInput
           id="recipient.name"
           label={t("recipientName")}

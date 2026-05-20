@@ -10,11 +10,9 @@ const optionalEmail = z
 const optionalUrl = z
   .string()
   .max(200, "tooLong")
-  .refine(
-    (val) =>
-      val === "" || /^https?:\/\/.+/.test(val) || /^[\w-]+(\.[\w-]+)+/.test(val),
-    { message: "invalidUrl" },
-  );
+  .refine((val) => val === "" || /^https?:\/\/.+/.test(val) || /^[\w-]+(\.[\w-]+)+/.test(val), {
+    message: "invalidUrl",
+  });
 
 export const contactSchema = z.object({
   email: optionalEmail,
@@ -67,7 +65,6 @@ export const projectEntrySchema = z.object({
   startDate: z.string(),
   endDate: z.string().nullable(),
 });
-
 
 export type PersonalInfoFormValues = z.infer<typeof personalInfoSchema>;
 export type ExperienceEntryFormValues = z.infer<typeof experienceEntrySchema>;

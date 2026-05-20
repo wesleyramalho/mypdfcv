@@ -10,22 +10,18 @@ export default function CookiesPage() {
   const tConsent = useTranslations("consent");
 
   return (
-    <div className="min-h-screen bg-background flex flex-col overflow-x-hidden">
+    <div className="bg-background flex min-h-screen flex-col overflow-x-hidden">
       <SiteNav />
 
-      <main className="flex-1 max-w-3xl mx-auto px-6 pt-24 pb-12">
-        <h1 className="font-sans font-bold text-3xl text-foreground mb-2">
-          {t("title")}
-        </h1>
-        <p className="text-sm text-muted-foreground mb-8">
-          {t("lastUpdated")}
-        </p>
+      <main className="mx-auto max-w-3xl flex-1 px-6 pt-24 pb-12">
+        <h1 className="text-foreground mb-2 font-sans text-3xl font-bold">{t("title")}</h1>
+        <p className="text-muted-foreground mb-8 text-sm">{t("lastUpdated")}</p>
 
         <div className="prose prose-sm text-muted-foreground space-y-6">
           <section>
-            <h2 className="text-lg font-semibold text-foreground">{t("s1h")}</h2>
+            <h2 className="text-foreground text-lg font-semibold">{t("s1h")}</h2>
             <p>{t("s1intro")}</p>
-            <ul className="list-disc pl-5 space-y-1 mt-2">
+            <ul className="mt-2 list-disc space-y-1 pl-5">
               {(t.raw("s1items") as string[]).map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
@@ -36,9 +32,9 @@ export default function CookiesPage() {
           <Section heading={t("s2h")} content={t("s2")} />
 
           <section>
-            <h2 className="text-lg font-semibold text-foreground">{t("s3h")}</h2>
+            <h2 className="text-foreground text-lg font-semibold">{t("s3h")}</h2>
             <p>{t("s3intro")}</p>
-            <ul className="list-disc pl-5 space-y-2 mt-2">
+            <ul className="mt-2 list-disc space-y-2 pl-5">
               {(t.raw("s3items") as string[]).map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
@@ -50,7 +46,7 @@ export default function CookiesPage() {
           <Section heading={t("s5h")} content={t("s5")} />
 
           <section>
-            <h2 className="text-lg font-semibold text-foreground">
+            <h2 className="text-foreground text-lg font-semibold">
               {tConsent("managePreferences")}
             </h2>
             <p className="mb-3">{tConsent("managePreferencesDescription")}</p>
@@ -67,7 +63,7 @@ export default function CookiesPage() {
 function Section({ heading, content }: { heading: string; content: string }) {
   return (
     <section>
-      <h2 className="text-lg font-semibold text-foreground">{heading}</h2>
+      <h2 className="text-foreground text-lg font-semibold">{heading}</h2>
       <p>{content}</p>
     </section>
   );

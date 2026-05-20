@@ -27,7 +27,7 @@ import {
 const data = createEmptyResumeData();
 
 // List available templates
-console.log(TEMPLATES.map(t => t.id));
+console.log(TEMPLATES.map((t) => t.id));
 // ["modern", "classic", "minimal", "executive", "bold", "balanced", "clear"]
 
 // Get a specific template
@@ -62,15 +62,15 @@ const buffer = await generateResumePDF(resume, "en", getMessages("en"));
 
 ## Templates
 
-| ID | Name | Description |
-| --- | --- | --- |
-| `modern` | Modern | Clean layout with blue accents |
-| `classic` | Classic | Traditional centered layout, text-only |
-| `minimal` | Minimal | Sleek and minimal with green accents |
-| `executive` | Executive | Navy sidebar for corporate roles |
-| `bold` | Bold | Deep red header banner |
-| `balanced` | Balanced | Dark sidebar with centered photo |
-| `clear` | Clear | Teal header banner with right-aligned photo |
+| ID          | Name      | Description                                 |
+| ----------- | --------- | ------------------------------------------- |
+| `modern`    | Modern    | Clean layout with blue accents              |
+| `classic`   | Classic   | Traditional centered layout, text-only      |
+| `minimal`   | Minimal   | Sleek and minimal with green accents        |
+| `executive` | Executive | Navy sidebar for corporate roles            |
+| `bold`      | Bold      | Deep red header banner                      |
+| `balanced`  | Balanced  | Dark sidebar with centered photo            |
+| `clear`     | Clear     | Teal header banner with right-aligned photo |
 
 ## Exports
 

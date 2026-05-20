@@ -20,7 +20,10 @@ export default function PreviewSkills({ skillGroups, style: tmpl }: Props) {
           textTransform: "uppercase",
           letterSpacing: "1.5pt",
           color: hexWithAlpha(tmpl.accentColor, 0.4),
-          borderBottom: tmpl.sectionDivider === "line" ? `0.5pt solid ${hexWithAlpha(tmpl.accentColor, 0.15)}` : "none",
+          borderBottom:
+            tmpl.sectionDivider === "line"
+              ? `0.5pt solid ${hexWithAlpha(tmpl.accentColor, 0.15)}`
+              : "none",
           paddingBottom: "3pt",
           marginBottom: "6pt",
         }}

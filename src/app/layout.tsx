@@ -17,13 +17,7 @@ export const metadata: Metadata = {
   },
   description:
     "Build professional resumes with real-time preview, 7 templates, and free PDF export. No paywall, no sign-up. 100% free and open source.",
-  keywords: [
-    "resume builder",
-    "free resume",
-    "PDF resume",
-    "CV builder",
-    "open source resume",
-  ],
+  keywords: ["resume builder", "free resume", "PDF resume", "CV builder", "open source resume"],
   authors: [{ name: "MyPDFCV" }],
   openGraph: {
     type: "website",
@@ -60,14 +54,8 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   return (
-    <html
-      lang={locale}
-      className={`${plusJakartaSans.variable}`}
-      suppressHydrationWarning
-    >
-      <body className="min-h-screen bg-background text-foreground">
-        {children}
-      </body>
+    <html lang={locale} className={`${plusJakartaSans.variable}`} suppressHydrationWarning>
+      <body className="bg-background text-foreground min-h-screen">{children}</body>
     </html>
   );
 }

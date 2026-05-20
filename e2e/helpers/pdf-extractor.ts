@@ -6,9 +6,7 @@ import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
  * Extracts all text content from a Playwright Download object (PDF).
  * Uses pdfjs-dist directly for reliable parsing of modern PDFs.
  */
-export async function extractTextFromDownload(
-  download: Download,
-): Promise<string> {
+export async function extractTextFromDownload(download: Download): Promise<string> {
   const filePath = await download.path();
   if (!filePath) throw new Error("Download has no file path");
 

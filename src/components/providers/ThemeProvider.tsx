@@ -43,7 +43,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       toggleTheme: () => setThemeState((prev) => (prev === "light" ? "dark" : "light")),
       mounted,
     }),
-    [theme, mounted]
+    [theme, mounted],
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
@@ -56,4 +56,3 @@ export function useTheme() {
   }
   return context;
 }
-

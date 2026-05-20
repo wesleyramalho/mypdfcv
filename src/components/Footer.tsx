@@ -18,14 +18,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border px-6 md:px-12 py-8">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <footer className="border-border border-t px-6 py-8 md:px-12">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
         <a
           href="https://wesleyramalho.com"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("creator_site_clicked", { location: "footer" })}
-          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+          className="text-muted-foreground hover:text-foreground flex cursor-pointer items-center gap-2 text-sm transition-colors"
         >
           <Image
             src="/pixel-me.png"
@@ -37,12 +37,12 @@ export default function Footer() {
           {t("createdBy")}
         </a>
 
-        <nav className="grid grid-cols-2 gap-x-4 gap-y-2 justify-items-center md:flex md:items-center md:gap-4">
+        <nav className="grid grid-cols-2 justify-items-center gap-x-4 gap-y-2 md:flex md:items-center md:gap-4">
           {LEGAL_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer text-center"
+              className="text-muted-foreground hover:text-foreground cursor-pointer text-center text-xs transition-colors"
             >
               {link.label}
             </Link>
@@ -51,16 +51,16 @@ export default function Footer() {
             href="https://github.com/wesleyramalho/mypdfcv"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer text-center inline-flex items-center gap-1"
+            className="text-muted-foreground hover:text-foreground inline-flex cursor-pointer items-center gap-1 text-center text-xs transition-colors"
           >
-            <GitHubIcon className="w-3.5 h-3.5" />
+            <GitHubIcon className="h-3.5 w-3.5" />
             {t("openSource")}
           </a>
         </nav>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-4">
-        <p className="text-[10px] text-muted-foreground/60 text-center md:text-left">
+      <div className="mx-auto mt-4 max-w-7xl">
+        <p className="text-muted-foreground/60 text-center text-[10px] md:text-left">
           &copy; {new Date().getFullYear()} {t("copyright")}
         </p>
       </div>

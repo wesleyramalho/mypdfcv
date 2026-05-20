@@ -19,13 +19,11 @@ export interface ResumeTemplate {
   previewPhoto?: string;
 }
 
-
 export const TEMPLATES: ResumeTemplate[] = [
   {
     id: "modern",
     name: "Modern",
-    description:
-      "Clean layout with blue accents. Pre-filled for a software engineer.",
+    description: "Clean layout with blue accents. Pre-filled for a software engineer.",
     style: {
       accentColor: "#2563eb",
       headerLayout: "standard",
@@ -122,7 +120,8 @@ export const TEMPLATES: ResumeTemplate[] = [
         {
           id: generateId(),
           name: "Open-Source CLI Tool",
-          description: "Built a developer CLI for scaffolding Next.js projects with pre-configured CI/CD, linting, and testing setups. 1.2K+ GitHub stars.",
+          description:
+            "Built a developer CLI for scaffolding Next.js projects with pre-configured CI/CD, linting, and testing setups. 1.2K+ GitHub stars.",
           url: "github.com/alexchen/create-next-stack",
           technologies: ["TypeScript", "Node.js", "GitHub Actions"],
           startDate: "2022-01",
@@ -134,8 +133,7 @@ export const TEMPLATES: ResumeTemplate[] = [
   {
     id: "classic",
     name: "Classic",
-    description:
-      "Traditional centered layout, text-only. Pre-filled for a business analyst.",
+    description: "Traditional centered layout, text-only. Pre-filled for a business analyst.",
     style: {
       accentColor: "#111827",
       headerLayout: "centered",
@@ -226,7 +224,8 @@ export const TEMPLATES: ResumeTemplate[] = [
         {
           id: generateId(),
           name: "Customer Churn Prediction Model",
-          description: "Developed a predictive analytics model that identified at-risk customers with 87% accuracy, enabling proactive retention strategies that reduced churn by 15%.",
+          description:
+            "Developed a predictive analytics model that identified at-risk customers with 87% accuracy, enabling proactive retention strategies that reduced churn by 15%.",
           technologies: ["Python", "Tableau", "SQL"],
           startDate: "2022-03",
           endDate: "2022-09",
@@ -237,8 +236,7 @@ export const TEMPLATES: ResumeTemplate[] = [
   {
     id: "minimal",
     name: "Minimal",
-    description:
-      "Sleek and minimal with green accents. Pre-filled for a designer.",
+    description: "Sleek and minimal with green accents. Pre-filled for a designer.",
     style: {
       accentColor: "#059669",
       headerLayout: "standard",
@@ -422,12 +420,7 @@ export const TEMPLATES: ResumeTemplate[] = [
         {
           id: generateId(),
           category: "HR",
-          skills: [
-            "Recruitment",
-            "HR Management",
-            "Employee Relations",
-            "Talent Acquisition",
-          ],
+          skills: ["Recruitment", "HR Management", "Employee Relations", "Talent Acquisition"],
         },
         {
           id: generateId(),
@@ -439,7 +432,8 @@ export const TEMPLATES: ResumeTemplate[] = [
         {
           id: generateId(),
           name: "Employer Branding Initiative",
-          description: "Led a company-wide employer branding project that revamped career pages and social presence, increasing qualified applications by 40% within 6 months.",
+          description:
+            "Led a company-wide employer branding project that revamped career pages and social presence, increasing qualified applications by 40% within 6 months.",
           technologies: ["LinkedIn Recruiter", "Greenhouse", "Canva"],
           startDate: "2023-01",
           endDate: "2023-07",
@@ -553,7 +547,8 @@ export const TEMPLATES: ResumeTemplate[] = [
         {
           id: generateId(),
           name: "Quarterly Forecast Dashboard",
-          description: "Built an automated financial forecasting dashboard in Power BI that consolidated data from 5 departments, reducing report generation time from 3 days to 2 hours.",
+          description:
+            "Built an automated financial forecasting dashboard in Power BI that consolidated data from 5 departments, reducing report generation time from 3 days to 2 hours.",
           technologies: ["Power BI", "Excel VBA", "SQL Server"],
           startDate: "2023-06",
           endDate: "2023-12",
@@ -564,8 +559,7 @@ export const TEMPLATES: ResumeTemplate[] = [
   {
     id: "balanced",
     name: "Balanced",
-    description:
-      "Dark sidebar accent with centered photo. Great for trades and hands-on roles.",
+    description: "Dark sidebar accent with centered photo. Great for trades and hands-on roles.",
     style: {
       accentColor: "#1e293b",
       headerLayout: "centered",
@@ -663,7 +657,8 @@ export const TEMPLATES: ResumeTemplate[] = [
         {
           id: generateId(),
           name: "Custom Kitchen Renovation",
-          description: "Designed and built a full kitchen renovation including custom cabinetry, hardwood flooring, and structural modifications. Completed on time and 10% under budget.",
+          description:
+            "Designed and built a full kitchen renovation including custom cabinetry, hardwood flooring, and structural modifications. Completed on time and 10% under budget.",
           technologies: ["AutoCAD", "Woodworking", "Project Estimation"],
           startDate: "2023-03",
           endDate: "2023-08",
@@ -674,8 +669,7 @@ export const TEMPLATES: ResumeTemplate[] = [
   {
     id: "clear",
     name: "Clear",
-    description:
-      "Teal header banner with right-aligned photo. Clean and modern.",
+    description: "Teal header banner with right-aligned photo. Clean and modern.",
     style: {
       accentColor: "#0f766e",
       headerLayout: "standard",
@@ -774,7 +768,8 @@ export const TEMPLATES: ResumeTemplate[] = [
         {
           id: generateId(),
           name: "Office Digitization Project",
-          description: "Led the transition from paper-based to digital filing systems across 3 departments, training 25+ staff members and reducing document retrieval time by 70%.",
+          description:
+            "Led the transition from paper-based to digital filing systems across 3 departments, training 25+ staff members and reducing document retrieval time by 70%.",
           technologies: ["Google Workspace", "DocuSign", "Notion"],
           startDate: "2023-02",
           endDate: "2023-06",

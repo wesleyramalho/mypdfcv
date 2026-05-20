@@ -38,11 +38,13 @@ export default function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className="flex items-center gap-1.5 rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+        className="text-muted-foreground hover:text-foreground flex cursor-pointer items-center gap-1.5 rounded-md px-2 py-1.5 text-sm transition-colors"
         aria-label="Switch language"
       >
         <span className="text-base leading-none">{current.flag}</span>
-        <span className="uppercase text-xs font-medium">{current.code.split("-")[0].toUpperCase()}</span>
+        <span className="text-xs font-medium uppercase">
+          {current.code.split("-")[0].toUpperCase()}
+        </span>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="bg-card border-border min-w-[180px]">
@@ -50,7 +52,7 @@ export default function LanguageSwitcher() {
           <DropdownMenuItem
             key={lang.code}
             onClick={() => selectLocale(lang.code)}
-            className={`gap-2.5 ${locale === lang.code ? "font-medium bg-surface-strong" : ""}`}
+            className={`gap-2.5 ${locale === lang.code ? "bg-surface-strong font-medium" : ""}`}
           >
             <span className="text-base leading-none">{lang.flag}</span>
             <span>{lang.label}</span>

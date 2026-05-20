@@ -28,9 +28,7 @@ export default function LandingHero() {
     if (hasAnimated.current) return;
     hasAnimated.current = true;
 
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
     gsap.from(".hero-char", {
@@ -76,8 +74,7 @@ export default function LandingHero() {
     }
 
     if (heroCardsRef.current) {
-      const cards =
-        heroCardsRef.current.querySelectorAll<HTMLElement>(".hero-card");
+      const cards = heroCardsRef.current.querySelectorAll<HTMLElement>(".hero-card");
       if (cards.length >= 2) {
         const card1 = cards[0];
         const card2 = cards[1];
@@ -97,9 +94,9 @@ export default function LandingHero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 px-6 md:px-12 overflow-hidden">
+    <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-20 md:px-12">
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
             "radial-gradient(ellipse 80% 60% at 60% 40%, color-mix(in srgb, var(--brand-primary) 18%, transparent) 0%, transparent 70%)",
@@ -107,10 +104,10 @@ export default function LandingHero() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
         <div>
           <h1
-            className="font-sans font-bold leading-[1.05] tracking-tight mb-6 [perspective:800px] overflow-hidden"
+            className="mb-6 overflow-hidden font-sans leading-[1.05] font-bold tracking-tight [perspective:800px]"
             style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)" }}
           >
             {HEADLINE_WORDS.map((word, wi) => (
@@ -119,20 +116,13 @@ export default function LandingHero() {
                   className={`inline-block whitespace-nowrap ${word.teal ? "text-brand-primary" : "text-foreground"}`}
                 >
                   {word.text.split("").map((char, ci) => (
-                    <span
-                      key={ci}
-                      className="hero-char inline-block"
-                      aria-hidden="true"
-                    >
+                    <span key={ci} className="hero-char inline-block" aria-hidden="true">
                       {char}
                     </span>
                   ))}
                 </span>
                 {wi < HEADLINE_WORDS.length - 1 && (
-                  <span
-                    className="hero-char inline-block text-foreground"
-                    aria-hidden="true"
-                  >
+                  <span className="hero-char text-foreground inline-block" aria-hidden="true">
                     &nbsp;
                   </span>
                 )}
@@ -141,7 +131,7 @@ export default function LandingHero() {
             <span className="sr-only">{t("headlineSr")}</span>
           </h1>
 
-          <p className="hero-subtitle text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed mb-8">
+          <p className="hero-subtitle text-muted-foreground mb-8 max-w-lg text-base leading-relaxed md:text-lg">
             {t("subtitle")}
           </p>
 
@@ -149,7 +139,7 @@ export default function LandingHero() {
             <Button
               size="lg"
               onClick={() => router.push("/dashboard")}
-              className="bg-foreground text-background hover:bg-foreground/90 font-sans text-xs uppercase tracking-widest"
+              className="bg-foreground text-background hover:bg-foreground/90 font-sans text-xs tracking-widest uppercase"
             >
               {t("cta")}
             </Button>
@@ -157,64 +147,58 @@ export default function LandingHero() {
         </div>
 
         <div ref={mockupRef} className="hero-mockup hidden lg:block">
-          <div className="bg-surface-soft rounded-xl border border-border p-3 shadow-lg animate-glow-border">
-            <div className="flex gap-2 h-[340px]">
-              <div className="w-[30%] bg-card rounded-lg border border-border p-3 flex flex-col gap-1.5">
-                <div className="h-1.5 bg-surface-strong rounded w-20 mb-3" />
+          <div className="bg-surface-soft border-border animate-glow-border rounded-xl border p-3 shadow-lg">
+            <div className="flex h-[340px] gap-2">
+              <div className="bg-card border-border flex w-[30%] flex-col gap-1.5 rounded-lg border p-3">
+                <div className="bg-surface-strong mb-3 h-1.5 w-20 rounded" />
                 {[User, Briefcase, GraduationCap].map((Icon, i) => (
                   <div
                     key={i}
                     className={`flex items-center gap-2 rounded-md px-2 py-2 ${i === 0 ? "bg-surface-strong" : ""}`}
                   >
                     <Icon
-                      className="w-3.5 h-3.5 text-muted-foreground shrink-0"
+                      className="text-muted-foreground h-3.5 w-3.5 shrink-0"
                       strokeWidth={1.5}
                     />
-                    <div className="h-1.5 bg-surface-strong rounded flex-1" />
+                    <div className="bg-surface-strong h-1.5 flex-1 rounded" />
                   </div>
                 ))}
               </div>
 
-              <div className="flex-1 flex flex-col gap-2">
-                <div className="bg-card rounded-lg border border-border p-3">
-                  <div className="flex items-start gap-2 mb-2">
-                    <div className="w-px h-8 bg-foreground/20 rounded-full" />
+              <div className="flex flex-1 flex-col gap-2">
+                <div className="bg-card border-border rounded-lg border p-3">
+                  <div className="mb-2 flex items-start gap-2">
+                    <div className="bg-foreground/20 h-8 w-px rounded-full" />
                     <div className="flex-1 space-y-1.5">
-                      <div className="h-1.5 bg-surface-strong rounded w-24" />
-                      <div className="h-3 bg-foreground/70 rounded w-40" />
-                      <div className="h-1.5 bg-surface-strong rounded w-full" />
-                      <div className="h-1.5 bg-surface-strong rounded w-4/5" />
+                      <div className="bg-surface-strong h-1.5 w-24 rounded" />
+                      <div className="bg-foreground/70 h-3 w-40 rounded" />
+                      <div className="bg-surface-strong h-1.5 w-full rounded" />
+                      <div className="bg-surface-strong h-1.5 w-4/5 rounded" />
                     </div>
                   </div>
                 </div>
 
                 <div ref={heroCardsRef} className="flex flex-col gap-2">
-                  <div className="hero-card bg-accent/40 rounded-lg border border-brand-primary/20 p-3 relative">
-                    <div className="h-1.5 bg-muted-foreground/20 rounded w-16 mb-2" />
-                    <div className="h-3 bg-foreground/50 rounded w-36 mb-1.5" />
-                    <div className="h-1.5 bg-muted-foreground/20 rounded w-3/4" />
+                  <div className="hero-card bg-accent/40 border-brand-primary/20 relative rounded-lg border p-3">
+                    <div className="bg-muted-foreground/20 mb-2 h-1.5 w-16 rounded" />
+                    <div className="bg-foreground/50 mb-1.5 h-3 w-36 rounded" />
+                    <div className="bg-muted-foreground/20 h-1.5 w-3/4 rounded" />
                     <div className="absolute top-3 right-3 grid grid-cols-2 gap-[3px]">
                       {Array.from({ length: 6 }).map((_, i) => (
-                        <div
-                          key={i}
-                          className="w-1 h-1 rounded-full bg-muted-foreground/40"
-                        />
+                        <div key={i} className="bg-muted-foreground/40 h-1 w-1 rounded-full" />
                       ))}
                     </div>
                   </div>
-                  <div className="hero-card bg-card rounded-lg border border-border p-3">
-                    <div className="h-1.5 bg-surface-strong rounded w-20 mb-2" />
-                    <div className="h-2.5 bg-surface-strong rounded w-28" />
+                  <div className="hero-card bg-card border-border rounded-lg border p-3">
+                    <div className="bg-surface-strong mb-2 h-1.5 w-20 rounded" />
+                    <div className="bg-surface-strong h-2.5 w-28 rounded" />
                   </div>
                 </div>
 
-                <div className="flex justify-end mt-auto">
-                  <div className="flex items-center gap-1.5 bg-surface-soft border border-border rounded-lg px-3 py-1.5">
-                    <Eye
-                      className="w-3 h-3 text-foreground"
-                      strokeWidth={1.5}
-                    />
-                    <span className="text-[9px] font-sans uppercase tracking-widest text-foreground">
+                <div className="mt-auto flex justify-end">
+                  <div className="bg-surface-soft border-border flex items-center gap-1.5 rounded-lg border px-3 py-1.5">
+                    <Eye className="text-foreground h-3 w-3" strokeWidth={1.5} />
+                    <span className="text-foreground font-sans text-[9px] tracking-widest uppercase">
                       {t("livePreview")}
                     </span>
                   </div>

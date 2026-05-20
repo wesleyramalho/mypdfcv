@@ -7,12 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useResumeStore } from "@/store/useResumeStore";
 import { importResumeFromFile } from "@/lib/resumeImport";
 import { toast } from "sonner";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface Props {
   resumeId: string;
@@ -44,9 +39,7 @@ export default function ImportResumeIntoButton({ resumeId }: Props) {
       const edu = data.education?.length ?? 0;
       toast.success(t("importSuccess", { exp, edu }));
     } catch (err) {
-      toast.error(
-        err instanceof Error ? err.message : t("parseFailed"),
-      );
+      toast.error(err instanceof Error ? err.message : t("parseFailed"));
     } finally {
       setImporting(false);
     }
@@ -71,13 +64,9 @@ export default function ImportResumeIntoButton({ resumeId }: Props) {
                 size="sm"
                 disabled={importing}
                 onClick={() => fileInputRef.current?.click()}
-                className="font-sans text-xs uppercase tracking-widest gap-1.5"
+                className="gap-1.5 font-sans text-xs tracking-widest uppercase"
               >
-                {importing ? (
-                  <Loader2 className="animate-spin" />
-                ) : (
-                  <Upload />
-                )}
+                {importing ? <Loader2 className="animate-spin" /> : <Upload />}
                 <span className="hidden sm:inline">
                   {importing ? tc("importing") : tc("import")}
                 </span>

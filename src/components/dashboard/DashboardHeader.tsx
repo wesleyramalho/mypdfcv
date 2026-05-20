@@ -31,7 +31,11 @@ import { LINKEDIN_OAUTH_ENABLED } from "@/lib/featureFlags";
 import { toast } from "sonner";
 import { track } from "@/lib/analytics";
 
-export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?: "resumes" | "cover-letters" }) {
+export default function DashboardHeader({
+  activeTab = "resumes",
+}: {
+  activeTab?: "resumes" | "cover-letters";
+}) {
   const { data: session, status } = useSession();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -48,9 +52,7 @@ export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?:
   const mobileFileInputRef = useRef<HTMLInputElement>(null);
   const [, setMobileImporting] = useState(false);
 
-  async function handleMobileFileImport(
-    e: React.ChangeEvent<HTMLInputElement>,
-  ) {
+  async function handleMobileFileImport(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
     e.target.value = "";
@@ -65,16 +67,17 @@ export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?:
       track("file_imported", { fileType: file.name.split(".").pop() });
       const exp = data.experience?.length ?? 0;
       const edu = data.education?.length ?? 0;
-      const skills =
-        data.skillGroups?.reduce((n, g) => n + g.skills.length, 0) ?? 0;
+      const skills = data.skillGroups?.reduce((n, g) => n + g.skills.length, 0) ?? 0;
       toast.success(
-        t("importSuccess", { exp, edu, skills: skills > 0 ? t("skillsSuffix", { count: skills }) : "" }),
+        t("importSuccess", {
+          exp,
+          edu,
+          skills: skills > 0 ? t("skillsSuffix", { count: skills }) : "",
+        }),
       );
       router.push(`/editor/${resume.id}`);
     } catch (err) {
-      toast.error(
-        err instanceof Error ? err.message : t("parseFailed"),
-      );
+      toast.error(err instanceof Error ? err.message : t("parseFailed"));
     } finally {
       setMobileImporting(false);
     }
@@ -90,15 +93,12 @@ export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?:
     }
     const tmpl = getTemplate(templateId);
     const sampleData = getLocalizedSampleData(templateId, locale) ?? tmpl?.sampleData;
-    const resume = createResume(
-      tmpl?.name ?? t("untitledResume"),
-      sampleData,
-      templateId,
-    );
+    const resume = createResume(tmpl?.name ?? t("untitledResume"), sampleData, templateId);
     router.push(`/editor/${resume.id}`);
   }
 
-  const callbackUrl = locale === "en" ? "/dashboard?intent=import" : `/${locale}/dashboard?intent=import`;
+  const callbackUrl =
+    locale === "en" ? "/dashboard?intent=import" : `/${locale}/dashboard?intent=import`;
 
   const handleLinkedInImport = useCallback(
     async (consumeIntent: boolean) => {
@@ -129,9 +129,7 @@ export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?:
         track("linkedin_import");
         router.push(`/editor/${importedResume.id}`);
       } catch (error) {
-        setImportError(
-          error instanceof Error ? error.message : t("importFailed"),
-        );
+        setImportError(error instanceof Error ? error.message : t("importFailed"));
         if (consumeIntent) {
           router.replace("/dashboard");
         }
@@ -160,13 +158,13 @@ export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?:
       .toUpperCase() ?? "?";
 
   return (
-    <header className="relative flex flex-col sm:flex-row sm:items-start sm:justify-between mb-12 gap-4">
+    <header className="relative mb-12 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
       <div>
-        <p className="font-sans text-xs uppercase tracking-[0.2em] text-text-subtle mb-2">
+        <p className="text-text-subtle mb-2 font-sans text-xs tracking-[0.2em] uppercase">
           {t("portfolioOverview")}
         </p>
         <h1
-          className="font-sans font-bold text-foreground"
+          className="text-foreground font-sans font-bold"
           style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
         >
           {activeTab === "cover-letters" ? t("coverLetterTitle") : t("title")}
@@ -191,31 +189,43 @@ export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?:
               <Button
                 {...props}
                 size="sm"
-                className="bg-foreground text-background hover:bg-foreground/90 font-sans text-xs uppercase tracking-widest gap-2"
+                className="bg-foreground text-background hover:bg-foreground/90 gap-2 font-sans text-xs tracking-widest uppercase"
               >
-                <Plus className="w-4 h-4" />
+                <Plus className="h-4 w-4" />
                 {t("createNew")}
-                <ChevronDown className="w-3 h-3 opacity-60" />
+                <ChevronDown className="h-3 w-3 opacity-60" />
               </Button>
             )}
           />
           <DropdownMenuContent align="end" className="bg-card border-border min-w-55">
             <DropdownMenuItem onClick={() => setPickerOpen(true)} className="gap-2">
-              <Palette className="w-4 h-4" />
+              <Palette className="h-4 w-4" />
               {t("fromTemplate")}
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => { const r = createResume(); router.push(`/editor/${r.id}`); }} className="gap-2">
-              <Plus className="w-4 h-4" />
+            <DropdownMenuItem
+              onClick={() => {
+                const r = createResume();
+                router.push(`/editor/${r.id}`);
+              }}
+              className="gap-2"
+            >
+              <Plus className="h-4 w-4" />
               {t("blankResume")}
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => { const cl = createCoverLetter(); router.push(`/cover-letter/${cl.id}`); }} className="gap-2">
-              <FileText className="w-4 h-4" />
+            <DropdownMenuItem
+              onClick={() => {
+                const cl = createCoverLetter();
+                router.push(`/cover-letter/${cl.id}`);
+              }}
+              className="gap-2"
+            >
+              <FileText className="h-4 w-4" />
               {t("blankCoverLetter")}
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => mobileFileInputRef.current?.click()} className="gap-2">
-              <Upload className="w-4 h-4" />
+              <Upload className="h-4 w-4" />
               {t("importFromFile")}
             </DropdownMenuItem>
             {LINKEDIN_OAUTH_ENABLED && (
@@ -230,10 +240,18 @@ export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?:
                 }}
                 className="gap-2"
               >
-                <LinkedInIcon className="w-4 h-4" />
+                <LinkedInIcon className="h-4 w-4" />
                 <div className="flex flex-col">
-                  <span>{isImporting ? tc("importing") : session ? t("importFromLinkedIn") : t("signInLinkedIn")}</span>
-                  <span className="text-[10px] text-muted-foreground font-normal">{tc("linkedInLimited")}</span>
+                  <span>
+                    {isImporting
+                      ? tc("importing")
+                      : session
+                        ? t("importFromLinkedIn")
+                        : t("signInLinkedIn")}
+                  </span>
+                  <span className="text-muted-foreground text-[10px] font-normal">
+                    {tc("linkedInLimited")}
+                  </span>
                 </div>
               </DropdownMenuItem>
             )}
@@ -242,13 +260,13 @@ export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?:
 
         {session && (
           <DropdownMenu>
-            <DropdownMenuTrigger className="w-9 h-9 rounded-full bg-surface-soft border border-border flex items-center justify-center font-sans text-xs font-bold text-foreground hover:bg-surface-strong transition-colors overflow-hidden">
+            <DropdownMenuTrigger className="bg-surface-soft border-border text-foreground hover:bg-surface-strong flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border font-sans text-xs font-bold transition-colors">
               {session.user?.image ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={session.user.image}
                   alt={session.user.name ?? "User"}
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               ) : (
                 initials
@@ -259,7 +277,7 @@ export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?:
                 onClick={() => signOut({ callbackUrl: "/" })}
                 className="text-destructive focus:text-destructive gap-2"
               >
-                <LogOut className="w-4 h-4" />
+                <LogOut className="h-4 w-4" />
                 {t("signOut")}
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -267,7 +285,7 @@ export default function DashboardHeader({ activeTab = "resumes" }: { activeTab?:
         )}
       </div>
       {importError ? (
-        <p className="absolute -bottom-6 right-0 text-xs text-destructive font-sans">
+        <p className="text-destructive absolute right-0 -bottom-6 font-sans text-xs">
           {importError}
         </p>
       ) : null}

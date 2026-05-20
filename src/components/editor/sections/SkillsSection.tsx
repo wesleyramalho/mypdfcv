@@ -39,7 +39,14 @@ export default function SkillsSection({ resumeId, data }: Props) {
 
   const lastSyncedJson = useRef(JSON.stringify(data.skillGroups));
 
-  const { register, control, watch, setValue, reset, formState: { errors } } = useForm<FormValues>({
+  const {
+    register,
+    control,
+    watch,
+    setValue,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: { skillGroups: structuredClone(data.skillGroups) },
     mode: "onTouched",
@@ -54,7 +61,9 @@ export default function SkillsSection({ resumeId, data }: Props) {
       debounceRef.current = setTimeout(() => {
         if (values.skillGroups) {
           lastSyncedJson.current = JSON.stringify(values.skillGroups);
-          updateResumeRef.current(resumeIdRef.current, { skillGroups: structuredClone(values.skillGroups) as ResumeData["skillGroups"] });
+          updateResumeRef.current(resumeIdRef.current, {
+            skillGroups: structuredClone(values.skillGroups) as ResumeData["skillGroups"],
+          });
         }
       }, 300);
     });
@@ -82,7 +91,10 @@ export default function SkillsSection({ resumeId, data }: Props) {
 
   function removeSkill(groupIdx: number, skill: string) {
     const current = watch(`skillGroups.${groupIdx}.skills`) ?? [];
-    setValue(`skillGroups.${groupIdx}.skills`, current.filter((s) => s !== skill));
+    setValue(
+      `skillGroups.${groupIdx}.skills`,
+      current.filter((s) => s !== skill),
+    );
   }
 
   const totalSkills = fields.reduce((sum, _, idx) => {
@@ -92,17 +104,17 @@ export default function SkillsSection({ resumeId, data }: Props) {
 
   return (
     <AccordionItem value="skills" className="border-border">
-      <AccordionTrigger className="text-sm font-sans uppercase tracking-widest text-foreground hover:no-underline hover:text-foreground/80 py-4">
+      <AccordionTrigger className="text-foreground hover:text-foreground/80 py-4 font-sans text-sm tracking-widest uppercase hover:no-underline">
         {t("skills")}
-        <span className="ml-auto mr-2 text-xs text-muted-foreground font-normal">
+        <span className="text-muted-foreground mr-2 ml-auto text-xs font-normal">
           {t("skillsCount", { count: totalSkills })}
         </span>
       </AccordionTrigger>
-      <AccordionContent className="pb-6 space-y-4">
+      <AccordionContent className="space-y-4 pb-6">
         {fields.map((field, idx) => {
           const skills = watch(`skillGroups.${idx}.skills`) ?? [];
           return (
-            <div key={field.id} className="border border-border bg-card rounded-lg p-4 space-y-3">
+            <div key={field.id} className="border-border bg-card space-y-3 rounded-lg border p-4">
               <div className="flex items-center gap-2">
                 <FormInput
                   id={`skillCat-${field.id}`}
@@ -115,10 +127,10 @@ export default function SkillsSection({ resumeId, data }: Props) {
                 />
                 <button
                   onClick={() => remove(idx)}
-                  className="text-muted-foreground hover:text-destructive transition-colors mt-5"
+                  className="text-muted-foreground hover:text-destructive mt-5 transition-colors"
                   aria-label={t("removeSkillGroup")}
                 >
-                  <Trash2 className="w-4 h-4" />
+                  <Trash2 className="h-4 w-4" />
                 </button>
               </div>
 
@@ -127,7 +139,7 @@ export default function SkillsSection({ resumeId, data }: Props) {
                 {skills.map((skill, si) => (
                   <span
                     key={`${si}-${skill}`}
-                    className="flex items-center gap-1 px-2 py-0.5 bg-surface-soft border border-border rounded text-xs font-sans"
+                    className="bg-surface-soft border-border flex items-center gap-1 rounded border px-2 py-0.5 font-sans text-xs"
                   >
                     {skill}
                     <button
@@ -135,7 +147,7 @@ export default function SkillsSection({ resumeId, data }: Props) {
                       className="text-muted-foreground hover:text-destructive transition-colors"
                       aria-label={`Remove ${skill}`}
                     >
-                      <X className="w-3 h-3" />
+                      <X className="h-3 w-3" />
                     </button>
                   </span>
                 ))}
@@ -146,7 +158,9 @@ export default function SkillsSection({ resumeId, data }: Props) {
                 <input
                   type="text"
                   value={newSkills[field.id] ?? ""}
-                  onChange={(e) => setNewSkills((prev) => ({ ...prev, [field.id]: e.target.value }))}
+                  onChange={(e) =>
+                    setNewSkills((prev) => ({ ...prev, [field.id]: e.target.value }))
+                  }
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       e.preventDefault();
@@ -155,15 +169,15 @@ export default function SkillsSection({ resumeId, data }: Props) {
                   }}
                   maxLength={50}
                   placeholder={t("typeSkillEnter")}
-                  className="flex-1 bg-input border border-border rounded-md px-3 py-1.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-ring transition-colors"
+                  className="bg-input border-border text-foreground placeholder:text-muted-foreground focus:border-ring flex-1 rounded-md border px-3 py-1.5 text-xs transition-colors focus:outline-none"
                 />
                 <Button
                   size="sm"
                   variant="ghost"
                   onClick={() => addSkill(idx)}
-                  className="border border-border hover:bg-muted h-8 text-xs"
+                  className="border-border hover:bg-muted h-8 border text-xs"
                 >
-                  <Plus className="w-3.5 h-3.5" />
+                  <Plus className="h-3.5 w-3.5" />
                 </Button>
               </div>
             </div>
@@ -173,9 +187,9 @@ export default function SkillsSection({ resumeId, data }: Props) {
         <Button
           variant="ghost"
           onClick={() => append({ id: generateId(), category: "", skills: [] })}
-          className="w-full border border-dashed border-border hover:border-brand-secondary/60 hover:bg-surface-soft font-sans text-xs uppercase tracking-widest gap-2 h-10"
+          className="border-border hover:border-brand-secondary/60 hover:bg-surface-soft h-10 w-full gap-2 border border-dashed font-sans text-xs tracking-widest uppercase"
         >
-          <Plus className="w-4 h-4" />
+          <Plus className="h-4 w-4" />
           {t("addSkillGroup")}
         </Button>
       </AccordionContent>

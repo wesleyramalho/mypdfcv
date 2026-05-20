@@ -12,14 +12,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 
-const FAQ_KEYS = [
-  "WhatIs",
-  "Free",
-  "Templates",
-  "Privacy",
-  "Export",
-  "Customization",
-] as const;
+const FAQ_KEYS = ["WhatIs", "Free", "Templates", "Privacy", "Export", "Customization"] as const;
 
 export default function LandingFAQ() {
   const t = useTranslations("landing");
@@ -27,9 +20,7 @@ export default function LandingFAQ() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
     gsap.fromTo(
@@ -69,12 +60,12 @@ export default function LandingFAQ() {
   }, []);
 
   return (
-    <section className="py-24 px-6 md:px-12">
-      <div className="max-w-3xl mx-auto">
+    <section className="px-6 py-24 md:px-12">
+      <div className="mx-auto max-w-3xl">
         <div className="faq-heading mb-12 text-center">
           <SectionHeading className="mb-3">{t("faqLabel")}</SectionHeading>
           <h3
-            className="font-sans font-bold text-foreground"
+            className="text-foreground font-sans font-bold"
             style={{ fontSize: "clamp(1.6rem, 3vw, 3rem)" }}
           >
             {t("faqHeading")}
@@ -83,18 +74,12 @@ export default function LandingFAQ() {
 
         <Accordion>
           {FAQ_KEYS.map((key) => (
-            <AccordionItem
-              key={key}
-              value={key}
-              className="faq-item opacity-0 border-border"
-            >
-              <AccordionTrigger className="text-base py-4 font-medium">
+            <AccordionItem key={key} value={key} className="faq-item border-border opacity-0">
+              <AccordionTrigger className="py-4 text-base font-medium">
                 {t(`faq${key}Q`)}
               </AccordionTrigger>
               <AccordionContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t(`faq${key}A`)}
-                </p>
+                <p className="text-muted-foreground leading-relaxed">{t(`faq${key}A`)}</p>
               </AccordionContent>
             </AccordionItem>
           ))}

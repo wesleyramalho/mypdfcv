@@ -1,0 +1,7 @@
+{
+  "extends": ["@commitlint/config-conventional"],
+  "rules": {
+    "scope-enum": [2, "always", ["i18n", "pdf-core", "ui", "app", "e2e", "ci", "deps"]],
+    "body-max-line-length": [1, "always", 200]
+  }
+}
