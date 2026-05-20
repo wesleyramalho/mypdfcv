@@ -6,6 +6,9 @@
 /** Public flag — readable from both client and server. */
 export const LINKEDIN_OAUTH_ENABLED = process.env.NEXT_PUBLIC_LINKEDIN_OAUTH_ENABLED === "true";
 
+/** Public flag — gates the YouTube subscribe prompt shown after PDF export. */
+export const YOUTUBE_PROMPT_ENABLED = process.env.NEXT_PUBLIC_YOUTUBE_PROMPT_ENABLED === "true";
+
 /**
  * Server-side gate for LinkedIn integration. The flag must be on AND OAuth
  * credentials must be present, otherwise the server treats LinkedIn as
