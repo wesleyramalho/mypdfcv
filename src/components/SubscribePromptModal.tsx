@@ -19,6 +19,7 @@ import {
   hasShownPrompt,
   markPromptShown,
 } from "@/lib/subscribePrompt";
+import { YOUTUBE_PROMPT_ENABLED } from "@/lib/featureFlags";
 
 export default function SubscribePromptModal() {
   const [open, setOpen] = useState(false);
@@ -26,6 +27,7 @@ export default function SubscribePromptModal() {
 
   useEffect(() => {
     function handleExportSuccess() {
+      if (!YOUTUBE_PROMPT_ENABLED) return;
       if (hasShownPrompt()) return;
       setOpen(true);
       track("youtube_prompt_shown");
