@@ -34,17 +34,17 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Build packages
+        run: npm run build:packages
+
       - name: Type check
         run: npm run typecheck
 
       - name: Unit tests
         run: npm run test
 
-      - name: Build packages
-        run: npm run build:packages
-
       - name: Build app
-        run: npm run build
+        run: npx next build
 
   e2e:
     name: E2E Tests
