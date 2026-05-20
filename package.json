@@ -30,7 +30,7 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@hookform/resolvers": "^5.2.2",
-    "@huggingface/transformers": "^3.8.1",
+    "@huggingface/transformers": "^4.2.0",
     "@mypdfcv/i18n": "*",
     "@mypdfcv/pdf-core": "*",
     "@react-pdf/renderer": "^4.3.2",
