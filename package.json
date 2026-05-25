@@ -43,7 +43,7 @@
     "next": "16.2.1",
     "next-auth": "^5.0.0-beta.30",
     "next-intl": "^4.8.3",
-    "pdfjs-dist": "^5.5.207",
+    "pdfjs-dist": "^5.7.284",
     "posthog-js": "^1.364.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",
