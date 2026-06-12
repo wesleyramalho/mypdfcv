@@ -7,10 +7,6 @@ import { useResumeStore } from "@/store/useResumeStore";
 import { track } from "@/lib/analytics";
 import { notifyExportSuccess } from "@/lib/subscribePrompt";
 
-interface PDFErrorResponse {
-  error?: string;
-}
-
 export function useExportPDF() {
   const [exporting, setExporting] = useState(false);
   const incrementExportCount = useResumeStore((s) => s.incrementExportCount);
@@ -19,16 +15,8 @@ export function useExportPDF() {
   async function exportPDF(resume: Resume) {
     setExporting(true);
     try {
-      const res = await fetch(`/api/pdf/${resume.id}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...resume, locale }),
-      });
-      if (!res.ok) {
-        const body = (await res.json().catch(() => ({}))) as PDFErrorResponse;
-        throw new Error(body.error ?? `PDF generation failed (${res.status})`);
-      }
-      const blob = await res.blob();
+      const { generateResumePDFBlob } = await import("@mypdfcv/pdf-core/client");
+      const blob = await generateResumePDFBlob(resume, locale);
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
