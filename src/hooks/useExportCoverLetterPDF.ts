@@ -7,10 +7,6 @@ import { useCoverLetterStore } from "@/store/useCoverLetterStore";
 import { track } from "@/lib/analytics";
 import { notifyExportSuccess } from "@/lib/subscribePrompt";
 
-interface PDFErrorResponse {
-  error?: string;
-}
-
 export function useExportCoverLetterPDF() {
   const [exporting, setExporting] = useState(false);
   const incrementExportCount = useCoverLetterStore((s) => s.incrementExportCount);
@@ -19,16 +15,8 @@ export function useExportCoverLetterPDF() {
   async function exportPDF(coverLetter: CoverLetter) {
     setExporting(true);
     try {
-      const res = await fetch(`/api/cover-letter-pdf/${coverLetter.id}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...coverLetter, locale }),
-      });
-      if (!res.ok) {
-        const body = (await res.json().catch(() => ({}))) as PDFErrorResponse;
-        throw new Error(body.error ?? `PDF generation failed (${res.status})`);
-      }
-      const blob = await res.blob();
+      const { generateCoverLetterPDFBlob } = await import("@mypdfcv/pdf-core/client");
+      const blob = await generateCoverLetterPDFBlob(coverLetter, locale);
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
