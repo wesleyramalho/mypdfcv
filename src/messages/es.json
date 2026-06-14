@@ -465,5 +465,15 @@
     "description": "Una sola persona construyó esto, y siempre será gratis. Si quieres devolver un poco, suscribirte a mi canal de YouTube es lo más amable que puedes hacer sin gastar nada.",
     "subscribe": "Suscríbete en YouTube",
     "later": "Quizás luego"
+  },
+  "rating": {
+    "title": "¿Qué tal tu experiencia?",
+    "description": "Ayúdanos a mejorar MyPDFCV. Califica tu experiencia y cuéntanos qué podemos hacer mejor.",
+    "starsLabel": "Califica tu experiencia de 1 a 5 estrellas",
+    "commentLabel": "¿Qué se puede mejorar? (opcional)",
+    "commentPlaceholder": "Cuéntanos qué funcionó, qué no o qué falta…",
+    "submit": "Enviar",
+    "later": "Quizás luego",
+    "thanks": "¡Gracias por tus comentarios!"
   }
 }

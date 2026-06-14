@@ -465,5 +465,15 @@
     "description": "Eine Person hat das gebaut, und es bleibt für immer kostenlos. Wenn du etwas zurückgeben möchtest, ist ein Abo meines YouTube-Kanals die freundlichste kostenlose Geste, die du machen kannst.",
     "subscribe": "Auf YouTube abonnieren",
     "later": "Vielleicht später"
+  },
+  "rating": {
+    "title": "Wie war deine Erfahrung?",
+    "description": "Hilf uns, MyPDFCV zu verbessern. Bewerte deine Erfahrung und sag uns, was wir besser machen können.",
+    "starsLabel": "Bewerte deine Erfahrung von 1 bis 5 Sternen",
+    "commentLabel": "Was kann verbessert werden? (optional)",
+    "commentPlaceholder": "Sag uns, was funktioniert hat, was nicht oder was fehlt…",
+    "submit": "Senden",
+    "later": "Vielleicht später",
+    "thanks": "Danke für dein Feedback!"
   }
 }
