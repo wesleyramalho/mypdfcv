@@ -49,7 +49,7 @@ export default function TemplatePicker({ open, onOpenChange, onSelect, hideBlank
             {!hideBlank && (
               <button
                 onClick={() => onSelect("blank")}
-                className="border-border hover:border-ring hover:bg-surface-soft rounded-lg border border-dashed p-3 text-left transition-colors"
+                className="border-border hover:border-ring hover:bg-surface-soft cursor-pointer rounded-lg border border-dashed p-3 text-left transition-colors"
               >
                 <div className="bg-surface-soft mb-2 flex aspect-[3/4] items-center justify-center rounded">
                   <span className="text-muted-foreground/40 text-2xl">+</span>
@@ -65,7 +65,7 @@ export default function TemplatePicker({ open, onOpenChange, onSelect, hideBlank
               <button
                 key={tmpl.id}
                 onClick={() => onSelect(tmpl.id)}
-                className="border-border hover:border-ring hover:bg-surface-soft rounded-lg border p-3 text-left transition-colors"
+                className="border-border hover:border-ring hover:bg-surface-soft cursor-pointer rounded-lg border p-3 text-left transition-colors"
               >
                 <div className="mb-2">
                   <ResumeThumbnail data={getSampleData(tmpl.id, locale)} templateId={tmpl.id} />
