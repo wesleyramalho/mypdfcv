@@ -6,6 +6,7 @@ import { getLocalizedSampleData } from "@/lib/localizedSampleData";
 import { createEmptyResumeData } from "@/lib/resumeDefaults";
 import type { ResumeData } from "@/types/resume";
 import ResumeThumbnail from "@/components/dashboard/ResumeThumbnail";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -67,8 +68,16 @@ export default function TemplatePicker({ open, onOpenChange, onSelect, hideBlank
                 onClick={() => onSelect(tmpl.id)}
                 className="border-border hover:border-ring hover:bg-surface-soft cursor-pointer rounded-lg border p-3 text-left transition-colors"
               >
-                <div className="mb-2">
+                <div className="relative mb-2">
                   <ResumeThumbnail data={getSampleData(tmpl.id, locale)} templateId={tmpl.id} />
+                  {tmpl.badge && (
+                    <Badge
+                      variant={tmpl.badge === "mostPopular" ? "default" : "secondary"}
+                      className="absolute top-1 right-1 h-auto px-1.5 py-0.5 text-[9px]"
+                    >
+                      {tt(tmpl.badge)}
+                    </Badge>
+                  )}
                 </div>
                 <p className="text-foreground text-xs font-semibold">{tt(tmpl.id)}</p>
                 <p className="text-muted-foreground mt-0.5 text-[9px] leading-relaxed">

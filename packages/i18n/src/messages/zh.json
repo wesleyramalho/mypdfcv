@@ -244,7 +244,9 @@
     "balanced": "均衡",
     "balancedDesc": "深色侧边栏搭配居中照片。适合技术和实操岗位。",
     "clear": "清晰",
-    "clearDesc": "青色标题横幅搭配右对齐照片。干净而现代。"
+    "clearDesc": "青色标题横幅搭配右对齐照片。干净而现代。",
+    "mostPopular": "最受欢迎",
+    "popular": "受欢迎"
   },
   "footer": {
     "createdBy": "由 wesleyramalho.com 构建",
@@ -399,7 +401,7 @@
       "list_locales — 列出简历章节标题支持的所有 7 种语言。"
     ],
     "s4h": "模板",
-    "s4": "从 7 个专业设计的模板中选择：Modern、Classic、Minimal、Executive、Bold、Balanced 和 Clear。每个模板都有独特的风格，包含不同的强调色、布局和照片位置。",
+    "s4": "从 7 个专业设计的模板中选择：Executive、Classic、Modern、Balanced、Clear、Minimal 和 Bold。每个模板都有独特的风格，包含不同的强调色、布局和照片位置。",
     "s5h": "语言",
     "s5": "简历章节标题可以用 7 种语言生成：英语、葡萄牙语（巴西）、西班牙语、意大利语、中文、日语和德语。",
     "s6h": "示例",

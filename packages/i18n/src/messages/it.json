@@ -244,7 +244,9 @@
     "balanced": "Bilanciato",
     "balancedDesc": "Barra laterale scura con foto centrata. Ideale per ruoli tecnici e manuali.",
     "clear": "Chiaro",
-    "clearDesc": "Banner teal con foto allineata a destra. Pulito e moderno."
+    "clearDesc": "Banner teal con foto allineata a destra. Pulito e moderno.",
+    "mostPopular": "Più Popolare",
+    "popular": "Popolare"
   },
   "footer": {
     "createdBy": "Sviluppato da wesleyramalho.com",
@@ -399,7 +401,7 @@
       "list_locales — Elenca tutte le 7 lingue supportate per le intestazioni delle sezioni del curriculum."
     ],
     "s4h": "Modelli",
-    "s4": "Scegli tra 7 modelli progettati professionalmente: Modern, Classic, Minimal, Executive, Bold, Balanced e Clear. Ogni modello ha uno stile unico con diversi colori di accento, layout e posizionamenti della foto.",
+    "s4": "Scegli tra 7 modelli progettati professionalmente: Executive, Classic, Modern, Balanced, Clear, Minimal e Bold. Ogni modello ha uno stile unico con diversi colori di accento, layout e posizionamenti della foto.",
     "s5h": "Lingue",
     "s5": "Le intestazioni delle sezioni del curriculum possono essere generate in 7 lingue: inglese, portoghese (BR), spagnolo, italiano, cinese, giapponese e tedesco.",
     "s6h": "Esempi",

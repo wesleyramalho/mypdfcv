@@ -244,7 +244,9 @@
     "balanced": "Ausgewogen",
     "balancedDesc": "Dunkler Seitenleisten-Akzent mit zentriertem Foto. Ideal für Handwerk und praktische Berufe.",
     "clear": "Klar",
-    "clearDesc": "Türkiser Header-Banner mit rechts ausgerichtetem Foto. Sauber und modern."
+    "clearDesc": "Türkiser Header-Banner mit rechts ausgerichtetem Foto. Sauber und modern.",
+    "mostPopular": "Am Beliebtesten",
+    "popular": "Beliebt"
   },
   "footer": {
     "createdBy": "Entwickelt von wesleyramalho.com",
@@ -399,7 +401,7 @@
       "list_locales — Listet alle 7 unterstützten Sprachen für Lebenslauf-Abschnittsüberschriften auf."
     ],
     "s4h": "Vorlagen",
-    "s4": "Wähle aus 7 professionell gestalteten Vorlagen: Modern, Classic, Minimal, Executive, Bold, Balanced und Clear. Jede Vorlage hat einen einzigartigen Stil mit verschiedenen Akzentfarben, Layouts und Foto-Platzierungen.",
+    "s4": "Wähle aus 7 professionell gestalteten Vorlagen: Executive, Classic, Modern, Balanced, Clear, Minimal und Bold. Jede Vorlage hat einen einzigartigen Stil mit verschiedenen Akzentfarben, Layouts und Foto-Platzierungen.",
     "s5h": "Sprachen",
     "s5": "Lebenslauf-Abschnittsüberschriften können in 7 Sprachen generiert werden: Englisch, Portugiesisch (BR), Spanisch, Italienisch, Chinesisch, Japanisch und Deutsch.",
     "s6h": "Beispiele",
