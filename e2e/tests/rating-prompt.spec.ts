@@ -3,6 +3,17 @@ import { seedResumes } from "../fixtures/seed-localstorage";
 import { TEST_RESUME, EXPECTED } from "../fixtures/test-resume";
 
 test.describe("Rating prompt modal", () => {
+  test("reappears on editor mount when threshold is met and not yet rated", async ({ page }) => {
+    // Threshold already crossed (e.g. user exported twice in a previous visit
+    // and navigated away without rating). Just landing on the editor should
+    // re-open the modal — no further export needed.
+    await seedResumes(page, [{ ...TEST_RESUME, exportCount: 2 }]);
+    await page.goto(`/editor/${TEST_RESUME.id}`);
+    await page.waitForSelector(`text=${EXPECTED.fullName}`, { timeout: 15_000 });
+
+    await expect(page.getByRole("dialog", { name: /how was your experience/i })).toBeVisible();
+  });
+
   test("does not appear on the first export (total < 2)", async ({ page }) => {
     await seedResumes(page, [{ ...TEST_RESUME, exportCount: 0 }]);
     await page.goto(`/editor/${TEST_RESUME.id}`);
