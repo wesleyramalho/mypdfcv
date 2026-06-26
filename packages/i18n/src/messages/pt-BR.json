@@ -244,7 +244,9 @@
     "balanced": "Equilibrado",
     "balancedDesc": "Barra lateral escura com foto centralizada. Ótimo para profissões técnicas e práticas.",
     "clear": "Clareza",
-    "clearDesc": "Banner verde-azulado com foto à direita. Limpo e moderno."
+    "clearDesc": "Banner verde-azulado com foto à direita. Limpo e moderno.",
+    "mostPopular": "Mais Popular",
+    "popular": "Popular"
   },
   "footer": {
     "createdBy": "Desenvolvido por wesleyramalho.com",
@@ -399,7 +401,7 @@
       "list_locales — Lista todos os 7 idiomas suportados para os cabeçalhos das seções do currículo."
     ],
     "s4h": "Templates",
-    "s4": "Escolha entre 7 templates profissionalmente projetados: Modern, Classic, Minimal, Executive, Bold, Balanced e Clear. Cada template tem um estilo único com diferentes cores de destaque, layouts e posicionamentos de foto.",
+    "s4": "Escolha entre 7 templates profissionalmente projetados: Executive, Classic, Modern, Balanced, Clear, Minimal e Bold. Cada template tem um estilo único com diferentes cores de destaque, layouts e posicionamentos de foto.",
     "s5h": "Idiomas",
     "s5": "Os cabeçalhos das seções do currículo podem ser gerados em 7 idiomas: inglês, português (BR), espanhol, italiano, chinês, japonês e alemão.",
     "s6h": "Exemplos",

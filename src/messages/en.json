@@ -244,7 +244,9 @@
     "balanced": "Balanced",
     "balancedDesc": "Dark sidebar accent with centered photo. Great for trades and hands-on roles.",
     "clear": "Clear",
-    "clearDesc": "Teal header banner with right-aligned photo. Clean and modern."
+    "clearDesc": "Teal header banner with right-aligned photo. Clean and modern.",
+    "mostPopular": "Most Popular",
+    "popular": "Popular"
   },
   "footer": {
     "createdBy": "Built by wesleyramalho.com",
@@ -399,7 +401,7 @@
       "list_locales — List all 7 supported languages for resume section headers."
     ],
     "s4h": "Templates",
-    "s4": "Choose from 7 professionally designed templates: Modern, Classic, Minimal, Executive, Bold, Balanced, and Clear. Each template has a unique style with different accent colors, layouts, and photo placements.",
+    "s4": "Choose from 7 professionally designed templates: Executive, Classic, Modern, Balanced, Clear, Minimal, and Bold. Each template has a unique style with different accent colors, layouts, and photo placements.",
     "s5h": "Languages",
     "s5": "Resume section headers can be generated in 7 languages: English, Portuguese (BR), Spanish, Italian, Chinese, Japanese, and German.",
     "s6h": "Examples",

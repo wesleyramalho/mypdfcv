@@ -7,6 +7,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ResumePreview from "@/components/editor/preview/ResumePreview";
+import { Badge } from "@/components/ui/badge";
 import { TEMPLATES, getTemplate } from "@/lib/resumeTemplates";
 import { getLocalizedSampleData } from "@/lib/localizedSampleData";
 import { createEmptyResumeData } from "@/lib/resumeDefaults";
@@ -92,6 +93,14 @@ export default function LandingTemplates() {
                     {t("useTemplate")}
                   </span>
                 </div>
+                {tmpl.badge && (
+                  <Badge
+                    variant={tmpl.badge === "mostPopular" ? "default" : "secondary"}
+                    className="absolute top-2 right-2 z-20"
+                  >
+                    {tt(tmpl.badge)}
+                  </Badge>
+                )}
               </div>
 
               <p className="text-foreground text-xs font-semibold">{tt(tmpl.id)}</p>

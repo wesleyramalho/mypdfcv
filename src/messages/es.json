@@ -244,7 +244,9 @@
     "balanced": "Equilibrado",
     "balancedDesc": "Acento de barra lateral oscura con foto centrada. Ideal para oficios y roles prácticos.",
     "clear": "Claro",
-    "clearDesc": "Encabezado turquesa con foto alineada a la derecha. Limpio y moderno."
+    "clearDesc": "Encabezado turquesa con foto alineada a la derecha. Limpio y moderno.",
+    "mostPopular": "Más Popular",
+    "popular": "Popular"
   },
   "footer": {
     "createdBy": "Desarrollado por wesleyramalho.com",
@@ -399,7 +401,7 @@
       "list_locales — Lista los 7 idiomas soportados para los encabezados de sección del currículum."
     ],
     "s4h": "Plantillas",
-    "s4": "Elige entre 7 plantillas diseñadas profesionalmente: Modern, Classic, Minimal, Executive, Bold, Balanced y Clear. Cada plantilla tiene un estilo único con diferentes colores de acento, diseños y posiciones de foto.",
+    "s4": "Elige entre 7 plantillas diseñadas profesionalmente: Executive, Classic, Modern, Balanced, Clear, Minimal y Bold. Cada plantilla tiene un estilo único con diferentes colores de acento, diseños y posiciones de foto.",
     "s5h": "Idiomas",
     "s5": "Los encabezados de sección del currículum pueden generarse en 7 idiomas: inglés, portugués (BR), español, italiano, chino, japonés y alemán.",
     "s6h": "Ejemplos",
