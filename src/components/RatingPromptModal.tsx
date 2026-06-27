@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Star } from "lucide-react";
 import { toast } from "sonner";
@@ -19,9 +20,21 @@ import { cn } from "@/lib/utils";
 import { EXPORT_SUCCESS_EVENT } from "@/lib/subscribePrompt";
 import { hasShownRatingPrompt, markRatingPromptShown } from "@/lib/ratingPrompt";
 import { RATING_PROMPT_ENABLED } from "@/lib/featureFlags";
+import { useResumeStore } from "@/store/useResumeStore";
+import { useCoverLetterStore } from "@/store/useCoverLetterStore";
 
 const STARS = [1, 2, 3, 4, 5] as const;
 const COMMENT_MAX_LENGTH = 500;
+const EXPORT_THRESHOLD = 2;
+
+function getTotalExports(): number {
+  const resumes = useResumeStore.getState().resumes;
+  const coverLetters = useCoverLetterStore.getState().coverLetters;
+  return (
+    resumes.reduce((sum, r) => sum + r.exportCount, 0) +
+    coverLetters.reduce((sum, cl) => sum + cl.exportCount, 0)
+  );
+}
 
 export default function RatingPromptModal() {
   const [open, setOpen] = useState(false);
@@ -29,11 +42,13 @@ export default function RatingPromptModal() {
   const [hoverStars, setHoverStars] = useState<number>(0);
   const [comment, setComment] = useState("");
   const t = useTranslations("rating");
+  const pathname = usePathname();
 
   useEffect(() => {
     function handleExportSuccess() {
       if (!RATING_PROMPT_ENABLED) return;
       if (hasShownRatingPrompt()) return;
+      if (getTotalExports() < EXPORT_THRESHOLD) return;
       setOpen(true);
       track("rating_prompt_shown");
     }
@@ -42,6 +57,19 @@ export default function RatingPromptModal() {
       window.removeEventListener(EXPORT_SUCCESS_EVENT, handleExportSuccess);
     };
   }, []);
+
+  // Reopen on every visit to the resume editor until the user submits.
+  // The modal is mounted in the global layout, so navigation unmounts only
+  // the React state — without this, users who navigate away can escape the
+  // mandatory prompt by simply leaving the page.
+  useEffect(() => {
+    if (!RATING_PROMPT_ENABLED) return;
+    if (!pathname?.match(/(^|\/)editor\/[^/]+$/)) return;
+    if (hasShownRatingPrompt()) return;
+    if (getTotalExports() < EXPORT_THRESHOLD) return;
+    setOpen(true);
+    track("rating_prompt_shown");
+  }, [pathname]);
 
   const handleSubmit = useCallback(() => {
     if (stars < 1) return;
@@ -57,24 +85,11 @@ export default function RatingPromptModal() {
     setOpen(false);
   }, [stars, comment, t]);
 
-  // `via` distinguishes the explicit "Maybe later" button from a soft close
-  // (X / backdrop / Esc) so PostHog can break down intent.
-  const handleDismiss = useCallback((via: "later" | "close") => {
-    markRatingPromptShown("dismissed");
-    track("rating_prompt_dismissed", { via });
-    setOpen(false);
+  // Mandatory once shown — block Escape, backdrop click, and any other
+  // attempt to close without submitting a rating.
+  const handleOpenChange = useCallback((next: boolean) => {
+    if (next) setOpen(true);
   }, []);
-
-  const handleOpenChange = useCallback(
-    (next: boolean) => {
-      if (!next && open) {
-        handleDismiss("close");
-      } else {
-        setOpen(next);
-      }
-    },
-    [open, handleDismiss],
-  );
 
   const displayedStars = hoverStars || stars;
   const canSubmit = stars > 0;
@@ -83,7 +98,13 @@ export default function RatingPromptModal() {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent
+        className="sm:max-w-md"
+        showCloseButton={false}
+        onKeyDown={(e) => {
+          if (e.key === "Escape") e.preventDefault();
+        }}
+      >
         <DialogHeader>
           <DialogTitle className="text-lg">{t("title")}</DialogTitle>
           <DialogDescription className="pt-1 leading-relaxed">{t("description")}</DialogDescription>
@@ -133,14 +154,6 @@ export default function RatingPromptModal() {
         />
 
         <DialogFooter className="gap-2 sm:justify-end">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => handleDismiss("later")}
-            className="font-sans text-xs tracking-widest uppercase"
-          >
-            {t("later")}
-          </Button>
           <Button
             size="sm"
             onClick={handleSubmit}
