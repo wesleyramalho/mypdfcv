@@ -4,10 +4,11 @@ import { TEST_RESUME, EXPECTED } from "../fixtures/test-resume";
 
 test.describe("Rating prompt modal", () => {
   test("reappears on editor mount when already exported and not yet rated", async ({ page }) => {
-    // User exported once in a previous visit and navigated away without
-    // rating. Just landing on the editor should re-open the modal — no
-    // further export needed.
+    // User exported once in a previous visit, the dialog was shown, and
+    // they navigated away without rating. Just landing on the editor
+    // should re-open the modal — no further export needed.
     await seedResumes(page, [{ ...TEST_RESUME, exportCount: 1 }]);
+    await page.evaluate(() => localStorage.setItem("architect-suite-rating-pending", "true"));
     await page.goto(`/editor/${TEST_RESUME.id}`);
     await page.waitForSelector(`text=${EXPECTED.fullName}`, { timeout: 15_000 });
 
