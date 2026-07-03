@@ -20,21 +20,9 @@ import { cn } from "@/lib/utils";
 import { EXPORT_SUCCESS_EVENT } from "@/lib/subscribePrompt";
 import { hasShownRatingPrompt, markRatingPromptShown } from "@/lib/ratingPrompt";
 import { RATING_PROMPT_ENABLED } from "@/lib/featureFlags";
-import { useResumeStore } from "@/store/useResumeStore";
-import { useCoverLetterStore } from "@/store/useCoverLetterStore";
 
 const STARS = [1, 2, 3, 4, 5] as const;
 const COMMENT_MAX_LENGTH = 500;
-const EXPORT_THRESHOLD = 2;
-
-function getTotalExports(): number {
-  const resumes = useResumeStore.getState().resumes;
-  const coverLetters = useCoverLetterStore.getState().coverLetters;
-  return (
-    resumes.reduce((sum, r) => sum + r.exportCount, 0) +
-    coverLetters.reduce((sum, cl) => sum + cl.exportCount, 0)
-  );
-}
 
 export default function RatingPromptModal() {
   const [open, setOpen] = useState(false);
@@ -48,7 +36,6 @@ export default function RatingPromptModal() {
     function handleExportSuccess() {
       if (!RATING_PROMPT_ENABLED) return;
       if (hasShownRatingPrompt()) return;
-      if (getTotalExports() < EXPORT_THRESHOLD) return;
       setOpen(true);
       track("rating_prompt_shown");
     }
@@ -66,7 +53,6 @@ export default function RatingPromptModal() {
     if (!RATING_PROMPT_ENABLED) return;
     if (!pathname?.match(/(^|\/)editor\/[^/]+$/)) return;
     if (hasShownRatingPrompt()) return;
-    if (getTotalExports() < EXPORT_THRESHOLD) return;
     setOpen(true);
     track("rating_prompt_shown");
   }, [pathname]);
