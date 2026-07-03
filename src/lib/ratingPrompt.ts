@@ -33,3 +33,32 @@ export function markRatingPromptShown(action: RatingPromptAction): void {
     // localStorage may be unavailable (private mode, quota) — ignore.
   }
 }
+
+const RATING_PENDING_KEY = "architect-suite-rating-pending";
+
+export function markRatingPromptPending(): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(RATING_PENDING_KEY, "true");
+  } catch {
+    /* ignore */
+  }
+}
+
+export function clearRatingPromptPending(): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(RATING_PENDING_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+export function isRatingPromptPending(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem(RATING_PENDING_KEY) === "true";
+  } catch {
+    return false;
+  }
+}

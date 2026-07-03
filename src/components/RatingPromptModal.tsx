@@ -18,23 +18,17 @@ import { FormTextarea } from "@/components/ui/FormInput";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { EXPORT_SUCCESS_EVENT } from "@/lib/subscribePrompt";
-import { hasShownRatingPrompt, markRatingPromptShown } from "@/lib/ratingPrompt";
+import {
+  hasShownRatingPrompt,
+  markRatingPromptShown,
+  markRatingPromptPending,
+  clearRatingPromptPending,
+  isRatingPromptPending,
+} from "@/lib/ratingPrompt";
 import { RATING_PROMPT_ENABLED } from "@/lib/featureFlags";
-import { useResumeStore } from "@/store/useResumeStore";
-import { useCoverLetterStore } from "@/store/useCoverLetterStore";
 
 const STARS = [1, 2, 3, 4, 5] as const;
 const COMMENT_MAX_LENGTH = 500;
-const EXPORT_THRESHOLD = 2;
-
-function getTotalExports(): number {
-  const resumes = useResumeStore.getState().resumes;
-  const coverLetters = useCoverLetterStore.getState().coverLetters;
-  return (
-    resumes.reduce((sum, r) => sum + r.exportCount, 0) +
-    coverLetters.reduce((sum, cl) => sum + cl.exportCount, 0)
-  );
-}
 
 export default function RatingPromptModal() {
   const [open, setOpen] = useState(false);
@@ -48,8 +42,8 @@ export default function RatingPromptModal() {
     function handleExportSuccess() {
       if (!RATING_PROMPT_ENABLED) return;
       if (hasShownRatingPrompt()) return;
-      if (getTotalExports() < EXPORT_THRESHOLD) return;
       setOpen(true);
+      markRatingPromptPending();
       track("rating_prompt_shown");
     }
     window.addEventListener(EXPORT_SUCCESS_EVENT, handleExportSuccess);
@@ -66,7 +60,7 @@ export default function RatingPromptModal() {
     if (!RATING_PROMPT_ENABLED) return;
     if (!pathname?.match(/(^|\/)editor\/[^/]+$/)) return;
     if (hasShownRatingPrompt()) return;
-    if (getTotalExports() < EXPORT_THRESHOLD) return;
+    if (!isRatingPromptPending()) return;
     setOpen(true);
     track("rating_prompt_shown");
   }, [pathname]);
@@ -80,6 +74,7 @@ export default function RatingPromptModal() {
       commentLength: trimmed.length,
       comment: trimmed || undefined,
     });
+    clearRatingPromptPending();
     markRatingPromptShown("rated");
     toast.success(t("thanks"));
     setOpen(false);

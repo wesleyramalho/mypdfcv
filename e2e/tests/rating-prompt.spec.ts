@@ -3,18 +3,19 @@ import { seedResumes } from "../fixtures/seed-localstorage";
 import { TEST_RESUME, EXPECTED } from "../fixtures/test-resume";
 
 test.describe("Rating prompt modal", () => {
-  test("reappears on editor mount when threshold is met and not yet rated", async ({ page }) => {
-    // Threshold already crossed (e.g. user exported twice in a previous visit
-    // and navigated away without rating). Just landing on the editor should
-    // re-open the modal — no further export needed.
-    await seedResumes(page, [{ ...TEST_RESUME, exportCount: 2 }]);
+  test("reappears on editor mount when already exported and not yet rated", async ({ page }) => {
+    // User exported once in a previous visit, the dialog was shown, and
+    // they navigated away without rating. Just landing on the editor
+    // should re-open the modal — no further export needed.
+    await seedResumes(page, [{ ...TEST_RESUME, exportCount: 1 }]);
+    await page.evaluate(() => localStorage.setItem("architect-suite-rating-pending", "true"));
     await page.goto(`/editor/${TEST_RESUME.id}`);
     await page.waitForSelector(`text=${EXPECTED.fullName}`, { timeout: 15_000 });
 
     await expect(page.getByRole("dialog", { name: /how was your experience/i })).toBeVisible();
   });
 
-  test("does not appear on the first export (total < 2)", async ({ page }) => {
+  test("appears after the first export", async ({ page }) => {
     await seedResumes(page, [{ ...TEST_RESUME, exportCount: 0 }]);
     await page.goto(`/editor/${TEST_RESUME.id}`);
     await page.waitForSelector(`text=${EXPECTED.fullName}`, { timeout: 15_000 });
@@ -23,15 +24,12 @@ test.describe("Rating prompt modal", () => {
     await page.getByRole("button", { name: /export/i }).click();
     await downloadPromise;
 
-    // Give the modal a beat to (not) appear, then assert it's absent.
-    await page.waitForTimeout(500);
-    await expect(page.getByRole("dialog", { name: /how was your experience/i })).toBeHidden();
+    await expect(page.getByRole("dialog", { name: /how was your experience/i })).toBeVisible();
   });
 
-  test.describe("on the 2nd export onward", () => {
+  test.describe("after the first export", () => {
     test.beforeEach(async ({ page }) => {
-      // Seed with exportCount=1 so the post-increment total hits the threshold.
-      await seedResumes(page, [{ ...TEST_RESUME, exportCount: 1 }]);
+      await seedResumes(page, [{ ...TEST_RESUME, exportCount: 0 }]);
       await page.goto(`/editor/${TEST_RESUME.id}`);
       await page.waitForSelector(`text=${EXPECTED.fullName}`, { timeout: 15_000 });
 
