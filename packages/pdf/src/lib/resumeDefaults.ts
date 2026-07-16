@@ -16,13 +16,15 @@ export function createEmptyResumeData(): ResumeData {
     education: [],
     skillGroups: [],
     projects: [],
+    certifications: [],
     sections: {
       summary: true,
       experience: true,
       education: true,
       skills: true,
       projects: true,
+      certifications: true,
     },
-    sectionOrder: ["summary", "experience", "education", "skills", "projects"],
+    sectionOrder: ["summary", "experience", "education", "certifications", "skills", "projects"],
   };
 }

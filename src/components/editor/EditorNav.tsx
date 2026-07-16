@@ -15,7 +15,16 @@ import {
   arrayMove,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { User, Briefcase, GraduationCap, Zap, Code, FileText, GripVertical } from "lucide-react";
+import {
+  User,
+  Briefcase,
+  GraduationCap,
+  Zap,
+  Code,
+  FileText,
+  Award,
+  GripVertical,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { useResumeStore } from "@/store/useResumeStore";
@@ -24,6 +33,7 @@ const SECTION_ICONS: Record<string, React.ElementType> = {
   personal: User,
   experience: Briefcase,
   education: GraduationCap,
+  certifications: Award,
   skills: Zap,
   projects: Code,
   summary: FileText,
@@ -33,12 +43,20 @@ const SECTION_KEYS: Record<string, string> = {
   personal: "personalInfo",
   experience: "experience",
   education: "education",
+  certifications: "certifications",
   skills: "skills",
   projects: "projects",
   summary: "summary",
 };
 
-const DEFAULT_ORDER = ["summary", "experience", "education", "skills", "projects"];
+const DEFAULT_ORDER = [
+  "summary",
+  "experience",
+  "education",
+  "certifications",
+  "skills",
+  "projects",
+];
 
 interface SortableItemProps {
   id: string;

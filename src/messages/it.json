@@ -207,7 +207,22 @@
     "projectCount": "{count, plural, one {# progetto} other {# progetti}}",
     "experienceFallback": "Esperienza {idx}",
     "educationFallback": "Formazione {idx}",
-    "projectFallback": "Progetto {idx}"
+    "projectFallback": "Progetto {idx}",
+    "certifications": "Certificazioni",
+    "sectionDescCertifications": "Certificazioni e credenziali professionali.",
+    "certificationName": "Nome della Certificazione",
+    "certificationNamePlaceholder": "AWS Certified Solutions Architect",
+    "certificationIssuer": "Organizzazione Emittente",
+    "certificationIssuerPlaceholder": "Amazon Web Services",
+    "certificationYear": "Anno (opzionale)",
+    "certificationYearPlaceholder": "2024",
+    "certificationId": "ID Credenziale (opzionale)",
+    "certificationIdPlaceholder": "ABC-123-XYZ",
+    "certificationUrl": "URL Credenziale (opzionale)",
+    "certificationUrlPlaceholder": "https://verifica.esempio.com/...",
+    "addCertification": "Aggiungi Certificazione",
+    "removeCertification": "Rimuovi certificazione",
+    "certificationFallback": "Certificazione {idx}"
   },
   "resume": {
     "profile": "Profilo",
@@ -219,7 +234,8 @@
     "yourName": "Il tuo nome",
     "yourHeadline": "Il tuo titolo",
     "skills": "Competenze",
-    "gpa": "Voto"
+    "gpa": "Voto",
+    "certifications": "Certificazioni"
   },
   "ai": {
     "improve": "Migliora",
@@ -349,7 +365,9 @@
   "validation": {
     "invalidEmail": "Inserisci un indirizzo email valido",
     "invalidUrl": "Inserisci un URL valido",
-    "tooLong": "Questo campo è troppo lungo"
+    "tooLong": "Questo campo è troppo lungo",
+    "required": "Questo campo è obbligatorio",
+    "invalidYear": "Inserisci un anno di 4 cifre"
   },
   "cookies": {
     "title": "Informativa sui cookie",

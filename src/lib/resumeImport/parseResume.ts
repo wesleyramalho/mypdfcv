@@ -709,12 +709,14 @@ export function parseResumeText(text: string): Partial<ResumeData> {
     education,
     skillGroups,
     projects,
+    certifications: [],
     sections: {
       summary: !!summary,
       experience: experience.length > 0,
       education: education.length > 0,
       skills: skillGroups.length > 0,
       projects: projects.length > 0,
+      certifications: true,
     },
   };
 }

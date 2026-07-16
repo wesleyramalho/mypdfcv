@@ -46,6 +46,15 @@ export interface ProjectEntry {
   endDate: string | null;
 }
 
+export interface CertificationEntry {
+  id: string;
+  name: string;
+  issuer: string;
+  year: string; // "YYYY" or ""
+  credentialId: string;
+  credentialUrl: string;
+}
+
 export interface ResumeData {
   fullName: string;
   headline: string;
@@ -56,12 +65,14 @@ export interface ResumeData {
   education: EducationEntry[];
   skillGroups: SkillGroup[];
   projects: ProjectEntry[];
+  certifications: CertificationEntry[];
   sections: {
     summary: boolean;
     experience: boolean;
     education: boolean;
     skills: boolean;
     projects: boolean;
+    certifications: boolean;
   };
   /** Ordered list of section IDs for the editor sidebar and PDF output. "personal" is always first. */
   sectionOrder: string[];

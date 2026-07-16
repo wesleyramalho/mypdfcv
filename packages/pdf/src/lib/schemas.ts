@@ -66,8 +66,18 @@ export const projectEntrySchema = z.object({
   endDate: z.string().nullable(),
 });
 
+export const certificationEntrySchema = z.object({
+  id: z.string(),
+  name: z.string().min(1, "required").max(150, "tooLong"),
+  issuer: z.string().max(100, "tooLong"),
+  year: z.string().refine((v) => v === "" || /^\d{4}$/.test(v), { message: "invalidYear" }),
+  credentialId: z.string().max(100, "tooLong"),
+  credentialUrl: optionalUrl,
+});
+
 export type PersonalInfoFormValues = z.infer<typeof personalInfoSchema>;
 export type ExperienceEntryFormValues = z.infer<typeof experienceEntrySchema>;
 export type EducationEntryFormValues = z.infer<typeof educationEntrySchema>;
 export type SkillGroupFormValues = z.infer<typeof skillGroupSchema>;
 export type ProjectEntryFormValues = z.infer<typeof projectEntrySchema>;
+export type CertificationEntryFormValues = z.infer<typeof certificationEntrySchema>;
