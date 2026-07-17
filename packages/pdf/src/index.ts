@@ -8,6 +8,7 @@ export type {
   EducationEntry,
   SkillGroup,
   ProjectEntry,
+  CertificationEntry,
 } from "./types/resume";
 
 // Templates
@@ -31,11 +32,13 @@ export {
   educationEntrySchema,
   skillGroupSchema,
   projectEntrySchema,
+  certificationEntrySchema,
   type PersonalInfoFormValues,
   type ExperienceEntryFormValues,
   type EducationEntryFormValues,
   type SkillGroupFormValues,
   type ProjectEntryFormValues,
+  type CertificationEntryFormValues,
 } from "./lib/schemas";
 
 // Cover Letter Types

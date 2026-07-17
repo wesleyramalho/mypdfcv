@@ -5,9 +5,11 @@ export {
   educationEntrySchema,
   skillGroupSchema,
   projectEntrySchema,
+  certificationEntrySchema,
   type PersonalInfoFormValues,
   type ExperienceEntryFormValues,
   type EducationEntryFormValues,
   type SkillGroupFormValues,
   type ProjectEntryFormValues,
+  type CertificationEntryFormValues,
 } from "@mypdfcv/pdf-core";

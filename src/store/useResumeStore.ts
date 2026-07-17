@@ -134,6 +134,37 @@ export const useResumeStore = create<ResumeStore>()(
       storage: createJSONStorage(() =>
         typeof window !== "undefined" ? localStorage : noopStorage,
       ),
+      version: 1,
+      migrate: (persistedState, version) => {
+        const state = persistedState as { resumes?: Resume[] } | undefined;
+        if (version < 1 && state?.resumes) {
+          for (const r of state.resumes) {
+            const d = r.data as ResumeData & Record<string, unknown>;
+            if (!Array.isArray(d.certifications)) d.certifications = [];
+            if (!d.sections) {
+              d.sections = {
+                summary: true,
+                experience: true,
+                education: true,
+                skills: true,
+                projects: true,
+                certifications: true,
+              };
+            } else if (typeof d.sections.certifications !== "boolean") {
+              d.sections.certifications = true;
+            }
+            if (Array.isArray(d.sectionOrder) && !d.sectionOrder.includes("certifications")) {
+              const idx = d.sectionOrder.indexOf("education");
+              d.sectionOrder.splice(
+                idx >= 0 ? idx + 1 : d.sectionOrder.length,
+                0,
+                "certifications",
+              );
+            }
+          }
+        }
+        return state;
+      },
     },
   ),
 );

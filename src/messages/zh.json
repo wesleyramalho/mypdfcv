@@ -207,7 +207,22 @@
     "projectCount": "{count, plural, other {# 个项目}}",
     "experienceFallback": "经历 {idx}",
     "educationFallback": "教育 {idx}",
-    "projectFallback": "项目 {idx}"
+    "projectFallback": "项目 {idx}",
+    "certifications": "证书",
+    "sectionDescCertifications": "专业证书和资格认证。",
+    "certificationName": "证书名称",
+    "certificationNamePlaceholder": "AWS 认证解决方案架构师",
+    "certificationIssuer": "颁发机构",
+    "certificationIssuerPlaceholder": "亚马逊网络服务",
+    "certificationYear": "年份（可选）",
+    "certificationYearPlaceholder": "2024",
+    "certificationId": "证书编号（可选）",
+    "certificationIdPlaceholder": "ABC-123-XYZ",
+    "certificationUrl": "证书链接（可选）",
+    "certificationUrlPlaceholder": "https://verify.example.com/...",
+    "addCertification": "添加证书",
+    "removeCertification": "移除证书",
+    "certificationFallback": "证书 {idx}"
   },
   "resume": {
     "profile": "个人简介",
@@ -219,7 +234,8 @@
     "yourName": "你的姓名",
     "yourHeadline": "你的头衔",
     "skills": "技能",
-    "gpa": "GPA"
+    "gpa": "GPA",
+    "certifications": "证书"
   },
   "ai": {
     "improve": "优化",
@@ -349,7 +365,9 @@
   "validation": {
     "invalidEmail": "请输入有效的电子邮件地址",
     "invalidUrl": "请输入有效的 URL",
-    "tooLong": "此字段过长"
+    "tooLong": "此字段过长",
+    "required": "此字段为必填",
+    "invalidYear": "请输入 4 位数字的年份"
   },
   "cookies": {
     "title": "Cookie 政策",

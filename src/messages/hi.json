@@ -207,7 +207,22 @@
     "projectCount": "{count, plural, one {# प्रोजेक्ट} other {# प्रोजेक्ट}}",
     "experienceFallback": "अनुभव {idx}",
     "educationFallback": "शिक्षा {idx}",
-    "projectFallback": "प्रोजेक्ट {idx}"
+    "projectFallback": "प्रोजेक्ट {idx}",
+    "certifications": "प्रमाणपत्र",
+    "sectionDescCertifications": "पेशेवर प्रमाणपत्र और साख।",
+    "certificationName": "प्रमाणपत्र का नाम",
+    "certificationNamePlaceholder": "AWS प्रमाणित सॉल्यूशन आर्किटेक्ट",
+    "certificationIssuer": "जारीकर्ता संगठन",
+    "certificationIssuerPlaceholder": "Amazon Web Services",
+    "certificationYear": "वर्ष (वैकल्पिक)",
+    "certificationYearPlaceholder": "2024",
+    "certificationId": "क्रेडेंशियल आईडी (वैकल्पिक)",
+    "certificationIdPlaceholder": "ABC-123-XYZ",
+    "certificationUrl": "क्रेडेंशियल URL (वैकल्पिक)",
+    "certificationUrlPlaceholder": "https://verify.example.com/...",
+    "addCertification": "प्रमाणपत्र जोड़ें",
+    "removeCertification": "प्रमाणपत्र हटाएं",
+    "certificationFallback": "प्रमाणपत्र {idx}"
   },
   "resume": {
     "profile": "प्रोफ़ाइल",
@@ -219,7 +234,8 @@
     "yourName": "आपका नाम",
     "yourHeadline": "आपका शीर्षक",
     "skills": "कौशल",
-    "gpa": "GPA"
+    "gpa": "GPA",
+    "certifications": "प्रमाणपत्र"
   },
   "ai": {
     "improve": "सुधारें",
@@ -349,7 +365,9 @@
   "validation": {
     "invalidEmail": "कृपया एक वैध ईमेल पता दर्ज करें",
     "invalidUrl": "कृपया एक वैध URL दर्ज करें",
-    "tooLong": "यह फ़ील्ड बहुत लंबा है"
+    "tooLong": "यह फ़ील्ड बहुत लंबा है",
+    "required": "यह फ़ील्ड आवश्यक है",
+    "invalidYear": "कृपया 4-अंकीय वर्ष दर्ज करें"
   },
   "cookies": {
     "title": "कुकी नीति",

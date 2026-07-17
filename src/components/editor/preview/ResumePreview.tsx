@@ -7,10 +7,18 @@ import { getResumeStyle, hexWithAlpha } from "@/lib/resumeTemplates";
 import PreviewHeader from "./PreviewHeader";
 import PreviewExperience from "./PreviewExperience";
 import PreviewEducation from "./PreviewEducation";
+import PreviewCertifications from "./PreviewCertifications";
 import PreviewSkills from "./PreviewSkills";
 import PreviewProjects from "./PreviewProjects";
 
-const DEFAULT_ORDER = ["experience", "education", "skills", "projects", "summary"];
+const DEFAULT_ORDER = [
+  "experience",
+  "education",
+  "certifications",
+  "skills",
+  "projects",
+  "summary",
+];
 
 /** A4 width in CSS px (210mm ≈ 793.7px at 96dpi) */
 const PAPER_WIDTH_PX = 793.7;
@@ -231,6 +239,18 @@ export default function ResumePreview({ data, templateId }: Props) {
               return <PreviewExperience key={id} experience={data.experience} style={style} />;
             if (id === "education" && data.sections.education)
               return <PreviewEducation key={id} education={data.education} style={style} />;
+            if (
+              id === "certifications" &&
+              data.sections.certifications &&
+              data.certifications.length > 0
+            )
+              return (
+                <PreviewCertifications
+                  key={id}
+                  certifications={data.certifications}
+                  style={style}
+                />
+              );
             if (id === "skills" && data.sections.skills && !style.sidebarColor)
               return <PreviewSkills key={id} skillGroups={data.skillGroups} style={style} />;
             if (id === "projects" && data.sections.projects)

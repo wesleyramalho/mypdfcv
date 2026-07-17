@@ -13,6 +13,7 @@ import EditorToolbar from "@/components/editor/EditorToolbar";
 import PersonalInfoSection from "@/components/editor/sections/PersonalInfoSection";
 import ExperienceSection from "@/components/editor/sections/ExperienceSection";
 import EducationSection from "@/components/editor/sections/EducationSection";
+import CertificationsSection from "@/components/editor/sections/CertificationsSection";
 import SkillsSection from "@/components/editor/sections/SkillsSection";
 import ProjectsSection from "@/components/editor/sections/ProjectsSection";
 import SummarySection from "@/components/editor/sections/SummarySection";
@@ -24,11 +25,19 @@ const SECTION_COMPONENTS: Record<string, React.FC<{ resumeId: string; data: Resu
   summary: SummarySection,
   experience: ExperienceSection,
   education: EducationSection,
+  certifications: CertificationsSection,
   skills: SkillsSection,
   projects: ProjectsSection,
 };
 
-const DEFAULT_ORDER = ["summary", "experience", "education", "skills", "projects"];
+const DEFAULT_ORDER = [
+  "summary",
+  "experience",
+  "education",
+  "certifications",
+  "skills",
+  "projects",
+];
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -38,6 +47,7 @@ const SECTION_DESC_KEYS: Record<string, string> = {
   personal: "sectionDescPersonal",
   experience: "sectionDescExperience",
   education: "sectionDescEducation",
+  certifications: "sectionDescCertifications",
   skills: "sectionDescSkills",
   projects: "sectionDescProjects",
   summary: "sectionDescSummary",

@@ -63,14 +63,15 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "9.2",
         highlights: "Monitor de Estruturas de Dados, Iniciação Científica em IA",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "AWS",
-        degree: "Certificação",
-        field: "AWS Solutions Architect Associate",
-        startDate: "2020-01",
-        endDate: "2020-03",
-        highlights: "Nota 920/1000",
+        name: "AWS Solutions Architect Associate",
+        issuer: "AWS",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -166,6 +167,16 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "Magna Cum Laude",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "Contador Público Certificado (CPA)",
+        issuer: "American Institute of CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -252,14 +263,15 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2019-12",
         highlights: "Projeto premiado em Design de Interfaces",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "Google",
-        degree: "Certificação",
-        field: "UX Design Professional Certificate",
-        startDate: "2020-03",
-        endDate: "2020-08",
-        highlights: "Concluído com distinção",
+        name: "UX Design Professional Certificate",
+        issuer: "Google",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -354,6 +366,16 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "Contador Público Certificado (CPA)",
+        issuer: "American Institute of CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -441,6 +463,16 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "Contador Público Certificado (CPA)",
+        issuer: "American Institute of CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -518,14 +550,15 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2012-12",
         highlights: "Melhor Aluno da Turma",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "SENAI",
-        degree: "Certificação",
-        field: "NR-35 Segurança em Trabalho em Altura",
-        startDate: "2013-06",
-        endDate: "2013-07",
-        highlights: "",
+        name: "NR-35 Segurança em Trabalho em Altura",
+        issuer: "SENAI",
+        year: "2013",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -609,14 +642,15 @@ const PT_BR_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2017-12",
         highlights: "",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "SENAC",
-        degree: "Certificação",
-        field: "Secretariado e Assessoria Executiva",
-        startDate: "2018-02",
-        endDate: "2018-06",
-        highlights: "",
+        name: "Secretariado e Assessoria Executiva",
+        issuer: "SENAC",
+        year: "2018",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -704,14 +738,15 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "8.7",
         highlights: "Matrícula de Honor en Algoritmos y Estructuras de Datos",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "AWS",
-        degree: "Certificación",
-        field: "AWS Solutions Architect Associate",
-        startDate: "2020-01",
-        endDate: "2020-03",
-        highlights: "Puntuación 920/1000",
+        name: "AWS Solutions Architect Associate",
+        issuer: "AWS",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -807,6 +842,16 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "Magna Cum Laude",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "Contador Público Certificado (CPA)",
+        issuer: "American Institute of CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -888,14 +933,15 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2019-06",
         highlights: "Premio al Mejor Proyecto de Diseño de Interfaces",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "Google",
-        degree: "Certificación",
-        field: "UX Design Professional Certificate",
-        startDate: "2020-03",
-        endDate: "2020-08",
-        highlights: "Completado con honores",
+        name: "UX Design Professional Certificate",
+        issuer: "Google",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -990,6 +1036,16 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "Contador Público Certificado (CPA)",
+        issuer: "American Institute of CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -1077,6 +1133,16 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "Contador Público Certificado (CPA)",
+        issuer: "American Institute of CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -1154,14 +1220,15 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2010-06",
         highlights: "Mejor Alumno de la Promoción",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "Fundación Laboral de la Construcción",
-        degree: "Certificado",
-        field: "Prevención de Riesgos Laborales",
-        startDate: "2011-01",
-        endDate: "2011-03",
-        highlights: "",
+        name: "Prevención de Riesgos Laborales",
+        issuer: "Fundación Laboral de la Construcción",
+        year: "2011",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -1255,6 +1322,16 @@ const ES_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "Contador Público Certificado (CPA)",
+        issuer: "American Institute of CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -1340,14 +1417,15 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "110/110",
         highlights: "Lode, Assistente al corso di Algoritmi e Strutture Dati",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "AWS",
-        degree: "Certificazione",
-        field: "AWS Solutions Architect Associate",
-        startDate: "2020-01",
-        endDate: "2020-03",
-        highlights: "Punteggio 920/1000",
+        name: "AWS Solutions Architect Associate",
+        issuer: "AWS",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -1434,14 +1512,15 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "110/110",
         highlights: "Lode, Presidente del Club di Finanza",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "CFA Institute",
-        degree: "Certificazione",
-        field: "CFA Livello I",
-        startDate: "2019-01",
-        endDate: "2019-06",
-        highlights: "Superato al primo tentativo",
+        name: "CFA Livello I",
+        issuer: "CFA Institute",
+        year: "2019",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -1525,14 +1604,15 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2019-07",
         highlights: "Lista del Rettore",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "Google",
-        degree: "Certificazione",
-        field: "UX Design Professional Certificate",
-        startDate: "2020-03",
-        endDate: "2020-08",
-        highlights: "Completato con lode",
+        name: "UX Design Professional Certificate",
+        issuer: "Google",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -1617,14 +1697,15 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2008-07",
         highlights: "Laureata con lode",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "SHRM",
-        degree: "Certificazione",
-        field: "SHRM Certified Professional (SHRM-CP)",
-        startDate: "2011-01",
-        endDate: "2011-06",
-        highlights: "",
+        name: "SHRM Certified Professional (SHRM-CP)",
+        issuer: "SHRM",
+        year: "2011",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -1718,6 +1799,16 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "110/110 con lode",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "Certified Public Accountant (CPA)",
+        issuer: "American Institute of CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -1804,14 +1895,15 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2005-07",
         highlights: "",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "Ente Formazione Sicurezza",
-        degree: "Certificazione",
-        field: "Sicurezza sul Lavoro nei Cantieri",
-        startDate: "2008-03",
-        endDate: "2008-04",
-        highlights: "",
+        name: "Sicurezza sul Lavoro nei Cantieri",
+        issuer: "Ente Formazione Sicurezza",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -1900,14 +1992,15 @@ const IT_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2008-07",
         highlights: "",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "Associazione Italiana Professionisti Amministrativi",
-        degree: "Certificazione",
-        field: "Professionista Amministrativo Certificato",
-        startDate: "2012-01",
-        endDate: "2012-06",
-        highlights: "",
+        name: "Professionista Amministrativo Certificato",
+        issuer: "Associazione Italiana Professionisti Amministrativi",
+        year: "2012",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2000,14 +2093,15 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "3.9",
         highlights: "院长奖学金，数据结构课程助教",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "AWS",
-        degree: "认证",
-        field: "AWS Solutions Architect Associate",
-        startDate: "2020-01",
-        endDate: "2020-03",
-        highlights: "得分 920/1000",
+        name: "AWS Solutions Architect Associate",
+        issuer: "AWS",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2090,14 +2184,15 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "3.8",
         highlights: "优秀毕业生，金融社团社长",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "CFA协会",
-        degree: "认证",
-        field: "CFA一级",
-        startDate: "2019-01",
-        endDate: "2019-06",
-        highlights: "一次通过",
+        name: "CFA一级",
+        issuer: "CFA协会",
+        year: "2019",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2173,14 +2268,15 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2019-07",
         highlights: "优秀毕业设计",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "Google",
-        degree: "认证",
-        field: "UX设计专业证书",
-        startDate: "2020-03",
-        endDate: "2020-08",
-        highlights: "以优异成绩完成",
+        name: "UX设计专业证书",
+        issuer: "Google",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2260,14 +2356,15 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2008-07",
         highlights: "优秀毕业论文",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "SHRM",
-        degree: "认证",
-        field: "SHRM认证专业人员 (SHRM-CP)",
-        startDate: "2011-01",
-        endDate: "2011-06",
-        highlights: "",
+        name: "SHRM认证专业人员 (SHRM-CP)",
+        issuer: "SHRM",
+        year: "2011",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2357,6 +2454,16 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "优秀毕业生",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "美国注册会计师 (CPA)",
+        issuer: "美国注册会计师协会",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -2428,24 +2535,23 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
           "协助熟练木工完成住宅项目的框架、屋顶和精装修工作\n学习安全操作电动工具、台锯和钉枪\n协助维护整洁有序的施工现场，符合安全标准",
       },
     ],
-    education: [
+    education: [],
+    certifications: [
       {
         id: generateId(),
-        school: "苏州技师学院",
-        degree: "职业证书",
-        field: "木工技术",
-        startDate: "2003-09",
-        endDate: "2005-07",
-        highlights: "",
+        name: "木工技术",
+        issuer: "苏州技师学院",
+        year: "2005",
+        credentialId: "",
+        credentialUrl: "",
       },
       {
         id: generateId(),
-        school: "建筑安全培训中心",
-        degree: "认证",
-        field: "建筑施工安全",
-        startDate: "2008-03",
-        endDate: "2008-04",
-        highlights: "",
+        name: "建筑施工安全",
+        issuer: "建筑安全培训中心",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2525,14 +2631,15 @@ const ZH_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2008-07",
         highlights: "",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "中国行政管理协会",
-        degree: "认证",
-        field: "行政管理专业认证",
-        startDate: "2012-01",
-        endDate: "2012-06",
-        highlights: "",
+        name: "行政管理专业认证",
+        issuer: "中国行政管理协会",
+        year: "2012",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2616,14 +2723,15 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "3.9",
         highlights: "学部長賞、データ構造ティーチングアシスタント",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "AWS",
-        degree: "認定資格",
-        field: "AWS ソリューションアーキテクト アソシエイト",
-        startDate: "2020-01",
-        endDate: "2020-03",
-        highlights: "スコア 920/1000",
+        name: "AWS ソリューションアーキテクト アソシエイト",
+        issuer: "AWS",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2710,14 +2818,15 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "3.8",
         highlights: "優等賞、金融研究会会長",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "CFA協会",
-        degree: "認定資格",
-        field: "CFA レベルI",
-        startDate: "2019-01",
-        endDate: "2019-06",
-        highlights: "初回合格",
+        name: "CFA レベルI",
+        issuer: "CFA協会",
+        year: "2019",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2797,14 +2906,15 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2019-03",
         highlights: "学長賞",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "Google",
-        degree: "認定資格",
-        field: "UXデザインプロフェッショナル証明書",
-        startDate: "2020-03",
-        endDate: "2020-08",
-        highlights: "優秀修了",
+        name: "UXデザインプロフェッショナル証明書",
+        issuer: "Google",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2889,14 +2999,15 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2008-03",
         highlights: "優秀修了",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "SHRM",
-        degree: "認定資格",
-        field: "SHRM認定プロフェッショナル（SHRM-CP）",
-        startDate: "2011-01",
-        endDate: "2011-06",
-        highlights: "",
+        name: "SHRM認定プロフェッショナル（SHRM-CP）",
+        issuer: "SHRM",
+        year: "2011",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -2986,6 +3097,16 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "優秀修了",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "米国公認会計士 (CPA)",
+        issuer: "American Institute of CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -3062,24 +3183,23 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
           "熟練大工の住宅プロジェクトにおけるフレーミング、屋根、仕上げ作業を支援\n電動工具、テーブルソー、釘打ち機の安全な操作を習得\n安全基準に準拠した整理整頓された現場の維持に貢献",
       },
     ],
-    education: [
+    education: [],
+    certifications: [
       {
         id: generateId(),
-        school: "神奈川県立職業訓練校",
-        degree: "職業訓練修了証",
-        field: "建築大工",
-        startDate: "2003-04",
-        endDate: "2005-03",
-        highlights: "",
+        name: "建築大工",
+        issuer: "神奈川県立職業訓練校",
+        year: "2005",
+        credentialId: "",
+        credentialUrl: "",
       },
       {
         id: generateId(),
-        school: "建設業労働災害防止協会",
-        degree: "資格",
-        field: "建設業安全衛生責任者",
-        startDate: "2008-03",
-        endDate: "2008-04",
-        highlights: "",
+        name: "建設業安全衛生責任者",
+        issuer: "建設業労働災害防止協会",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -3159,14 +3279,15 @@ const JA_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2008-03",
         highlights: "",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "日本秘書協会",
-        degree: "資格",
-        field: "秘書検定1級",
-        startDate: "2012-01",
-        endDate: "2012-06",
-        highlights: "",
+        name: "秘書検定1級",
+        issuer: "日本秘書協会",
+        year: "2012",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -3256,14 +3377,15 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "1,3",
         highlights: "Deutschlandstipendium, Tutor für Algorithmen und Datenstrukturen",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "AWS",
-        degree: "Zertifizierung",
-        field: "AWS Solutions Architect Associate",
-        startDate: "2020-01",
-        endDate: "2020-03",
-        highlights: "Punktzahl 920/1000",
+        name: "AWS Solutions Architect Associate",
+        issuer: "AWS",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -3350,14 +3472,15 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "1,5",
         highlights: "Begabtenförderung, Vorsitzende des Finanz-Clubs",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "CFA Institute",
-        degree: "Zertifizierung",
-        field: "CFA Level I",
-        startDate: "2019-01",
-        endDate: "2019-06",
-        highlights: "Beim ersten Versuch bestanden",
+        name: "CFA Level I",
+        issuer: "CFA Institute",
+        year: "2019",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -3441,14 +3564,15 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2019-07",
         highlights: "Rektoratspreis",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "Google",
-        degree: "Zertifizierung",
-        field: "UX Design Professional Certificate",
-        startDate: "2020-03",
-        endDate: "2020-08",
-        highlights: "Mit Auszeichnung abgeschlossen",
+        name: "UX Design Professional Certificate",
+        issuer: "Google",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -3533,14 +3657,15 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2008-07",
         highlights: "Mit Auszeichnung abgeschlossen",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "SHRM",
-        degree: "Zertifizierung",
-        field: "SHRM Certified Professional (SHRM-CP)",
-        startDate: "2011-01",
-        endDate: "2011-06",
-        highlights: "",
+        name: "SHRM Certified Professional (SHRM-CP)",
+        issuer: "SHRM",
+        year: "2011",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -3634,6 +3759,16 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "Mit Auszeichnung abgeschlossen",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "Certified Public Accountant (CPA)",
+        issuer: "American Institute of CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -3715,14 +3850,15 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2005-07",
         highlights: "",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "BG BAU",
-        degree: "Zertifizierung",
-        field: "Arbeitssicherheit im Bauwesen",
-        startDate: "2008-03",
-        endDate: "2008-04",
-        highlights: "",
+        name: "Arbeitssicherheit im Bauwesen",
+        issuer: "BG BAU",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -3811,14 +3947,15 @@ const DE_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2008-07",
         highlights: "",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "IHK",
-        degree: "Zertifizierung",
-        field: "Geprüfte Bürofachkraft",
-        startDate: "2012-01",
-        endDate: "2012-06",
-        highlights: "",
+        name: "Geprüfte Bürofachkraft",
+        issuer: "IHK",
+        year: "2012",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -3906,14 +4043,15 @@ const HI_SAMPLE_DATA: Record<string, PartialSampleData> = {
         gpa: "9.1",
         highlights: "डीन्स लिस्ट, AI में रिसर्च प्रोजेक्ट",
       },
+    ],
+    certifications: [
       {
         id: generateId(),
-        school: "AWS",
-        degree: "प्रमाणपत्र",
-        field: "AWS Solutions Architect Associate",
-        startDate: "2020-01",
-        endDate: "2020-03",
-        highlights: "स्कोर 920/1000",
+        name: "AWS Solutions Architect Associate",
+        issuer: "AWS",
+        year: "2020",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -3990,6 +4128,16 @@ const HI_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "डेटा एनालिटिक्स में विशेषज्ञता, केस कॉम्पिटिशन फाइनलिस्ट",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "प्रमाणित सार्वजनिक लेखाकार (CPA)",
+        issuer: "अमेरिकन इंस्टीट्यूट ऑफ CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       { id: generateId(), category: "विश्लेषण", skills: ["SQL", "Python", "Tableau", "Power BI"] },
       {
@@ -4055,6 +4203,16 @@ const HI_SAMPLE_DATA: Record<string, PartialSampleData> = {
         startDate: "2015-07",
         endDate: "2019-05",
         highlights: "गोल्ड मेडलिस्ट, UX डिज़ाइन में थीसिस",
+      },
+    ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "प्रमाणित सार्वजनिक लेखाकार (CPA)",
+        issuer: "अमेरिकन इंस्टीट्यूट ऑफ CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -4130,6 +4288,16 @@ const HI_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "HR क्लब अध्यक्ष, समर इंटर्नशिप एक्सीलेंस अवार्ड",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "प्रमाणित सार्वजनिक लेखाकार (CPA)",
+        issuer: "अमेरिकन इंस्टीट्यूट ऑफ CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -4201,6 +4369,16 @@ const HI_SAMPLE_DATA: Record<string, PartialSampleData> = {
         endDate: "2018-04",
         gpa: "3.9",
         highlights: "वित्त क्लब सचिव, CFA Level II उत्तीर्ण",
+      },
+    ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "प्रमाणित सार्वजनिक लेखाकार (CPA)",
+        issuer: "अमेरिकन इंस्टीट्यूट ऑफ CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [
@@ -4275,6 +4453,16 @@ const HI_SAMPLE_DATA: Record<string, PartialSampleData> = {
         highlights: "प्रथम श्रेणी, प्रैक्टिकल एग्ज़ाम में सर्वोच्च अंक",
       },
     ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "प्रमाणित सार्वजनिक लेखाकार (CPA)",
+        issuer: "अमेरिकन इंस्टीट्यूट ऑफ CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
+      },
+    ],
     skillGroups: [
       {
         id: generateId(),
@@ -4345,6 +4533,16 @@ const HI_SAMPLE_DATA: Record<string, PartialSampleData> = {
         startDate: "2014-06",
         endDate: "2017-04",
         highlights: "हॉस्पिटैलिटी मैनेजमेंट में प्रमाणपत्र",
+      },
+    ],
+    certifications: [
+      {
+        id: generateId(),
+        name: "प्रमाणित सार्वजनिक लेखाकार (CPA)",
+        issuer: "अमेरिकन इंस्टीट्यूट ऑफ CPAs",
+        year: "2008",
+        credentialId: "",
+        credentialUrl: "",
       },
     ],
     skillGroups: [

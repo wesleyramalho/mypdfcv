@@ -211,7 +211,14 @@ interface Props {
   messages?: Record<string, Record<string, string>>;
 }
 
-const DEFAULT_SECTION_ORDER = ["experience", "education", "skills", "projects", "summary"];
+const DEFAULT_SECTION_ORDER = [
+  "experience",
+  "education",
+  "certifications",
+  "skills",
+  "projects",
+  "summary",
+];
 
 type PDFStyles = ReturnType<typeof buildStyles>;
 type RD = import("../types/resume").ResumeData;
@@ -313,6 +320,49 @@ function EducationSection({ data, s, font, localeTag, presentLabel, t }: PDFSect
           ) : null}
         </View>
       ))}
+    </View>
+  );
+}
+
+function CertificationsSection({ data, s, font, t }: PDFSectionProps) {
+  if (!data.sections.certifications || data.certifications.length === 0) return null;
+  return (
+    <View style={s.section}>
+      <Text style={s.sectionTitle}>{t("resume", "certifications")}</Text>
+      {data.certifications.map((cert) => {
+        const issuerLine = [cert.issuer, cert.credentialId ? `ID: ${cert.credentialId}` : ""]
+          .filter(Boolean)
+          .join(" · ");
+        return (
+          <View key={cert.id} style={{ marginBottom: 6 }}>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
+              }}
+            >
+              <View style={{ flex: 1 }}>
+                <Text style={s.eduSchool}>{cert.name}</Text>
+                {issuerLine ? <Text style={s.eduDegree}>{issuerLine}</Text> : null}
+              </View>
+              {cert.year ? <Text style={s.expDate}>{cert.year}</Text> : null}
+            </View>
+            {cert.credentialUrl ? (
+              <Text
+                style={{
+                  fontFamily: font,
+                  fontSize: 7.5,
+                  color: "#9ca3af",
+                  marginTop: 2,
+                }}
+              >
+                {cert.credentialUrl}
+              </Text>
+            ) : null}
+          </View>
+        );
+      })}
     </View>
   );
 }
@@ -456,6 +506,8 @@ export default function ResumePDFDocument({ resume, locale = "en", messages }: P
     if (sectionId === "summary") return <SummarySection key={sectionId} {...sectionProps} />;
     if (sectionId === "experience") return <ExperienceSection key={sectionId} {...sectionProps} />;
     if (sectionId === "education") return <EducationSection key={sectionId} {...sectionProps} />;
+    if (sectionId === "certifications")
+      return <CertificationsSection key={sectionId} {...sectionProps} />;
     if (sectionId === "skills" && !hasSidebar)
       return <SkillsSection key={sectionId} {...sectionProps} />;
     if (sectionId === "projects") return <ProjectsSection key={sectionId} {...sectionProps} />;

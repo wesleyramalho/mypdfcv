@@ -207,7 +207,22 @@
     "projectCount": "{count, plural, other {# プロジェクト}}",
     "experienceFallback": "職歴 {idx}",
     "educationFallback": "学歴 {idx}",
-    "projectFallback": "プロジェクト {idx}"
+    "projectFallback": "プロジェクト {idx}",
+    "certifications": "資格・認定",
+    "sectionDescCertifications": "取得している資格や認定。",
+    "certificationName": "資格名",
+    "certificationNamePlaceholder": "AWS 認定ソリューションアーキテクト",
+    "certificationIssuer": "発行機関",
+    "certificationIssuerPlaceholder": "Amazon Web Services",
+    "certificationYear": "取得年（任意）",
+    "certificationYearPlaceholder": "2024",
+    "certificationId": "資格ID（任意）",
+    "certificationIdPlaceholder": "ABC-123-XYZ",
+    "certificationUrl": "認定URL（任意）",
+    "certificationUrlPlaceholder": "https://verify.example.com/...",
+    "addCertification": "資格を追加",
+    "removeCertification": "資格を削除",
+    "certificationFallback": "資格 {idx}"
   },
   "resume": {
     "profile": "プロフィール",
@@ -219,7 +234,8 @@
     "yourName": "あなたの名前",
     "yourHeadline": "あなたのヘッドライン",
     "skills": "スキル",
-    "gpa": "GPA"
+    "gpa": "GPA",
+    "certifications": "資格・認定"
   },
   "ai": {
     "improve": "改善",
@@ -349,7 +365,9 @@
   "validation": {
     "invalidEmail": "有効なメールアドレスを入力してください",
     "invalidUrl": "有効な URL を入力してください",
-    "tooLong": "このフィールドは長すぎます"
+    "tooLong": "このフィールドは長すぎます",
+    "required": "この項目は必須です",
+    "invalidYear": "4桁の年を入力してください"
   },
   "cookies": {
     "title": "Cookie ポリシー",
