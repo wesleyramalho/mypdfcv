@@ -34,6 +34,7 @@
     "@mypdfcv/i18n": "*",
     "@mypdfcv/pdf-core": "*",
     "@react-pdf/renderer": "^4.3.2",
+    "@sentry/nextjs": "^10.53.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gsap": "^3.15.0",

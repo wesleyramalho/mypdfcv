@@ -11,6 +11,7 @@ import {
   setAnalyticsEnabled,
   writeConsent,
 } from "@/lib/consent";
+import { disableSentryClient, initSentryClient } from "@/lib/sentry/client";
 
 interface ConsentContextValue {
   status: ConsentStatus;
@@ -51,6 +52,16 @@ function disablePostHog() {
   posthog.reset();
 }
 
+function enableTelemetry() {
+  initPostHog();
+  initSentryClient();
+}
+
+function disableTelemetry() {
+  disablePostHog();
+  disableSentryClient();
+}
+
 interface ConsentProviderProps {
   country: string | null;
   children: React.ReactNode;
@@ -75,15 +86,15 @@ export function ConsentProvider({ country, children }: ConsentProviderProps) {
     }
 
     if (!isBR) {
-      // Non-BR users keep the prior behaviour: PostHog initialises on boot.
-      initPostHog();
+      // Non-BR users keep the prior behaviour: telemetry initialises on boot.
+      enableTelemetry();
       setAnalyticsEnabled(true);
       return;
     }
 
     // BR users: only init when consent was previously granted.
     if (stored === "accepted") {
-      initPostHog();
+      enableTelemetry();
       setAnalyticsEnabled(true);
     } else {
       setAnalyticsEnabled(false);
@@ -94,7 +105,7 @@ export function ConsentProvider({ country, children }: ConsentProviderProps) {
     writeConsent("accepted");
     setStatus("accepted");
     if (navigator.doNotTrack !== "1") {
-      initPostHog();
+      enableTelemetry();
       setAnalyticsEnabled(true);
     }
   }, []);
@@ -103,14 +114,14 @@ export function ConsentProvider({ country, children }: ConsentProviderProps) {
     writeConsent("rejected");
     setStatus("rejected");
     setAnalyticsEnabled(false);
-    disablePostHog();
+    disableTelemetry();
   }, []);
 
   const revoke = useCallback(() => {
     clearConsent();
     setStatus("unset");
     setAnalyticsEnabled(false);
-    disablePostHog();
+    disableTelemetry();
   }, []);
 
   const showBanner =
